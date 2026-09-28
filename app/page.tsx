@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import agents from "./agents.json";
 import { registerCompositionTool } from "./webmcp";
+import { TrainingResults } from "./training-results";
 import { sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
@@ -92,6 +93,7 @@ export default function Home() {
       })}</div><div className="sidebar-footer"><span className="side-accent" /> PLANEJAMENTO DE EQUIPE</div></aside>
       <main className="main-area"><div className="section-kicker"><span className="pink-line" /> COMPOSIÇÃO POR MAPA <span className="kicker-slash">/</span> {mapNames[selectedMap].toUpperCase()}</div><div className="page-heading"><div><h1>{mapNames[selectedMap]}</h1><p>Defina os agentes de cada jogador e registre a estratégia.</p></div><div className="save-status" role="status"><span className={`status-dot ${saveState}`} />{loadState === "loading" ? "Carregando" : loadState === "error" ? "Sem conexão" : saveState === "saving" ? "Salvando" : saveState === "error" ? "Erro ao salvar" : "Tudo salvo"}</div></div>
         <div className="map-hero"><img src={`/maps/${selectedMap}.webp`} alt={`Imagem do mapa ${mapNames[selectedMap]}`} /><div className="hero-overlay" /><span className="hero-label">MAPA 0{maps.indexOf(selectedMap) + 1} <span>—</span> VALORANT</span><strong>{mapNames[selectedMap].toUpperCase()}</strong><span className="hero-corner">COMPOSIÇÃO {picked.toString().padStart(2, "0")}/05</span></div>
+        <TrainingResults map={selectedMap} mapName={mapNames[selectedMap]} />
         {loadState === "error" && <div className="error-banner">Não foi possível carregar os dados do time. <button onClick={() => void load()}>Tentar novamente</button></div>}
         <div className="content-grid"><section className="roster-section" aria-labelledby="roster-title"><div className="section-heading"><div><span className="eyebrow">01 / LINEUP</span><h2 id="roster-title">Escalação do time</h2></div><span className="progress-text">{picked} de 5 definidos</span></div><div className="roster-list">{players.map((player, index) => {
           const agent = agentList.find((entry) => entry.id === current.picks[player]);

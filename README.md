@@ -1,6 +1,6 @@
 # Espumas — Campeonato Valorant
 
-Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe e um campo de observações compartilhado.
+Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe, observações de estratégia e o total de vitórias e derrotas em treinos.
 
 ## Desenvolvimento
 
