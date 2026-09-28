@@ -8,14 +8,14 @@ import { Textarea } from "@/components/ui/textarea";
 import agents from "./agents.json";
 import { registerCompositionTool } from "./webmcp";
 import { TrainingResults } from "./training-results";
-import { sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
+import { maxNoteLength, packNotes, sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
 const players = ["joao", "ronaldo", "bolla", "rafa", "felipe"];
 const maps = ["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"];
 const mapNames: Record<string, string> = Object.fromEntries(maps.map((map) => [map, map.charAt(0).toUpperCase() + map.slice(1)]));
 const agentList = agents as Agent[];
-const emptyComposition = (): Composition => ({ picks: {}, notes: {} });
+const emptyComposition = (): Composition => ({ picks: {}, notes: {}, observations: "" });
 
 function NoteEditor({ label, value, onChange, disabled, placeholder }: { label: string; value: string; onChange: (value: string) => void; disabled: boolean; placeholder: string }) {
   return <div className="note-editor"><label className="note-label" htmlFor="strategy-note">{label}</label><Textarea id="strategy-note" aria-label={label} placeholder={placeholder} value={value} onChange={(event) => onChange(event.target.value)} disabled={disabled} maxLength={5000} className="notes-input" /><span className="note-counter">{value.length}/5000 caracteres</span></div>;
@@ -30,21 +30,30 @@ export default function Home() {
   const [bombTab, setBombTab] = useState<"A" | "B" | "C">("A");
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
   const [saveState, setSaveState] = useState<"saved" | "saving" | "error">("saved");
+  const [sharedLimitReached, setSharedLimitReached] = useState(false);
   const pendingSave = useRef<ReturnType<typeof setTimeout> | null>(null);
   const current = compositions[selectedMap] ?? emptyComposition();
   const picked = players.filter((player) => current.picks[player]).length;
   const availableSites = sitesForMap(selectedMap);
+  const sharedLength = packNotes(current.notes, current.observations).default?.length ?? 0;
   const filteredAgents = useMemo(() => agentList.filter((agent) => `${agent.name} ${agent.role}`.toLocaleLowerCase("pt-BR").includes(query.toLocaleLowerCase("pt-BR"))), [query]);
 
-  async function load() {
+  function load() {
+    return fetch("/api/compositions", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error();
+        return response.json() as Promise<Record<string, Composition>>;
+      })
+      .then((compositions) => {
+        setCompositions(compositions);
+        setLoadState("ready");
+        setSaveState("saved");
+      })
+      .catch(() => setLoadState("error"));
+  }
+  function refresh() {
     setLoadState("loading");
-    try {
-      const response = await fetch("/api/compositions", { cache: "no-store" });
-      if (!response.ok) throw new Error();
-      setCompositions(await response.json() as Record<string, Composition>);
-      setLoadState("ready");
-      setSaveState("saved");
-    } catch { setLoadState("error"); }
+    void load();
   }
   useEffect(() => { void load(); }, []);
   useEffect(() => registerCompositionTool((map, composition) => {
@@ -74,9 +83,24 @@ export default function Home() {
     setSelectedMap(map);
     setNoteTab("default");
     setBombTab("A");
+    setSharedLimitReached(false);
   }
   function updateNote(key: NoteKey, value: string) {
-    updateCurrent({ notes: { ...current.notes, [key]: value } });
+    const notes = { ...current.notes, [key]: value };
+    if (key === "default" && (packNotes(notes, current.observations).default?.length ?? 0) > maxNoteLength) {
+      setSharedLimitReached(true);
+      return;
+    }
+    setSharedLimitReached(false);
+    updateCurrent({ notes });
+  }
+  function updateObservations(value: string) {
+    if ((packNotes(current.notes, value).default?.length ?? 0) > maxNoteLength) {
+      setSharedLimitReached(true);
+      return;
+    }
+    setSharedLimitReached(false);
+    updateCurrent({ observations: value });
   }
   function chooseAgent(agentId: string) {
     if (!pickerFor) return;
@@ -94,13 +118,13 @@ export default function Home() {
       <main className="main-area"><div className="section-kicker"><span className="pink-line" /> COMPOSIÇÃO POR MAPA <span className="kicker-slash">/</span> {mapNames[selectedMap].toUpperCase()}</div><div className="page-heading"><div><h1>{mapNames[selectedMap]}</h1><p>Defina os agentes de cada jogador e registre a estratégia.</p></div><div className="save-status" role="status"><span className={`status-dot ${saveState}`} />{loadState === "loading" ? "Carregando" : loadState === "error" ? "Sem conexão" : saveState === "saving" ? "Salvando" : saveState === "error" ? "Erro ao salvar" : "Tudo salvo"}</div></div>
         <div className="map-hero"><img src={`/maps/${selectedMap}.webp`} alt={`Imagem do mapa ${mapNames[selectedMap]}`} /><div className="hero-overlay" /><span className="hero-label">MAPA 0{maps.indexOf(selectedMap) + 1} <span>—</span> VALORANT</span><strong>{mapNames[selectedMap].toUpperCase()}</strong><span className="hero-corner">COMPOSIÇÃO {picked.toString().padStart(2, "0")}/05</span></div>
         <TrainingResults map={selectedMap} mapName={mapNames[selectedMap]} />
-        {loadState === "error" && <div className="error-banner">Não foi possível carregar os dados do time. <button onClick={() => void load()}>Tentar novamente</button></div>}
+        {loadState === "error" && <div className="error-banner">Não foi possível carregar os dados do time. <button onClick={refresh}>Tentar novamente</button></div>}
         <div className="content-grid"><section className="roster-section" aria-labelledby="roster-title"><div className="section-heading"><div><span className="eyebrow">01 / LINEUP</span><h2 id="roster-title">Escalação do time</h2></div><span className="progress-text">{picked} de 5 definidos</span></div><div className="roster-list">{players.map((player, index) => {
           const agent = agentList.find((entry) => entry.id === current.picks[player]);
           return <div className="player-row" key={player}><span className="player-number">0{index + 1}</span><div className="player-avatar">{player.slice(0, 1).toUpperCase()}</div><div className="player-name"><strong>{player}</strong><small>JOGADOR</small></div><button className={`agent-choice ${agent ? "chosen" : ""}`} onClick={() => { setPickerFor(player); setQuery(""); }} aria-label={`Escolher agente para ${player}`} disabled={loadState !== "ready"}>{agent ? <><img src={agent.icon} alt="" /><span><strong>{agent.name}</strong><small>{agent.role}</small></span></> : <span className="empty-agent"><Sparkles size={16} /> Escolher agente</span>}<ChevronDown size={16} className="choice-chevron" /></button></div>;
         })}</div></section>
         <section className="notes-section" aria-labelledby="notes-title">
-          <div className="section-heading"><div><span className="eyebrow">02 / ESTRATÉGIA</span><h2 id="notes-title">Observações</h2></div><span className="notes-icon">✳</span></div>
+          <div className="section-heading"><div><span className="eyebrow">02 / ESTRATÉGIA</span><h2 id="notes-title">Procedimentos</h2></div><span className="notes-icon">✳</span></div>
           <p className="notes-help">Planeje cada fase da rodada em {mapNames[selectedMap]}.</p>
           <Tabs className="strategy-tabs" value={noteTab} onValueChange={setNoteTab}>
             <TabsList aria-label="Fase da rodada"><TabsTrigger value="default">Default</TabsTrigger><TabsTrigger value="exec">Exec</TabsTrigger><TabsTrigger value="postPlant">Pós Plant</TabsTrigger><TabsTrigger value="retake">Retake</TabsTrigger></TabsList>
@@ -111,7 +135,13 @@ export default function Home() {
               <NoteEditor label={`${phase === "postPlant" ? "Pós Plant" : "Retake"} · Bomb ${bombTab}`} value={current.notes[`${phase}${bombTab}` as NoteKey] ?? ""} onChange={(value) => updateNote(`${phase}${bombTab}` as NoteKey, value)} disabled={loadState !== "ready"} placeholder={phase === "postPlant" ? "Posições após plantar, utilidades e tempo de contato..." : "Como retomar o bomb, entradas e utilidades..."} />
             </TabsContent>)}
           </Tabs>
-          <div className="notes-bottom"><span>Salvamento automático</span><button onClick={() => void load()} title="Atualizar dados do time" aria-label="Atualizar dados do time"><RefreshCw size={16} /> Atualizar</button></div>
+          <div className="observations-field">
+            <label className="note-label" htmlFor="observations">Observações</label>
+            <Textarea id="observations" placeholder="Anotações gerais sobre este mapa..." value={current.observations ?? ""} onChange={(event) => updateObservations(event.target.value)} disabled={loadState !== "ready"} maxLength={maxNoteLength} className="notes-input observations-input" />
+            <span className="note-counter">{sharedLength}/{maxNoteLength} caracteres usados com Default</span>
+            {sharedLimitReached && <p className="note-limit" role="alert">Default e Observações compartilham o limite de 5000 caracteres.</p>}
+          </div>
+          <div className="notes-bottom"><span>Salvamento automático</span><button onClick={refresh} title="Atualizar dados do time" aria-label="Atualizar dados do time"><RefreshCw size={16} /> Atualizar</button></div>
         </section></div>
       </main>
     </div>
