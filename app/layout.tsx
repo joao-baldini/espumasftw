@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Comp Lab — Campeonato Valorant",
-  description: "Composições, agentes e estratégias do time para cada mapa do campeonato.",
+  title: "Espumas — Composições Valorant",
+  description: "Composições, agentes e estratégias do time Espumas para cada mapa do campeonato.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

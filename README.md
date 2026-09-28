@@ -1,4 +1,4 @@
-# Comp Lab — Campeonato Valorant
+# Espumas — Campeonato Valorant
 
 Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe e um campo de observações compartilhado.
 

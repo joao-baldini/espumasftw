@@ -71,7 +71,7 @@ export default function Home() {
   }
 
   return <div className="app-shell">
-    <header className="topbar"><div className="brand"><span className="brand-mark">V</span><div><strong>COMP LAB</strong><small>CAMPEONATO VALORANT</small></div></div><div className="topbar-right"><span className="team-chip"><span className="team-dot" /> NOSSO TIME</span><span className="edition">TEMPORADA 2026</span></div></header>
+    <header className="topbar"><div className="brand"><span className="brand-mark">E</span><div><strong>ESPUMAS</strong><small>COMPOSIÇÕES VALORANT</small></div></div><div className="topbar-right"><span className="team-chip"><span className="team-dot" /> CAMPEONATO</span><span className="edition">TEMPORADA 2026</span></div></header>
     <div className="workspace">
       <aside className="map-sidebar" aria-label="Mapas do campeonato"><div className="sidebar-heading"><span>MAP POOL</span><span className="count">07 MAPAS</span></div><div className="map-list">{maps.map((map, index) => {
         const assigned = players.filter((player) => compositions[map]?.picks[player]).length;
