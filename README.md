@@ -8,10 +8,9 @@ Requer Node.js 22.13 ou mais recente.
 
 ```sh
 npm ci
-npm run db:generate
 npm run dev
 ```
 
-O banco é Cloudflare D1. As migrações em `drizzle/` devem ser aplicadas ao ambiente local ou de publicação antes do uso da API. O deploy do Sites aplica as migrações do projeto.
+O frontend e as rotas da API rodam em Next.js na Vercel. As rotas consultam a API do site original, que mantém o banco compartilhado Cloudflare D1 e preserva as composições já salvas. É possível alterar a origem dessa API com a variável de servidor `ESPUMAS_DATA_ORIGIN`.
 
 As imagens dos mapas e ícones dos agentes vêm do [Valorant-API](https://valorant-api.com/), a partir de conteúdo do VALORANT. Este é um projeto independente, sem afiliação com a Riot Games ou com a FIAP.
