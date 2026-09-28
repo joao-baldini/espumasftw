@@ -1,4 +1,4 @@
-type Composition = { picks: Record<string, string>; notes: string; updatedAt?: string };
+import { noteKeys, sitesForMap, type Composition, type NoteKey, type Notes } from "@/lib/composition";
 type ModelContext = {
   registerTool: (tool: {
     name: string;
@@ -26,7 +26,7 @@ export function registerCompositionTool(onSaved: (map: string, composition: Comp
       properties: {
         map: { type: "string", enum: [...maps] },
         picks: { type: "object", additionalProperties: { type: "string" } },
-        notes: { type: "string" },
+        notes: { type: "object", properties: Object.fromEntries(noteKeys.map((key) => [key, { type: "string", maxLength: 5000 }])), additionalProperties: false },
       },
       required: ["map", "picks", "notes"],
       additionalProperties: false,
@@ -35,9 +35,10 @@ export function registerCompositionTool(onSaved: (map: string, composition: Comp
     async execute(input) {
       if (!input || typeof input !== "object") throw new Error("Dados inválidos.");
       const { map, picks, notes } = input as { map?: unknown; picks?: unknown; notes?: unknown };
-      if (typeof map !== "string" || !maps.has(map) || typeof notes !== "string" || notes.length > 5000 || !picks || typeof picks !== "object" || Array.isArray(picks)) throw new Error("Dados inválidos.");
+      if (typeof map !== "string" || !maps.has(map) || !notes || typeof notes !== "object" || Array.isArray(notes) || !picks || typeof picks !== "object" || Array.isArray(picks)) throw new Error("Dados inválidos.");
       const entries = Object.entries(picks);
       if (entries.some(([player, agent]) => !players.has(player) || typeof agent !== "string") || new Set(entries.map(([, agent]) => agent)).size !== entries.length) throw new Error("Jogadores ou agentes inválidos.");
+      if (Object.entries(notes).some(([key, note]) => !noteKeys.includes(key as NoteKey) || typeof note !== "string" || note.length > 5000 || (key.endsWith("C") && !sitesForMap(map).includes("C")))) throw new Error("Observações inválidas.");
       const response = await fetch(`/api/compositions/${map}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ picks, notes }) });
       if (!response.ok) throw new Error("Não foi possível salvar a composição.");
       const saved = await response.json() as Composition;
