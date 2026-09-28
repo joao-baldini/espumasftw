@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import agents from "./agents.json";
 import { registerCompositionTool } from "./webmcp";
 import { TrainingResults } from "./training-results";
+import { TeamObservations } from "./team-observations";
 import { maxNoteLength, packNotes, sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
@@ -115,7 +116,7 @@ export default function Home() {
         const assigned = players.filter((player) => compositions[map]?.picks[player]).length;
         return <button key={map} className={`map-tile ${selectedMap === map ? "active" : ""}`} onClick={() => chooseMap(map)} aria-current={selectedMap === map ? "page" : undefined}><img src={`/maps/${map}-thumb.png`} alt="" /><span className="map-shade" /><span className="map-index">0{index + 1}</span><span className="map-info"><strong>{mapNames[map]}</strong><small>{assigned}/5 AGENTES</small></span><ArrowUpRight size={16} className="map-arrow" /></button>;
       })}</div><div className="sidebar-footer"><span className="side-accent" /> PLANEJAMENTO DE EQUIPE</div></aside>
-      <main className="main-area"><div className="section-kicker"><span className="pink-line" /> COMPOSIÇÃO POR MAPA <span className="kicker-slash">/</span> {mapNames[selectedMap].toUpperCase()}</div><div className="page-heading"><div><h1>{mapNames[selectedMap]}</h1><p>Defina os agentes de cada jogador e registre a estratégia.</p></div><div className="save-status" role="status"><span className={`status-dot ${saveState}`} />{loadState === "loading" ? "Carregando" : loadState === "error" ? "Sem conexão" : saveState === "saving" ? "Salvando" : saveState === "error" ? "Erro ao salvar" : "Tudo salvo"}</div></div>
+      <main className="main-area"><TeamObservations /><div className="section-kicker"><span className="pink-line" /> COMPOSIÇÃO POR MAPA <span className="kicker-slash">/</span> {mapNames[selectedMap].toUpperCase()}</div><div className="page-heading"><div><h1>{mapNames[selectedMap]}</h1><p>Defina os agentes de cada jogador e registre a estratégia.</p></div><div className="save-status" role="status"><span className={`status-dot ${saveState}`} />{loadState === "loading" ? "Carregando" : loadState === "error" ? "Sem conexão" : saveState === "saving" ? "Salvando" : saveState === "error" ? "Erro ao salvar" : "Tudo salvo"}</div></div>
         <div className="map-hero"><img src={`/maps/${selectedMap}.webp`} alt={`Imagem do mapa ${mapNames[selectedMap]}`} /><div className="hero-overlay" /><span className="hero-label">MAPA 0{maps.indexOf(selectedMap) + 1} <span>—</span> VALORANT</span><strong>{mapNames[selectedMap].toUpperCase()}</strong><span className="hero-corner">COMPOSIÇÃO {picked.toString().padStart(2, "0")}/05</span></div>
         <TrainingResults map={selectedMap} mapName={mapNames[selectedMap]} />
         {loadState === "error" && <div className="error-banner">Não foi possível carregar os dados do time. <button onClick={refresh}>Tentar novamente</button></div>}
