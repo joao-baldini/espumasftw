@@ -51,7 +51,7 @@ function phasesForMap(map: string) {
   ];
 }
 
-export function TacticsBoard({ map, mapName, allies, notes, observations }: { map: string; mapName: string; allies: Array<{ player: string; agentId: string }>; notes: Notes; observations: string }) {
+export function TacticsBoard({ map, mapName, allies, notes, observations, onNoteChange, editable }: { map: string; mapName: string; allies: Array<{ player: string; agentId: string }>; notes: Notes; observations: string; onNoteChange: (key: NoteKey, value: string) => void; editable: boolean }) {
   const [boards, setBoards] = useState<Record<string, History>>({});
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
   const [saveState, setSaveState] = useState<"saved" | "saving" | "error">("saved");
@@ -82,8 +82,8 @@ export function TacticsBoard({ map, mapName, allies, notes, observations }: { ma
   const phases = phasesForMap(map);
   const selected = items.find((item) => item.id === selectedId);
   const phaseNotes = phase.startsWith("exec")
-    ? [{ label: "Exec geral", value: notes.exec ?? "" }, { label: `Exec · Bomb ${phase.at(-1)}`, value: notes[phase as NoteKey] ?? "" }]
-    : [{ label: phases.find((entry) => entry.id === phase)?.label ?? "Default", value: notes[phase as NoteKey] ?? "" }];
+    ? [{ key: "exec" as NoteKey, label: "Exec geral", value: notes.exec ?? "" }, { key: phase as NoteKey, label: `Exec · Bomb ${phase.at(-1)}`, value: notes[phase as NoteKey] ?? "" }]
+    : [{ key: phase as NoteKey, label: phases.find((entry) => entry.id === phase)?.label ?? "Default", value: notes[phase as NoteKey] ?? "" }];
 
   async function loadBoards() {
     setLoadState("loading");
@@ -291,7 +291,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations }: { ma
     <div className="tactics-phases" role="tablist" aria-label="Fase do quadro">{phases.map((entry) => <button key={entry.id} role="tab" aria-selected={phase === entry.id} className={phase === entry.id ? "active" : ""} onClick={() => { setPhase(entry.id); setSelectedId(null); }}>{entry.label}{(boards[`${map}:${entry.id}`]?.present.length ?? 0) > 0 && <span className="phase-dot" />}</button>)}</div>
     <div className="tactics-layout">
       <div className="tactics-stage">
-        <div className="tactics-procedure" aria-label="Observações da fase"><strong>{phases.find((entry) => entry.id === phase)?.label}</strong>{phaseNotes.map((entry) => entry.value && <div key={entry.label}><span>{entry.label}</span><p>{entry.value}</p></div>)}{observations && <div><span>Observações do mapa</span><p>{observations}</p></div>}{!phaseNotes.some((entry) => entry.value) && !observations && <p>Nenhuma observação para esta fase. Escreva em Procedimentos acima.</p>}</div>
+        <div className="tactics-procedure" aria-label="Observações da fase"><strong>Procedimentos · {phases.find((entry) => entry.id === phase)?.label}</strong>{phaseNotes.map((entry) => <div key={entry.key}><label htmlFor={`tactics-note-${entry.key}`}>{entry.label}</label><textarea id={`tactics-note-${entry.key}`} value={entry.value} onChange={(event) => onNoteChange(entry.key, event.target.value)} disabled={!editable} maxLength={5000} placeholder="Posições, habilidades e coordenação desta fase..." /><small>{entry.value.length}/5000 caracteres</small></div>)}{observations && <div><span>Observações do mapa</span><p>{observations}</p></div>}</div>
         <div className="tactics-toolbar" role="toolbar" aria-label="Ferramentas do quadro">
           <div className="tool-group">{tools.map(({ id, label, icon: Icon }) => <button key={id} className={tool === id && !placing ? "active" : ""} onClick={() => chooseTool(id)} title={label} aria-label={label} aria-pressed={tool === id}><Icon size={17} /></button>)}</div>
           <div className="tool-group">{colors.map((swatch) => <button key={swatch} className={`swatch ${color === swatch ? "active" : ""}`} style={{ background: swatch }} onClick={() => setColor(swatch)} title="Cor do desenho" aria-label={`Cor ${swatch}`} aria-pressed={color === swatch} />)}</div>

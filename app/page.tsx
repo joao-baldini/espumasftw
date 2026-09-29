@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, RefreshCw, Search, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import agents from "./agents.json";
 import { registerCompositionTool } from "./webmcp";
 import { TrainingResults } from "./training-results";
 import { TeamObservations } from "./team-observations";
 import { TacticsBoard } from "./tactics/tactics-board";
-import { maxNoteLength, sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
+import { maxNoteLength, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
 const players = ["joao", "ronaldo", "bolla", "rafa", "felipe"];
@@ -19,24 +18,16 @@ const mapNames: Record<string, string> = Object.fromEntries(maps.map((map) => [m
 const agentList = agents as Agent[];
 const emptyComposition = (): Composition => ({ picks: {}, notes: {}, observations: "" });
 
-function NoteEditor({ label, value, onChange, disabled, placeholder }: { label: string; value: string; onChange: (value: string) => void; disabled: boolean; placeholder: string }) {
-  const id = useId();
-  return <div className="note-editor"><label className="note-label" htmlFor={id}>{label}</label><Textarea id={id} aria-label={label} placeholder={placeholder} value={value} onChange={(event) => onChange(event.target.value)} disabled={disabled} maxLength={5000} className="notes-input" /><span className="note-counter">{value.length}/5000 caracteres</span></div>;
-}
-
 export default function Home() {
   const [selectedMap, setSelectedMap] = useState("abyss");
   const [compositions, setCompositions] = useState<Record<string, Composition>>({});
   const [pickerFor, setPickerFor] = useState<string | null>(null);
   const [query, setQuery] = useState("");
-  const [noteTab, setNoteTab] = useState("default");
-  const [bombTab, setBombTab] = useState<"A" | "B" | "C">("A");
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
   const [saveState, setSaveState] = useState<"saved" | "saving" | "error">("saved");
   const pendingSave = useRef<ReturnType<typeof setTimeout> | null>(null);
   const current = compositions[selectedMap] ?? emptyComposition();
   const picked = players.filter((player) => current.picks[player]).length;
-  const availableSites = sitesForMap(selectedMap);
   const filteredAgents = useMemo(() => agentList.filter((agent) => `${agent.name} ${agent.role}`.toLocaleLowerCase("pt-BR").includes(query.toLocaleLowerCase("pt-BR"))), [query]);
 
   function load() {
@@ -82,8 +73,6 @@ export default function Home() {
   function chooseMap(map: string) {
     if (pendingSave.current) { clearTimeout(pendingSave.current); pendingSave.current = null; void save(selectedMap, current); }
     setSelectedMap(map);
-    setNoteTab("default");
-    setBombTab("A");
   }
   function updateNote(key: NoteKey, value: string) {
     updateCurrent({ notes: { ...current.notes, [key]: value } });
@@ -113,29 +102,16 @@ export default function Home() {
           return <div className="player-row" key={player}><span className="player-number">0{index + 1}</span><div className="player-avatar">{player.slice(0, 1).toUpperCase()}</div><div className="player-name"><strong>{player}</strong><small>JOGADOR</small></div><button className={`agent-choice ${agent ? "chosen" : ""}`} onClick={() => { setPickerFor(player); setQuery(""); }} aria-label={`Escolher agente para ${player}`} disabled={loadState !== "ready"}>{agent ? <><img src={agent.icon} alt="" /><span><strong>{agent.name}</strong><small>{agent.role}</small></span></> : <span className="empty-agent"><Sparkles size={16} /> Escolher agente</span>}<ChevronDown size={16} className="choice-chevron" /></button></div>;
         })}</div></section>
         <section className="notes-section" aria-labelledby="notes-title">
-          <div className="section-heading"><div><span className="eyebrow">02 / ESTRATÉGIA</span><h2 id="notes-title">Procedimentos</h2></div><span className="notes-icon">✳</span></div>
-          <p className="notes-help">Planeje cada fase da rodada em {mapNames[selectedMap]}.</p>
-          <Tabs className="strategy-tabs" value={noteTab} onValueChange={setNoteTab}>
-            <TabsList aria-label="Fase da rodada"><TabsTrigger value="default">Default</TabsTrigger><TabsTrigger value="exec">Exec</TabsTrigger><TabsTrigger value="postPlant">Pós Plant</TabsTrigger><TabsTrigger value="retake">Retake</TabsTrigger></TabsList>
-            <TabsContent value="default"><NoteEditor label="Default" value={current.notes.default ?? ""} onChange={(value) => updateNote("default", value)} disabled={loadState !== "ready"} placeholder="Controle inicial, posições e utilidades..." /></TabsContent>
-            <TabsContent value="exec">
-              <div className="bomb-selector" role="group" aria-label="Bomb de Exec">{availableSites.map((site) => <button key={site} type="button" className={bombTab === site ? "active" : ""} aria-pressed={bombTab === site} onClick={() => setBombTab(site)}>Bomb {site}</button>)}</div>
-              <NoteEditor label={`Exec · Bomb ${bombTab}`} value={current.notes[`exec${bombTab}` as NoteKey] ?? ""} onChange={(value) => updateNote(`exec${bombTab}` as NoteKey, value)} disabled={loadState !== "ready"} placeholder="Entrada no bomb, ordem de habilidades e funções..." />
-              <div className="general-exec-note"><NoteEditor label="Exec geral" value={current.notes.exec ?? ""} onChange={(value) => updateNote("exec", value)} disabled={loadState !== "ready"} placeholder="Pontos que valem para todos os bombs..." /></div>
-            </TabsContent>
-            {(["postPlant", "retake"] as const).map((phase) => <TabsContent value={phase} key={phase}>
-              <div className="bomb-selector" role="group" aria-label={`Bomb de ${phase === "postPlant" ? "Pós Plant" : "Retake"}`}>{availableSites.map((site) => <button key={site} type="button" className={bombTab === site ? "active" : ""} aria-pressed={bombTab === site} onClick={() => setBombTab(site)}>Bomb {site}</button>)}</div>
-              <NoteEditor label={`${phase === "postPlant" ? "Pós Plant" : "Retake"} · Bomb ${bombTab}`} value={current.notes[`${phase}${bombTab}` as NoteKey] ?? ""} onChange={(value) => updateNote(`${phase}${bombTab}` as NoteKey, value)} disabled={loadState !== "ready"} placeholder={phase === "postPlant" ? "Posições após plantar, utilidades e tempo de contato..." : "Como retomar o bomb, entradas e utilidades..."} />
-            </TabsContent>)}
-          </Tabs>
-          <div className="observations-field">
+          <div className="section-heading"><div><span className="eyebrow">02 / MAPA</span><h2 id="notes-title">Observações do mapa</h2></div><span className="notes-icon">✳</span></div>
+          <p className="notes-help">Anote informações gerais de {mapNames[selectedMap]}. Os procedimentos de cada fase ficam no quadro tático abaixo.</p>
+          <div className="map-observations-field">
             <label className="note-label" htmlFor="observations">Observações</label>
             <Textarea id="observations" placeholder="Anotações gerais sobre este mapa..." value={current.observations ?? ""} onChange={(event) => updateObservations(event.target.value)} disabled={loadState !== "ready"} maxLength={maxNoteLength} className="notes-input observations-input" />
             <span className="note-counter">{(current.observations ?? "").length}/{maxNoteLength} caracteres</span>
           </div>
           <div className="notes-bottom"><span>Salvamento automático</span><button onClick={refresh} title="Atualizar dados do time" aria-label="Atualizar dados do time"><RefreshCw size={16} /> Atualizar</button></div>
         </section></div>
-        <TacticsBoard map={selectedMap} mapName={mapNames[selectedMap]} notes={current.notes} observations={current.observations ?? ""} allies={players.flatMap((player) => current.picks[player] ? [{ player, agentId: current.picks[player] }] : [])} />
+        <TacticsBoard map={selectedMap} mapName={mapNames[selectedMap]} notes={current.notes} observations={current.observations ?? ""} onNoteChange={updateNote} editable={loadState === "ready"} allies={players.flatMap((player) => current.picks[player] ? [{ player, agentId: current.picks[player] }] : [])} />
       </main>
     </div>
     <Dialog open={pickerFor !== null} onOpenChange={(open) => { if (!open) setPickerFor(null); }}><DialogContent className="agent-dialog"><DialogHeader><span className="eyebrow">SELEÇÃO DE AGENTE</span><DialogTitle>Quem {pickerFor} vai jogar?</DialogTitle></DialogHeader><label className="agent-search"><Search size={18} /><input autoFocus placeholder="Buscar agente ou função..." value={query} onChange={(event) => setQuery(event.target.value)} /></label><div className="agent-grid">{filteredAgents.map((agent) => {
