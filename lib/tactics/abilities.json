@@ -1,0 +1,814 @@
+[
+  {
+    "key": "Astra:Grenade",
+    "agentId": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    "slot": "Grenade",
+    "name": "Poço Gravitacional",
+    "icon": "/abilities/41fb69c1-4189-7b37-f117-bcaf1e96f1bf-grenade.png"
+  },
+  {
+    "key": "Astra:Ability1",
+    "agentId": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    "slot": "Ability1",
+    "name": "Pulso Nova",
+    "icon": "/abilities/41fb69c1-4189-7b37-f117-bcaf1e96f1bf-ability1.png"
+  },
+  {
+    "key": "Astra:Ability2",
+    "agentId": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    "slot": "Ability2",
+    "name": "Nebulosa / Dissipar",
+    "icon": "/abilities/41fb69c1-4189-7b37-f117-bcaf1e96f1bf-ability2.png"
+  },
+  {
+    "key": "Astra:Ultimate",
+    "agentId": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    "slot": "Ultimate",
+    "name": "Forma Astral / Divisa\nCósmica",
+    "icon": "/abilities/41fb69c1-4189-7b37-f117-bcaf1e96f1bf-ultimate.png"
+  },
+  {
+    "key": "Breach:Grenade",
+    "agentId": "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    "slot": "Grenade",
+    "name": "Pós-choque",
+    "icon": "/abilities/5f8d3a7f-467b-97f3-062c-13acf203c006-grenade.png"
+  },
+  {
+    "key": "Breach:Ability1",
+    "agentId": "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    "slot": "Ability1",
+    "name": "Estopim",
+    "icon": "/abilities/5f8d3a7f-467b-97f3-062c-13acf203c006-ability1.png"
+  },
+  {
+    "key": "Breach:Ability2",
+    "agentId": "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    "slot": "Ability2",
+    "name": "Falha Tectônica",
+    "icon": "/abilities/5f8d3a7f-467b-97f3-062c-13acf203c006-ability2.png"
+  },
+  {
+    "key": "Breach:Ultimate",
+    "agentId": "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    "slot": "Ultimate",
+    "name": "Onda Trovejante",
+    "icon": "/abilities/5f8d3a7f-467b-97f3-062c-13acf203c006-ultimate.png"
+  },
+  {
+    "key": "Brimstone:Grenade",
+    "agentId": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    "slot": "Grenade",
+    "name": "Sinalizador Estimulante",
+    "icon": "/abilities/9f0d8ba9-4140-b941-57d3-a7ad57c6b417-grenade.png"
+  },
+  {
+    "key": "Brimstone:Ability1",
+    "agentId": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    "slot": "Ability1",
+    "name": "Incendiário",
+    "icon": "/abilities/9f0d8ba9-4140-b941-57d3-a7ad57c6b417-ability1.png"
+  },
+  {
+    "key": "Brimstone:Ability2",
+    "agentId": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    "slot": "Ability2",
+    "name": "Fumaça Celeste",
+    "icon": "/abilities/9f0d8ba9-4140-b941-57d3-a7ad57c6b417-ability2.png"
+  },
+  {
+    "key": "Brimstone:Ultimate",
+    "agentId": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    "slot": "Ultimate",
+    "name": "Ataque Orbital",
+    "icon": "/abilities/9f0d8ba9-4140-b941-57d3-a7ad57c6b417-ultimate.png"
+  },
+  {
+    "key": "Chamber:Grenade",
+    "agentId": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    "slot": "Grenade",
+    "name": "Marca Registrada",
+    "icon": "/abilities/22697a3d-45bf-8dd7-4fec-84a9e28c69d7-grenade.png"
+  },
+  {
+    "key": "Chamber:Ability1",
+    "agentId": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    "slot": "Ability1",
+    "name": "Caçador de Cabeças",
+    "icon": "/abilities/22697a3d-45bf-8dd7-4fec-84a9e28c69d7-ability1.png"
+  },
+  {
+    "key": "Chamber:Ability2",
+    "agentId": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    "slot": "Ability2",
+    "name": "Rendezvous",
+    "icon": "/abilities/22697a3d-45bf-8dd7-4fec-84a9e28c69d7-ability2.png"
+  },
+  {
+    "key": "Chamber:Ultimate",
+    "agentId": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    "slot": "Ultimate",
+    "name": "Tour de Force",
+    "icon": "/abilities/22697a3d-45bf-8dd7-4fec-84a9e28c69d7-ultimate.png"
+  },
+  {
+    "key": "Clove:Grenade",
+    "agentId": "1dbf2edd-4729-0984-3115-daa5eed44993",
+    "slot": "Grenade",
+    "name": "Revitalizar",
+    "icon": "/abilities/1dbf2edd-4729-0984-3115-daa5eed44993-grenade.png"
+  },
+  {
+    "key": "Clove:Ability1",
+    "agentId": "1dbf2edd-4729-0984-3115-daa5eed44993",
+    "slot": "Ability1",
+    "name": "Desvitalização",
+    "icon": "/abilities/1dbf2edd-4729-0984-3115-daa5eed44993-ability1.png"
+  },
+  {
+    "key": "Clove:Ability2",
+    "agentId": "1dbf2edd-4729-0984-3115-daa5eed44993",
+    "slot": "Ability2",
+    "name": "Artimanha",
+    "icon": "/abilities/1dbf2edd-4729-0984-3115-daa5eed44993-ability2.png"
+  },
+  {
+    "key": "Clove:Ultimate",
+    "agentId": "1dbf2edd-4729-0984-3115-daa5eed44993",
+    "slot": "Ultimate",
+    "name": "Ainda Não Morri",
+    "icon": "/abilities/1dbf2edd-4729-0984-3115-daa5eed44993-ultimate.png"
+  },
+  {
+    "key": "Cypher:Grenade",
+    "agentId": "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    "slot": "Grenade",
+    "name": "Fio-armadilha",
+    "icon": "/abilities/117ed9e3-49f3-6512-3ccf-0cada7e3823b-grenade.png"
+  },
+  {
+    "key": "Cypher:Ability1",
+    "agentId": "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    "slot": "Ability1",
+    "name": "Jaula Cibernética",
+    "icon": "/abilities/117ed9e3-49f3-6512-3ccf-0cada7e3823b-ability1.png"
+  },
+  {
+    "key": "Cypher:Ability2",
+    "agentId": "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    "slot": "Ability2",
+    "name": "Câmera de Vigilância",
+    "icon": "/abilities/117ed9e3-49f3-6512-3ccf-0cada7e3823b-ability2.png"
+  },
+  {
+    "key": "Cypher:Ultimate",
+    "agentId": "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    "slot": "Ultimate",
+    "name": "Assalto Neural",
+    "icon": "/abilities/117ed9e3-49f3-6512-3ccf-0cada7e3823b-ultimate.png"
+  },
+  {
+    "key": "Deadlock:Grenade",
+    "agentId": "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    "slot": "Grenade",
+    "name": "Barreira de Contenção",
+    "icon": "/abilities/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235-grenade.png"
+  },
+  {
+    "key": "Deadlock:Ability1",
+    "agentId": "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    "slot": "Ability1",
+    "name": "Sensor Sônico",
+    "icon": "/abilities/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235-ability1.png"
+  },
+  {
+    "key": "Deadlock:Ability2",
+    "agentId": "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    "slot": "Ability2",
+    "name": "GravNet",
+    "icon": "/abilities/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235-ability2.png"
+  },
+  {
+    "key": "Deadlock:Ultimate",
+    "agentId": "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    "slot": "Ultimate",
+    "name": "Aniquilação",
+    "icon": "/abilities/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235-ultimate.png"
+  },
+  {
+    "key": "Fade:Grenade",
+    "agentId": "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    "slot": "Grenade",
+    "name": "Espreitador",
+    "icon": "/abilities/dade69b4-4f5a-8528-247b-219e5a1facd6-grenade.png"
+  },
+  {
+    "key": "Fade:Ability1",
+    "agentId": "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    "slot": "Ability1",
+    "name": "Clausura",
+    "icon": "/abilities/dade69b4-4f5a-8528-247b-219e5a1facd6-ability1.png"
+  },
+  {
+    "key": "Fade:Ability2",
+    "agentId": "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    "slot": "Ability2",
+    "name": "Assombrar",
+    "icon": "/abilities/dade69b4-4f5a-8528-247b-219e5a1facd6-ability2.png"
+  },
+  {
+    "key": "Fade:Ultimate",
+    "agentId": "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    "slot": "Ultimate",
+    "name": "Véu da Noite",
+    "icon": "/abilities/dade69b4-4f5a-8528-247b-219e5a1facd6-ultimate.png"
+  },
+  {
+    "key": "Gekko:Grenade",
+    "agentId": "e370fa57-4757-3604-3648-499e1f642d3f",
+    "slot": "Grenade",
+    "name": "Mosh Pit",
+    "icon": "/abilities/e370fa57-4757-3604-3648-499e1f642d3f-grenade.png"
+  },
+  {
+    "key": "Gekko:Ability1",
+    "agentId": "e370fa57-4757-3604-3648-499e1f642d3f",
+    "slot": "Ability1",
+    "name": "Wingman",
+    "icon": "/abilities/e370fa57-4757-3604-3648-499e1f642d3f-ability1.png"
+  },
+  {
+    "key": "Gekko:Ability2",
+    "agentId": "e370fa57-4757-3604-3648-499e1f642d3f",
+    "slot": "Ability2",
+    "name": "Dizzy",
+    "icon": "/abilities/e370fa57-4757-3604-3648-499e1f642d3f-ability2.png"
+  },
+  {
+    "key": "Gekko:Ultimate",
+    "agentId": "e370fa57-4757-3604-3648-499e1f642d3f",
+    "slot": "Ultimate",
+    "name": "Thrash",
+    "icon": "/abilities/e370fa57-4757-3604-3648-499e1f642d3f-ultimate.png"
+  },
+  {
+    "key": "Harbor:Grenade",
+    "agentId": "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    "slot": "Grenade",
+    "name": "Temporal",
+    "icon": "/abilities/95b78ed7-4637-86d9-7e41-71ba8c293152-grenade.png"
+  },
+  {
+    "key": "Harbor:Ability1",
+    "agentId": "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    "slot": "Ability1",
+    "name": "Maré Alta",
+    "icon": "/abilities/95b78ed7-4637-86d9-7e41-71ba8c293152-ability1.png"
+  },
+  {
+    "key": "Harbor:Ability2",
+    "agentId": "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    "slot": "Ability2",
+    "name": "Enseada",
+    "icon": "/abilities/95b78ed7-4637-86d9-7e41-71ba8c293152-ability2.png"
+  },
+  {
+    "key": "Harbor:Ultimate",
+    "agentId": "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    "slot": "Ultimate",
+    "name": "Acerto de Contas",
+    "icon": "/abilities/95b78ed7-4637-86d9-7e41-71ba8c293152-ultimate.png"
+  },
+  {
+    "key": "Iso:Grenade",
+    "agentId": "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    "slot": "Grenade",
+    "name": "Contingência",
+    "icon": "/abilities/0e38b510-41a8-5780-5e8f-568b2a4f2d6c-grenade.png"
+  },
+  {
+    "key": "Iso:Ability1",
+    "agentId": "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    "slot": "Ability1",
+    "name": "Centelha Debilitante",
+    "icon": "/abilities/0e38b510-41a8-5780-5e8f-568b2a4f2d6c-ability1.png"
+  },
+  {
+    "key": "Iso:Ability2",
+    "agentId": "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    "slot": "Ability2",
+    "name": "Fluxo Protetor",
+    "icon": "/abilities/0e38b510-41a8-5780-5e8f-568b2a4f2d6c-ability2.png"
+  },
+  {
+    "key": "Iso:Ultimate",
+    "agentId": "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    "slot": "Ultimate",
+    "name": "Contrato de Abate",
+    "icon": "/abilities/0e38b510-41a8-5780-5e8f-568b2a4f2d6c-ultimate.png"
+  },
+  {
+    "key": "Jett:Grenade",
+    "agentId": "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    "slot": "Grenade",
+    "name": "Erupção das Brumas",
+    "icon": "/abilities/add6443a-41bd-e414-f6ad-e58d267f4e95-grenade.png"
+  },
+  {
+    "key": "Jett:Ability1",
+    "agentId": "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    "slot": "Ability1",
+    "name": "Corrente Ascendente",
+    "icon": "/abilities/add6443a-41bd-e414-f6ad-e58d267f4e95-ability1.png"
+  },
+  {
+    "key": "Jett:Ability2",
+    "agentId": "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    "slot": "Ability2",
+    "name": "Brisa de Impulso",
+    "icon": "/abilities/add6443a-41bd-e414-f6ad-e58d267f4e95-ability2.png"
+  },
+  {
+    "key": "Jett:Ultimate",
+    "agentId": "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    "slot": "Ultimate",
+    "name": "Tormenta de Aço",
+    "icon": "/abilities/add6443a-41bd-e414-f6ad-e58d267f4e95-ultimate.png"
+  },
+  {
+    "key": "KAY/O:Grenade",
+    "agentId": "601dbbe7-43ce-be57-2a40-4abd24953621",
+    "slot": "Grenade",
+    "name": "FRAG/mento",
+    "icon": "/abilities/601dbbe7-43ce-be57-2a40-4abd24953621-grenade.png"
+  },
+  {
+    "key": "KAY/O:Ability1",
+    "agentId": "601dbbe7-43ce-be57-2a40-4abd24953621",
+    "slot": "Ability1",
+    "name": "GRANADA/clarão",
+    "icon": "/abilities/601dbbe7-43ce-be57-2a40-4abd24953621-ability1.png"
+  },
+  {
+    "key": "KAY/O:Ability2",
+    "agentId": "601dbbe7-43ce-be57-2a40-4abd24953621",
+    "slot": "Ability2",
+    "name": "PONTO/zero",
+    "icon": "/abilities/601dbbe7-43ce-be57-2a40-4abd24953621-ability2.png"
+  },
+  {
+    "key": "KAY/O:Ultimate",
+    "agentId": "601dbbe7-43ce-be57-2a40-4abd24953621",
+    "slot": "Ultimate",
+    "name": "ANULAR/cmd",
+    "icon": "/abilities/601dbbe7-43ce-be57-2a40-4abd24953621-ultimate.png"
+  },
+  {
+    "key": "Killjoy:Grenade",
+    "agentId": "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    "slot": "Grenade",
+    "name": "Nanoenxame",
+    "icon": "/abilities/1e58de9c-4950-5125-93e9-a0aee9f98746-grenade.png"
+  },
+  {
+    "key": "Killjoy:Ability1",
+    "agentId": "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    "slot": "Ability1",
+    "name": "Robô de Alarme",
+    "icon": "/abilities/1e58de9c-4950-5125-93e9-a0aee9f98746-ability1.png"
+  },
+  {
+    "key": "Killjoy:Ability2",
+    "agentId": "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    "slot": "Ability2",
+    "name": "Torreta",
+    "icon": "/abilities/1e58de9c-4950-5125-93e9-a0aee9f98746-ability2.png"
+  },
+  {
+    "key": "Killjoy:Ultimate",
+    "agentId": "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    "slot": "Ultimate",
+    "name": "Confinamento",
+    "icon": "/abilities/1e58de9c-4950-5125-93e9-a0aee9f98746-ultimate.png"
+  },
+  {
+    "key": "Miks:Grenade",
+    "agentId": "7c8a4701-4de6-9355-b254-e09bc2a34b72",
+    "slot": "Grenade",
+    "name": "Pulso M",
+    "icon": "/abilities/7c8a4701-4de6-9355-b254-e09bc2a34b72-grenade.png"
+  },
+  {
+    "key": "Miks:Ability1",
+    "agentId": "7c8a4701-4de6-9355-b254-e09bc2a34b72",
+    "slot": "Ability1",
+    "name": "Harmonia",
+    "icon": "/abilities/7c8a4701-4de6-9355-b254-e09bc2a34b72-ability1.png"
+  },
+  {
+    "key": "Miks:Ability2",
+    "agentId": "7c8a4701-4de6-9355-b254-e09bc2a34b72",
+    "slot": "Ability2",
+    "name": "Ressonância",
+    "icon": "/abilities/7c8a4701-4de6-9355-b254-e09bc2a34b72-ability2.png"
+  },
+  {
+    "key": "Miks:Ultimate",
+    "agentId": "7c8a4701-4de6-9355-b254-e09bc2a34b72",
+    "slot": "Ultimate",
+    "name": "Melodia Sísmica",
+    "icon": "/abilities/7c8a4701-4de6-9355-b254-e09bc2a34b72-ultimate.png"
+  },
+  {
+    "key": "Neon:Grenade",
+    "agentId": "bb2a4828-46eb-8cd1-e765-15848195d751",
+    "slot": "Grenade",
+    "name": "Via Expressa",
+    "icon": "/abilities/bb2a4828-46eb-8cd1-e765-15848195d751-grenade.png"
+  },
+  {
+    "key": "Neon:Ability1",
+    "agentId": "bb2a4828-46eb-8cd1-e765-15848195d751",
+    "slot": "Ability1",
+    "name": "Ricochete Elétrico",
+    "icon": "/abilities/bb2a4828-46eb-8cd1-e765-15848195d751-ability1.png"
+  },
+  {
+    "key": "Neon:Ability2",
+    "agentId": "bb2a4828-46eb-8cd1-e765-15848195d751",
+    "slot": "Ability2",
+    "name": "Equipamento Voltaico",
+    "icon": "/abilities/bb2a4828-46eb-8cd1-e765-15848195d751-ability2.png"
+  },
+  {
+    "key": "Neon:Ultimate",
+    "agentId": "bb2a4828-46eb-8cd1-e765-15848195d751",
+    "slot": "Ultimate",
+    "name": "Sobrecarga",
+    "icon": "/abilities/bb2a4828-46eb-8cd1-e765-15848195d751-ultimate.png"
+  },
+  {
+    "key": "Omen:Grenade",
+    "agentId": "8e253930-4c05-31dd-1b6c-968525494517",
+    "slot": "Grenade",
+    "name": "Passos Tenebrosos",
+    "icon": "/abilities/8e253930-4c05-31dd-1b6c-968525494517-grenade.png"
+  },
+  {
+    "key": "Omen:Ability1",
+    "agentId": "8e253930-4c05-31dd-1b6c-968525494517",
+    "slot": "Ability1",
+    "name": "Paranoia",
+    "icon": "/abilities/8e253930-4c05-31dd-1b6c-968525494517-ability1.png"
+  },
+  {
+    "key": "Omen:Ability2",
+    "agentId": "8e253930-4c05-31dd-1b6c-968525494517",
+    "slot": "Ability2",
+    "name": "Manto Sombrio",
+    "icon": "/abilities/8e253930-4c05-31dd-1b6c-968525494517-ability2.png"
+  },
+  {
+    "key": "Omen:Ultimate",
+    "agentId": "8e253930-4c05-31dd-1b6c-968525494517",
+    "slot": "Ultimate",
+    "name": "Salto das Sombras",
+    "icon": "/abilities/8e253930-4c05-31dd-1b6c-968525494517-ultimate.png"
+  },
+  {
+    "key": "Phoenix:Grenade",
+    "agentId": "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    "slot": "Grenade",
+    "name": "Labareda",
+    "icon": "/abilities/eb93336a-449b-9c1b-0a54-a891f7921d69-grenade.png"
+  },
+  {
+    "key": "Phoenix:Ability1",
+    "agentId": "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    "slot": "Ability1",
+    "name": "Mãos Quentes",
+    "icon": "/abilities/eb93336a-449b-9c1b-0a54-a891f7921d69-ability1.png"
+  },
+  {
+    "key": "Phoenix:Ability2",
+    "agentId": "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    "slot": "Ability2",
+    "name": "Bola Curva",
+    "icon": "/abilities/eb93336a-449b-9c1b-0a54-a891f7921d69-ability2.png"
+  },
+  {
+    "key": "Phoenix:Ultimate",
+    "agentId": "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    "slot": "Ultimate",
+    "name": "Renascimento",
+    "icon": "/abilities/eb93336a-449b-9c1b-0a54-a891f7921d69-ultimate.png"
+  },
+  {
+    "key": "Raze:Grenade",
+    "agentId": "f94c3b30-42be-e959-889c-5aa313dba261",
+    "slot": "Grenade",
+    "name": "Bumba",
+    "icon": "/abilities/f94c3b30-42be-e959-889c-5aa313dba261-grenade.png"
+  },
+  {
+    "key": "Raze:Ability1",
+    "agentId": "f94c3b30-42be-e959-889c-5aa313dba261",
+    "slot": "Ability1",
+    "name": "Carga de Explosivos",
+    "icon": "/abilities/f94c3b30-42be-e959-889c-5aa313dba261-ability1.png"
+  },
+  {
+    "key": "Raze:Ability2",
+    "agentId": "f94c3b30-42be-e959-889c-5aa313dba261",
+    "slot": "Ability2",
+    "name": "Cartuchos de Tinta",
+    "icon": "/abilities/f94c3b30-42be-e959-889c-5aa313dba261-ability2.png"
+  },
+  {
+    "key": "Raze:Ultimate",
+    "agentId": "f94c3b30-42be-e959-889c-5aa313dba261",
+    "slot": "Ultimate",
+    "name": "Estraga-prazeres",
+    "icon": "/abilities/f94c3b30-42be-e959-889c-5aa313dba261-ultimate.png"
+  },
+  {
+    "key": "Reyna:Grenade",
+    "agentId": "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    "slot": "Grenade",
+    "name": "Olhar Voraz",
+    "icon": "/abilities/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc-grenade.png"
+  },
+  {
+    "key": "Reyna:Ability1",
+    "agentId": "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    "slot": "Ability1",
+    "name": "Devorar",
+    "icon": "/abilities/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc-ability1.png"
+  },
+  {
+    "key": "Reyna:Ability2",
+    "agentId": "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    "slot": "Ability2",
+    "name": "Dispensar",
+    "icon": "/abilities/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc-ability2.png"
+  },
+  {
+    "key": "Reyna:Ultimate",
+    "agentId": "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    "slot": "Ultimate",
+    "name": "Imperatriz",
+    "icon": "/abilities/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc-ultimate.png"
+  },
+  {
+    "key": "Sage:Grenade",
+    "agentId": "569fdd95-4d10-43ab-ca70-79becc718b46",
+    "slot": "Grenade",
+    "name": "Orbe de Barreira",
+    "icon": "/abilities/569fdd95-4d10-43ab-ca70-79becc718b46-grenade.png"
+  },
+  {
+    "key": "Sage:Ability1",
+    "agentId": "569fdd95-4d10-43ab-ca70-79becc718b46",
+    "slot": "Ability1",
+    "name": "Orbe de Lentidão",
+    "icon": "/abilities/569fdd95-4d10-43ab-ca70-79becc718b46-ability1.png"
+  },
+  {
+    "key": "Sage:Ability2",
+    "agentId": "569fdd95-4d10-43ab-ca70-79becc718b46",
+    "slot": "Ability2",
+    "name": "Orbe Curativo",
+    "icon": "/abilities/569fdd95-4d10-43ab-ca70-79becc718b46-ability2.png"
+  },
+  {
+    "key": "Sage:Ultimate",
+    "agentId": "569fdd95-4d10-43ab-ca70-79becc718b46",
+    "slot": "Ultimate",
+    "name": "Ressurreição",
+    "icon": "/abilities/569fdd95-4d10-43ab-ca70-79becc718b46-ultimate.png"
+  },
+  {
+    "key": "Skye:Grenade",
+    "agentId": "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    "slot": "Grenade",
+    "name": "Reflorescer",
+    "icon": "/abilities/6f2a04ca-43e0-be17-7f36-b3908627744d-grenade.png"
+  },
+  {
+    "key": "Skye:Ability1",
+    "agentId": "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    "slot": "Ability1",
+    "name": "Predador Explosivo",
+    "icon": "/abilities/6f2a04ca-43e0-be17-7f36-b3908627744d-ability1.png"
+  },
+  {
+    "key": "Skye:Ability2",
+    "agentId": "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    "slot": "Ability2",
+    "name": "Luz Desbravadora",
+    "icon": "/abilities/6f2a04ca-43e0-be17-7f36-b3908627744d-ability2.png"
+  },
+  {
+    "key": "Skye:Ultimate",
+    "agentId": "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    "slot": "Ultimate",
+    "name": "Rastreadores",
+    "icon": "/abilities/6f2a04ca-43e0-be17-7f36-b3908627744d-ultimate.png"
+  },
+  {
+    "key": "Sova:Grenade",
+    "agentId": "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    "slot": "Grenade",
+    "name": "Drone Coruja",
+    "icon": "/abilities/320b2a48-4d9b-a075-30f1-1f93a9b638fa-grenade.png"
+  },
+  {
+    "key": "Sova:Ability1",
+    "agentId": "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    "slot": "Ability1",
+    "name": "Flecha de Choque",
+    "icon": "/abilities/320b2a48-4d9b-a075-30f1-1f93a9b638fa-ability1.png"
+  },
+  {
+    "key": "Sova:Ability2",
+    "agentId": "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    "slot": "Ability2",
+    "name": "Flecha Rastreadora",
+    "icon": "/abilities/320b2a48-4d9b-a075-30f1-1f93a9b638fa-ability2.png"
+  },
+  {
+    "key": "Sova:Ultimate",
+    "agentId": "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    "slot": "Ultimate",
+    "name": "Fúria do Caçador",
+    "icon": "/abilities/320b2a48-4d9b-a075-30f1-1f93a9b638fa-ultimate.png"
+  },
+  {
+    "key": "Tejo:Grenade",
+    "agentId": "b444168c-4e35-8076-db47-ef9bf368f384",
+    "slot": "Grenade",
+    "name": "Drone Furtivo",
+    "icon": "/abilities/b444168c-4e35-8076-db47-ef9bf368f384-grenade.png"
+  },
+  {
+    "key": "Tejo:Ability1",
+    "agentId": "b444168c-4e35-8076-db47-ef9bf368f384",
+    "slot": "Ability1",
+    "name": "Entrega Especial",
+    "icon": "/abilities/b444168c-4e35-8076-db47-ef9bf368f384-ability1.png"
+  },
+  {
+    "key": "Tejo:Ability2",
+    "agentId": "b444168c-4e35-8076-db47-ef9bf368f384",
+    "slot": "Ability2",
+    "name": "Rajada Guiada",
+    "icon": "/abilities/b444168c-4e35-8076-db47-ef9bf368f384-ability2.png"
+  },
+  {
+    "key": "Tejo:Ultimate",
+    "agentId": "b444168c-4e35-8076-db47-ef9bf368f384",
+    "slot": "Ultimate",
+    "name": "Armagedom",
+    "icon": "/abilities/b444168c-4e35-8076-db47-ef9bf368f384-ultimate.png"
+  },
+  {
+    "key": "Veto:Grenade",
+    "agentId": "92eeef5d-43b5-1d4a-8d03-b3927a09034b",
+    "slot": "Grenade",
+    "name": "Travessia",
+    "icon": "/abilities/92eeef5d-43b5-1d4a-8d03-b3927a09034b-grenade.png"
+  },
+  {
+    "key": "Veto:Ability1",
+    "agentId": "92eeef5d-43b5-1d4a-8d03-b3927a09034b",
+    "slot": "Ability1",
+    "name": "Imobilidade",
+    "icon": "/abilities/92eeef5d-43b5-1d4a-8d03-b3927a09034b-ability1.png"
+  },
+  {
+    "key": "Veto:Ability2",
+    "agentId": "92eeef5d-43b5-1d4a-8d03-b3927a09034b",
+    "slot": "Ability2",
+    "name": "Interceptador",
+    "icon": "/abilities/92eeef5d-43b5-1d4a-8d03-b3927a09034b-ability2.png"
+  },
+  {
+    "key": "Veto:Ultimate",
+    "agentId": "92eeef5d-43b5-1d4a-8d03-b3927a09034b",
+    "slot": "Ultimate",
+    "name": "Evolução",
+    "icon": "/abilities/92eeef5d-43b5-1d4a-8d03-b3927a09034b-ultimate.png"
+  },
+  {
+    "key": "Viper:Grenade",
+    "agentId": "707eab51-4836-f488-046a-cda6bf494859",
+    "slot": "Grenade",
+    "name": "Veneno de Cobra",
+    "icon": "/abilities/707eab51-4836-f488-046a-cda6bf494859-grenade.png"
+  },
+  {
+    "key": "Viper:Ability1",
+    "agentId": "707eab51-4836-f488-046a-cda6bf494859",
+    "slot": "Ability1",
+    "name": "Nuvem Venenosa",
+    "icon": "/abilities/707eab51-4836-f488-046a-cda6bf494859-ability1.png"
+  },
+  {
+    "key": "Viper:Ability2",
+    "agentId": "707eab51-4836-f488-046a-cda6bf494859",
+    "slot": "Ability2",
+    "name": "Cortina Tóxica",
+    "icon": "/abilities/707eab51-4836-f488-046a-cda6bf494859-ability2.png"
+  },
+  {
+    "key": "Viper:Ultimate",
+    "agentId": "707eab51-4836-f488-046a-cda6bf494859",
+    "slot": "Ultimate",
+    "name": "Poço Peçonhento",
+    "icon": "/abilities/707eab51-4836-f488-046a-cda6bf494859-ultimate.png"
+  },
+  {
+    "key": "Vyse:Grenade",
+    "agentId": "efba5359-4016-a1e5-7626-b1ae76895940",
+    "slot": "Grenade",
+    "name": "Espinheiro Cortante",
+    "icon": "/abilities/efba5359-4016-a1e5-7626-b1ae76895940-grenade.png"
+  },
+  {
+    "key": "Vyse:Ability1",
+    "agentId": "efba5359-4016-a1e5-7626-b1ae76895940",
+    "slot": "Ability1",
+    "name": "Cerca-Viva",
+    "icon": "/abilities/efba5359-4016-a1e5-7626-b1ae76895940-ability1.png"
+  },
+  {
+    "key": "Vyse:Ability2",
+    "agentId": "efba5359-4016-a1e5-7626-b1ae76895940",
+    "slot": "Ability2",
+    "name": "Rosa Arcana",
+    "icon": "/abilities/efba5359-4016-a1e5-7626-b1ae76895940-ability2.png"
+  },
+  {
+    "key": "Vyse:Ultimate",
+    "agentId": "efba5359-4016-a1e5-7626-b1ae76895940",
+    "slot": "Ultimate",
+    "name": "Jardim de Aço",
+    "icon": "/abilities/efba5359-4016-a1e5-7626-b1ae76895940-ultimate.png"
+  },
+  {
+    "key": "Waylay:Grenade",
+    "agentId": "df1cb487-4902-002e-5c17-d28e83e78588",
+    "slot": "Grenade",
+    "name": "Saturação",
+    "icon": "/abilities/df1cb487-4902-002e-5c17-d28e83e78588-grenade.png"
+  },
+  {
+    "key": "Waylay:Ability1",
+    "agentId": "df1cb487-4902-002e-5c17-d28e83e78588",
+    "slot": "Ability1",
+    "name": "Velocidade da Luz",
+    "icon": "/abilities/df1cb487-4902-002e-5c17-d28e83e78588-ability1.png"
+  },
+  {
+    "key": "Waylay:Ability2",
+    "agentId": "df1cb487-4902-002e-5c17-d28e83e78588",
+    "slot": "Ability2",
+    "name": "Refração",
+    "icon": "/abilities/df1cb487-4902-002e-5c17-d28e83e78588-ability2.png"
+  },
+  {
+    "key": "Waylay:Ultimate",
+    "agentId": "df1cb487-4902-002e-5c17-d28e83e78588",
+    "slot": "Ultimate",
+    "name": "Caminhos Convergentes",
+    "icon": "/abilities/df1cb487-4902-002e-5c17-d28e83e78588-ultimate.png"
+  },
+  {
+    "key": "Yoru:Grenade",
+    "agentId": "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    "slot": "Grenade",
+    "name": "Distração",
+    "icon": "/abilities/7f94d92c-4234-0a36-9646-3a87eb8b5c89-grenade.png"
+  },
+  {
+    "key": "Yoru:Ability1",
+    "agentId": "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    "slot": "Ability1",
+    "name": "Ponto Cego",
+    "icon": "/abilities/7f94d92c-4234-0a36-9646-3a87eb8b5c89-ability1.png"
+  },
+  {
+    "key": "Yoru:Ability2",
+    "agentId": "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    "slot": "Ability2",
+    "name": "Passagem Dimensional",
+    "icon": "/abilities/7f94d92c-4234-0a36-9646-3a87eb8b5c89-ability2.png"
+  },
+  {
+    "key": "Yoru:Ultimate",
+    "agentId": "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    "slot": "Ultimate",
+    "name": "Espionagem Dimensional",
+    "icon": "/abilities/7f94d92c-4234-0a36-9646-3a87eb8b5c89-ultimate.png"
+  }
+]
