@@ -5,7 +5,7 @@ import { Eraser, Maximize2, Minimize2, MousePointer2, MoveUpRight, Pencil, Redo2
 import agents from "../agents.json";
 import { abilitiesForAgent, abilityByKey, isDirectional, slotLabels } from "@/lib/tactics/abilities";
 import { boardSize, commit, emptyHistory, mapInfo, moveItem, newId, redo, undo, type BoardItem, type History, type Team } from "@/lib/tactics/board";
-import { sitesForMap } from "@/lib/composition";
+import { sitesForMap, type Notes, type NoteKey } from "@/lib/composition";
 import { BoardItemView, teamColors } from "./board-items";
 
 type Agent = { id: string; name: string; role: string; icon: string };
@@ -44,14 +44,21 @@ function zoomView(current: View, factor: number, fx = 0.5, fy = 0.5): View {
 function phasesForMap(map: string) {
   const sites = sitesForMap(map);
   return [
-    { id: "default", label: "Default" }, { id: "exec", label: "Exec" },
+    { id: "default", label: "Default" },
+    ...sites.map((site) => ({ id: `exec${site}`, label: `Exec ${site}` })),
     ...sites.map((site) => ({ id: `postPlant${site}`, label: `Pós Plant ${site}` })),
     ...sites.map((site) => ({ id: `retake${site}`, label: `Retake ${site}` })),
   ];
 }
 
-export function TacticsBoard({ map, mapName, allies }: { map: string; mapName: string; allies: Array<{ player: string; agentId: string }> }) {
+export function TacticsBoard({ map, mapName, allies, notes, observations }: { map: string; mapName: string; allies: Array<{ player: string; agentId: string }>; notes: Notes; observations: string }) {
   const [boards, setBoards] = useState<Record<string, History>>({});
+  const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
+  const [saveState, setSaveState] = useState<"saved" | "saving" | "error">("saved");
+  const dirty = useRef(new Set<string>());
+  const timers = useRef(new Map<string, ReturnType<typeof setTimeout>>());
+  const revisions = useRef(new Map<string, number>());
+  const queues = useRef(new Map<string, Promise<void>>());
   const [phase, setPhase] = useState("default");
   const [tool, setTool] = useState<Tool>("select");
   const [color, setColor] = useState(colors[0]);
@@ -74,11 +81,55 @@ export function TacticsBoard({ map, mapName, allies }: { map: string; mapName: s
   const viewRotation = rotated ? 180 : 0;
   const phases = phasesForMap(map);
   const selected = items.find((item) => item.id === selectedId);
+  const phaseNotes = phase.startsWith("exec")
+    ? [{ label: "Exec geral", value: notes.exec ?? "" }, { label: `Exec · Bomb ${phase.at(-1)}`, value: notes[phase as NoteKey] ?? "" }]
+    : [{ label: phases.find((entry) => entry.id === phase)?.label ?? "Default", value: notes[phase as NoteKey] ?? "" }];
+
+  async function loadBoards() {
+    setLoadState("loading");
+    try {
+      const response = await fetch("/api/tactics", { cache: "no-store" });
+      if (!response.ok) throw new Error();
+      const data = await response.json() as Record<string, { items: BoardItem[] }>;
+      setBoards(Object.fromEntries(Object.entries(data).map(([key, value]) => [key, { past: [], present: value.items, future: [] }])));
+      setLoadState("ready");
+      setSaveState("saved");
+    } catch { setLoadState("error"); }
+  }
+
+  useEffect(() => { void loadBoards(); }, []);
+
+  function saveBoard(key: string, boardItems: BoardItem[], revision: number) {
+    const previous = queues.current.get(key) ?? Promise.resolve();
+    const next = previous.catch(() => {}).then(async () => {
+      const [boardMap, boardPhase] = key.split(":");
+      const response = await fetch(`/api/tactics/${boardMap}/${boardPhase}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: boardItems }) });
+      if (!response.ok) throw new Error();
+      if (revisions.current.get(key) === revision) setSaveState("saved");
+    }).catch(() => { if (revisions.current.get(key) === revision) setSaveState("error"); });
+    queues.current.set(key, next);
+  }
+
+  useEffect(() => {
+    for (const key of dirty.current) {
+      const boardItems = boards[key]?.present;
+      if (!boardItems) continue;
+      const existing = timers.current.get(key);
+      if (existing) clearTimeout(existing);
+      const revision = (revisions.current.get(key) ?? 0) + 1;
+      revisions.current.set(key, revision);
+      timers.current.set(key, setTimeout(() => { timers.current.delete(key); saveBoard(key, boardItems, revision); }, 700));
+    }
+    dirty.current.clear();
+  }, [boards]);
 
   const [lastMap, setLastMap] = useState(map);
   if (lastMap !== map) { setLastMap(map); setPhase("default"); setSelectedId(null); setView(fullView); setTextDraft(null); }
 
   function setHistory(update: (history: History) => History) {
+    if (loadState !== "ready") return;
+    dirty.current.add(boardKey);
+    setSaveState("saving");
     setBoards((previous) => ({ ...previous, [boardKey]: update(previous[boardKey] ?? emptyHistory()) }));
   }
   function setItems(update: (items: BoardItem[]) => BoardItem[]) { setHistory((current) => ({ ...current, present: update(current.present) })); }
@@ -129,6 +180,7 @@ export function TacticsBoard({ map, mapName, allies }: { map: string; mapName: s
   });
 
   function onPointerDown(event: ReactPointerEvent<SVGSVGElement>) {
+    if (loadState !== "ready") return;
     if (event.button !== 0 && event.button !== 1) return;
     if (textDraft) { finishText(); return; }
     const point = toBoard(event);
@@ -233,10 +285,13 @@ export function TacticsBoard({ map, mapName, allies }: { map: string; mapName: s
     : tool === "select" ? "Arraste para mover o mapa, roda do mouse para zoom." : tool === "text" ? "Clique no mapa para escrever." : tool === "eraser" ? "Clique ou arraste sobre um item para apagar." : "Clique e arraste para desenhar.";
 
   return <section className={`tactics-section ${fullscreen ? "fullscreen" : ""}`} aria-labelledby="tactics-title">
-    <div className="section-heading"><div><span className="eyebrow">03 / QUADRO TÁTICO</span><h2 id="tactics-title">Quadro tático · {mapName}</h2></div><span className="tactics-note">Não é salvo · some ao recarregar a página</span></div>
+    <div className="section-heading"><div><span className="eyebrow">03 / QUADRO TÁTICO</span><h2 id="tactics-title">Quadro tático · {mapName}</h2></div><span className="tactics-note" role="status">{loadState === "loading" ? "Carregando quadro" : loadState === "error" ? "Erro ao carregar" : saveState === "saving" ? "Salvando quadro" : saveState === "error" ? "Erro ao salvar" : "Quadro salvo"}</span></div>
+    {loadState === "error" && <div className="error-banner">Não foi possível carregar o quadro tático. <button onClick={() => void loadBoards()}>Tentar novamente</button></div>}
+    {saveState === "error" && <div className="error-banner">Não foi possível salvar esta alteração. <button onClick={() => { setSaveState("saving"); const revision = (revisions.current.get(boardKey) ?? 0) + 1; revisions.current.set(boardKey, revision); saveBoard(boardKey, items, revision); }}>Tentar novamente</button></div>}
     <div className="tactics-phases" role="tablist" aria-label="Fase do quadro">{phases.map((entry) => <button key={entry.id} role="tab" aria-selected={phase === entry.id} className={phase === entry.id ? "active" : ""} onClick={() => { setPhase(entry.id); setSelectedId(null); }}>{entry.label}{(boards[`${map}:${entry.id}`]?.present.length ?? 0) > 0 && <span className="phase-dot" />}</button>)}</div>
     <div className="tactics-layout">
       <div className="tactics-stage">
+        <div className="tactics-procedure" aria-label="Observações da fase"><strong>{phases.find((entry) => entry.id === phase)?.label}</strong>{phaseNotes.map((entry) => entry.value && <div key={entry.label}><span>{entry.label}</span><p>{entry.value}</p></div>)}{observations && <div><span>Observações do mapa</span><p>{observations}</p></div>}{!phaseNotes.some((entry) => entry.value) && !observations && <p>Nenhuma observação para esta fase. Escreva em Procedimentos acima.</p>}</div>
         <div className="tactics-toolbar" role="toolbar" aria-label="Ferramentas do quadro">
           <div className="tool-group">{tools.map(({ id, label, icon: Icon }) => <button key={id} className={tool === id && !placing ? "active" : ""} onClick={() => chooseTool(id)} title={label} aria-label={label} aria-pressed={tool === id}><Icon size={17} /></button>)}</div>
           <div className="tool-group">{colors.map((swatch) => <button key={swatch} className={`swatch ${color === swatch ? "active" : ""}`} style={{ background: swatch }} onClick={() => setColor(swatch)} title="Cor do desenho" aria-label={`Cor ${swatch}`} aria-pressed={color === swatch} />)}</div>

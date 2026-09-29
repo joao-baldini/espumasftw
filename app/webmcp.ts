@@ -1,4 +1,4 @@
-import { maxNoteLength, noteKeys, packNotes, sitesForMap, type Composition, type NoteKey, type Notes } from "@/lib/composition";
+import { maxNoteLength, noteKeys, sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
 type ModelContext = {
   registerTool: (tool: {
     name: string;
@@ -41,7 +41,6 @@ export function registerCompositionTool(onSaved: (map: string, composition: Comp
       if (entries.some(([player, agent]) => !players.has(player) || typeof agent !== "string") || new Set(entries.map(([, agent]) => agent)).size !== entries.length) throw new Error("Jogadores ou agentes inválidos.");
       if (Object.entries(notes).some(([key, note]) => !noteKeys.includes(key as NoteKey) || typeof note !== "string" || note.length > maxNoteLength || (key.endsWith("C") && !sitesForMap(map).includes("C")))) throw new Error("Procedimentos inválidos.");
       if (observations !== undefined && (typeof observations !== "string" || observations.length > maxNoteLength)) throw new Error("Observações inválidas.");
-      if (typeof observations === "string" && (packNotes(notes as Notes, observations).default?.length ?? 0) > maxNoteLength) throw new Error("Default e Observações excedem o limite compartilhado de 5000 caracteres.");
       const response = await fetch(`/api/compositions/${map}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ picks, notes, observations }) });
       if (!response.ok) throw new Error("Não foi possível salvar a composição.");
       const saved = await response.json() as Composition;

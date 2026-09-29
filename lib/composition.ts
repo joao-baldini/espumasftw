@@ -1,5 +1,5 @@
 export const noteKeys = [
-  "default", "exec", "postPlantA", "postPlantB", "postPlantC",
+  "default", "exec", "execA", "execB", "execC", "postPlantA", "postPlantB", "postPlantC",
   "retakeA", "retakeB", "retakeC",
 ] as const;
 

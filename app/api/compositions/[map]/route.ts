@@ -1,4 +1,5 @@
 import { getCompositions, putComposition } from "@/db/compositions";
+import { usingRenderBackend } from "@/db/backend";
 import agents from "@/app/agents.json";
 import { maxNoteLength, noteKeys, packNotes, sitesForMap, type NoteKey, type Notes } from "@/lib/composition";
 
@@ -23,7 +24,7 @@ export async function PUT(request: Request, context: { params: Promise<{ map: st
   if (new Set(Object.values(picks)).size !== Object.keys(picks).length) return Response.json({ error: "Um agente não pode ser escolhido duas vezes." }, { status: 400 });
   try {
     const observations = value.observations === undefined ? (await getCompositions())[map]?.observations ?? "" : value.observations as string;
-    if ((packNotes(notes as Notes, observations).default?.length ?? 0) > maxNoteLength) return Response.json({ error: "Default e Observações excedem o limite compartilhado de 5000 caracteres." }, { status: 400 });
+    if (!usingRenderBackend && (packNotes(notes as Notes, observations).default?.length ?? 0) > maxNoteLength) return Response.json({ error: "Default e Observações excedem o limite compartilhado de 5000 caracteres." }, { status: 400 });
     return Response.json(await putComposition(map, { picks: picks as Record<string, string>, notes: notes as Notes, observations }));
   } catch (error) {
     console.error("Failed to save composition", error);
