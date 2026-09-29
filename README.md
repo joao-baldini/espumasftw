@@ -1,6 +1,8 @@
 # Espumas — Campeonato Valorant
 
-Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe, procedimentos por fase, observações do mapa e o total de vitórias e derrotas em treinos. O time também tem um campo de observações gerais, independente do mapa selecionado.
+Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe, procedimentos por fase, observações do mapa e o total de vitórias e derrotas em treinos. O time também tem um campo de observações gerais, independente do mapa selecionado. Cada mapa também tem um quadro tático, com minimapa, agentes e áreas de habilidades em escala real, por fase da rodada. Esse quadro ainda não é salvo: ele se perde ao recarregar a página.
+
+Os minimapas, as posições e os ícones de habilidades do quadro tático são baixados com `node scripts/fetch-tactics-assets.mjs`. Os alcances ficam em `lib/tactics/abilities.ts` e são aproximados.
 
 ## Desenvolvimento
 

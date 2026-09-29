@@ -9,6 +9,7 @@ import agents from "./agents.json";
 import { registerCompositionTool } from "./webmcp";
 import { TrainingResults } from "./training-results";
 import { TeamObservations } from "./team-observations";
+import { TacticsBoard } from "./tactics/tactics-board";
 import { maxNoteLength, packNotes, sitesForMap, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
@@ -144,6 +145,7 @@ export default function Home() {
           </div>
           <div className="notes-bottom"><span>Salvamento automático</span><button onClick={refresh} title="Atualizar dados do time" aria-label="Atualizar dados do time"><RefreshCw size={16} /> Atualizar</button></div>
         </section></div>
+        <TacticsBoard map={selectedMap} mapName={mapNames[selectedMap]} allies={players.flatMap((player) => current.picks[player] ? [{ player, agentId: current.picks[player] }] : [])} />
       </main>
     </div>
     <Dialog open={pickerFor !== null} onOpenChange={(open) => { if (!open) setPickerFor(null); }}><DialogContent className="agent-dialog"><DialogHeader><span className="eyebrow">SELEÇÃO DE AGENTE</span><DialogTitle>Quem {pickerFor} vai jogar?</DialogTitle></DialogHeader><label className="agent-search"><Search size={18} /><input autoFocus placeholder="Buscar agente ou função..." value={query} onChange={(event) => setQuery(event.target.value)} /></label><div className="agent-grid">{filteredAgents.map((agent) => {
