@@ -51,6 +51,13 @@ function phasesForMap(map: string) {
   ];
 }
 
+async function fetchBoards(): Promise<Record<string, History>> {
+  const response = await fetch("/api/tactics", { cache: "no-store" });
+  if (!response.ok) throw new Error();
+  const data = await response.json() as Record<string, { items: BoardItem[] }>;
+  return Object.fromEntries(Object.entries(data).map(([key, value]) => [key, { past: [], present: value.items, future: [] }]));
+}
+
 export function TacticsBoard({ map, mapName, allies, notes, observations, onNoteChange, editable }: { map: string; mapName: string; allies: Array<{ player: string; agentId: string }>; notes: Notes; observations: string; onNoteChange: (key: NoteKey, value: string) => void; editable: boolean }) {
   const [boards, setBoards] = useState<Record<string, History>>({});
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
@@ -68,6 +75,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   const [view, setView] = useState<View>(fullView);
   const [rotated, setRotated] = useState(false);
   const [showCallouts, setShowCallouts] = useState(true);
+  const [filteredPlayers, setFilteredPlayers] = useState<string[]>([]);
   const [fullscreen, setFullscreen] = useState(false);
   const [textDraft, setTextDraft] = useState<{ x: number; y: number; left: number; top: number; value: string } | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -81,23 +89,36 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   const viewRotation = rotated ? 180 : 0;
   const phases = phasesForMap(map);
   const selected = items.find((item) => item.id === selectedId);
+  const filteredAllies = allies.filter(({ player }) => filteredPlayers.includes(player));
+  const filteredAgentIds = new Set(filteredAllies.map(({ agentId }) => agentId));
+  const isFiltered = filteredAllies.length > 0;
+  const visibleItems = isFiltered ? items.filter((item) => {
+    if (item.kind === "agent") return item.team === "ally" && filteredAgentIds.has(item.agentId);
+    if (item.kind === "ability") return item.team === "ally" && filteredAgentIds.has(abilityByKey.get(item.abilityKey)?.agentId ?? "");
+    return false;
+  }) : items;
   const phaseNotes = phase.startsWith("exec")
     ? [{ key: "exec" as NoteKey, label: "Exec geral", value: notes.exec ?? "" }, { key: phase as NoteKey, label: `Exec · Bomb ${phase.at(-1)}`, value: notes[phase as NoteKey] ?? "" }]
     : [{ key: phase as NoteKey, label: phases.find((entry) => entry.id === phase)?.label ?? "Default", value: notes[phase as NoteKey] ?? "" }];
 
   async function loadBoards() {
-    setLoadState("loading");
     try {
-      const response = await fetch("/api/tactics", { cache: "no-store" });
-      if (!response.ok) throw new Error();
-      const data = await response.json() as Record<string, { items: BoardItem[] }>;
-      setBoards(Object.fromEntries(Object.entries(data).map(([key, value]) => [key, { past: [], present: value.items, future: [] }])));
+      setBoards(await fetchBoards());
       setLoadState("ready");
       setSaveState("saved");
     } catch { setLoadState("error"); }
   }
 
-  useEffect(() => { void loadBoards(); }, []);
+  useEffect(() => {
+    let active = true;
+    void fetchBoards().then((loaded) => {
+      if (!active) return;
+      setBoards(loaded);
+      setLoadState("ready");
+      setSaveState("saved");
+    }, () => { if (active) setLoadState("error"); });
+    return () => { active = false; };
+  }, []);
 
   function saveBoard(key: string, boardItems: BoardItem[], revision: number) {
     const previous = queues.current.get(key) ?? Promise.resolve();
@@ -124,7 +145,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   }, [boards]);
 
   const [lastMap, setLastMap] = useState(map);
-  if (lastMap !== map) { setLastMap(map); setPhase("default"); setSelectedId(null); setView(fullView); setTextDraft(null); }
+  if (lastMap !== map) { setLastMap(map); setPhase("default"); setSelectedId(null); setView(fullView); setTextDraft(null); setFilteredPlayers([]); }
 
   function setHistory(update: (history: History) => History) {
     if (loadState !== "ready") return;
@@ -170,6 +191,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
       if (target.closest("input, textarea, [contenteditable]")) return;
       if (!canvasRef.current?.closest(".tactics-section")?.matches(":hover") && !fullscreen) return;
       const mod = event.metaKey || event.ctrlKey;
+      if (isFiltered && event.key !== "Escape") return;
       if (mod && event.key.toLowerCase() === "z") { event.preventDefault(); setHistory(event.shiftKey ? redo : undo); }
       else if (mod && event.key.toLowerCase() === "y") { event.preventDefault(); setHistory(redo); }
       else if ((event.key === "Delete" || event.key === "Backspace") && selectedId) { event.preventDefault(); removeItem(selectedId); }
@@ -182,6 +204,11 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   function onPointerDown(event: ReactPointerEvent<SVGSVGElement>) {
     if (loadState !== "ready") return;
     if (event.button !== 0 && event.button !== 1) return;
+    if (isFiltered) {
+      event.currentTarget.setPointerCapture(event.pointerId);
+      drag.current = { type: "pan", clientX: event.clientX, clientY: event.clientY, view };
+      return;
+    }
     if (textDraft) { finishText(); return; }
     const point = toBoard(event);
     const target = event.target as Element;
@@ -221,7 +248,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   function onPointerMove(event: ReactPointerEvent<SVGSVGElement>) {
     const current = drag.current;
     if (!current) {
-      if (tool === "eraser" && event.buttons === 1) {
+      if (!isFiltered && tool === "eraser" && event.buttons === 1) {
         const id = document.elementFromPoint(event.clientX, event.clientY)?.closest("[data-id]")?.getAttribute("data-id");
         if (id) removeItem(id);
       }
@@ -278,6 +305,12 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
   }
   function chooseTool(next: Tool) { setTool(next); setPlacing(null); if (next !== "select") setSelectedId(null); }
   function clearBoard() { if (items.length) { commitItems([]); setSelectedId(null); } }
+  function filterPlayer(player: string | null) {
+    setFilteredPlayers((current) => player === null ? [] : current.includes(player) ? current.filter((entry) => entry !== player) : [...current, player]);
+    setSelectedId(null);
+    setPlacing(null);
+    setTool("select");
+  }
 
   const focusAbilities = focusAgent ? abilitiesForAgent(focusAgent.agentId) : [];
   const hint = placing ? `Clique no mapa para posicionar ${placing.kind === "agent" ? agentById.get(placing.agentId)?.name : abilityByKey.get(placing.abilityKey)?.name}. Shift mantém a seleção.`
@@ -286,20 +319,26 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
 
   return <section className={`tactics-section ${fullscreen ? "fullscreen" : ""}`} aria-labelledby="tactics-title">
     <div className="section-heading"><div><span className="eyebrow">03 / QUADRO TÁTICO</span><h2 id="tactics-title">Quadro tático · {mapName}</h2></div><span className="tactics-note" role="status">{loadState === "loading" ? "Carregando quadro" : loadState === "error" ? "Erro ao carregar" : saveState === "saving" ? "Salvando quadro" : saveState === "error" ? "Erro ao salvar" : "Quadro salvo"}</span></div>
-    {loadState === "error" && <div className="error-banner">Não foi possível carregar o quadro tático. <button onClick={() => void loadBoards()}>Tentar novamente</button></div>}
+    {loadState === "error" && <div className="error-banner">Não foi possível carregar o quadro tático. <button onClick={() => { setLoadState("loading"); void loadBoards(); }}>Tentar novamente</button></div>}
     {saveState === "error" && <div className="error-banner">Não foi possível salvar esta alteração. <button onClick={() => { setSaveState("saving"); const revision = (revisions.current.get(boardKey) ?? 0) + 1; revisions.current.set(boardKey, revision); saveBoard(boardKey, items, revision); }}>Tentar novamente</button></div>}
     <div className="tactics-phases" role="tablist" aria-label="Fase do quadro">{phases.map((entry) => <button key={entry.id} role="tab" aria-selected={phase === entry.id} className={phase === entry.id ? "active" : ""} onClick={() => { setPhase(entry.id); setSelectedId(null); }}>{entry.label}{(boards[`${map}:${entry.id}`]?.present.length ?? 0) > 0 && <span className="phase-dot" />}</button>)}</div>
+    {allies.length > 0 && <div className="tactics-filter" role="group" aria-label="Filtrar visão por jogador"><span>VISÃO DO JOGADOR</span><button type="button" className={!isFiltered ? "active" : ""} aria-pressed={!isFiltered} onClick={() => filterPlayer(null)}>Todos</button>{allies.map(({ player, agentId }) => {
+      const agent = agentById.get(agentId);
+      if (!agent) return null;
+      const active = filteredPlayers.includes(player);
+      return <button key={player} type="button" className={active ? "active" : ""} aria-pressed={active} onClick={() => filterPlayer(player)}><img src={agent.icon} alt="" /><span>{player} · {agent.name}</span></button>;
+    })}{isFiltered && <small>Visão de consulta. Selecione Todos para editar o mapa.</small>}</div>}
     <div className="tactics-layout">
       <div className="tactics-stage">
         <div className="tactics-procedure" aria-label="Observações da fase"><strong>Procedimentos · {phases.find((entry) => entry.id === phase)?.label}</strong>{phaseNotes.map((entry) => <div key={entry.key}><label htmlFor={`tactics-note-${entry.key}`}>{entry.label}</label><textarea id={`tactics-note-${entry.key}`} value={entry.value} onChange={(event) => onNoteChange(entry.key, event.target.value)} disabled={!editable} maxLength={5000} placeholder="Posições, habilidades e coordenação desta fase..." /><small>{entry.value.length}/5000 caracteres</small></div>)}{observations && <div><span>Observações do mapa</span><p>{observations}</p></div>}</div>
         <div className="tactics-toolbar" role="toolbar" aria-label="Ferramentas do quadro">
-          <div className="tool-group">{tools.map(({ id, label, icon: Icon }) => <button key={id} className={tool === id && !placing ? "active" : ""} onClick={() => chooseTool(id)} title={label} aria-label={label} aria-pressed={tool === id}><Icon size={17} /></button>)}</div>
-          <div className="tool-group">{colors.map((swatch) => <button key={swatch} className={`swatch ${color === swatch ? "active" : ""}`} style={{ background: swatch }} onClick={() => setColor(swatch)} title="Cor do desenho" aria-label={`Cor ${swatch}`} aria-pressed={color === swatch} />)}</div>
-          <div className="tool-group">
+          {!isFiltered && <div className="tool-group">{tools.map(({ id, label, icon: Icon }) => <button key={id} className={tool === id && !placing ? "active" : ""} onClick={() => chooseTool(id)} title={label} aria-label={label} aria-pressed={tool === id}><Icon size={17} /></button>)}</div>}
+          {!isFiltered && <div className="tool-group">{colors.map((swatch) => <button key={swatch} className={`swatch ${color === swatch ? "active" : ""}`} style={{ background: swatch }} onClick={() => setColor(swatch)} title="Cor do desenho" aria-label={`Cor ${swatch}`} aria-pressed={color === swatch} />)}</div>}
+          {!isFiltered && <div className="tool-group">
             <button onClick={() => setHistory(undo)} disabled={!history.past.length} title="Desfazer (Ctrl+Z)" aria-label="Desfazer"><Undo2 size={17} /></button>
             <button onClick={() => setHistory(redo)} disabled={!history.future.length} title="Refazer (Ctrl+Shift+Z)" aria-label="Refazer"><Redo2 size={17} /></button>
             <button onClick={clearBoard} disabled={!items.length} title="Limpar fase" aria-label="Limpar fase"><Trash2 size={17} /></button>
-          </div>
+          </div>}
           <div className="tool-group">
             <button onClick={() => zoom(1 / 1.4)} title="Aproximar" aria-label="Aproximar"><ZoomIn size={17} /></button>
             <button onClick={() => zoom(1.4)} title="Afastar" aria-label="Afastar"><ZoomOut size={17} /></button>
@@ -309,19 +348,27 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
             <button onClick={() => setFullscreen(!fullscreen)} title={fullscreen ? "Sair da tela cheia" : "Tela cheia"} aria-label={fullscreen ? "Sair da tela cheia" : "Tela cheia"}>{fullscreen ? <Minimize2 size={17} /> : <Maximize2 size={17} />}</button>
           </div>
         </div>
-        <div className={`tactics-canvas tool-${placing ? "place" : tool}`} ref={canvasRef}>
-          <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.size} ${view.size}`} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onContextMenu={(event) => event.preventDefault()} role="img" aria-label={`Minimapa de ${mapName} com ${items.length} itens`}>
+        <div className={`tactics-canvas tool-${isFiltered ? "filtered" : placing ? "place" : tool}`} ref={canvasRef}>
+          <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.size} ${view.size}`} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onContextMenu={(event) => event.preventDefault()} role="img" aria-label={`Minimapa de ${mapName} com ${visibleItems.length} itens${isFiltered ? " na visão filtrada" : ""}`}>
             <g ref={contentRef} transform={rotated ? `rotate(180 ${boardSize / 2} ${boardSize / 2})` : undefined}>
               <image href={`/minimaps/${map}.png`} x={0} y={0} width={boardSize} height={boardSize} />
               {showCallouts && callouts.map((callout, index) => <text key={index} className="callout" transform={`translate(${callout.x} ${callout.y}) rotate(${-viewRotation})`} textAnchor="middle" dominantBaseline="middle">{callout.name}</text>)}
-              {items.map((item) => <BoardItemView key={item.id} item={item} meter={meter} selected={item.id === selectedId} viewRotation={viewRotation} />)}
+              {visibleItems.map((item) => <BoardItemView key={item.id} item={item} meter={meter} selected={item.id === selectedId} viewRotation={viewRotation} />)}
             </g>
           </svg>
           {textDraft && <input className="tactics-text-input" style={{ left: textDraft.left, top: textDraft.top }} autoFocus maxLength={60} value={textDraft.value} placeholder="Texto e Enter" onChange={(event) => setTextDraft({ ...textDraft, value: event.target.value })} onKeyDown={(event) => { if (event.key === "Enter") finishText(); if (event.key === "Escape") setTextDraft(null); }} onBlur={finishText} />}
-          <span className="tactics-hint">{hint}</span>
+          <span className="tactics-hint">{isFiltered ? "Arraste para mover o mapa e use a roda do mouse para zoom." : hint}</span>
         </div>
       </div>
       <aside className="tactics-palette" aria-label="Agentes e habilidades">
+        {isFiltered ? filteredAllies.map(({ player, agentId }) => {
+          const agent = agentById.get(agentId);
+          if (!agent) return null;
+          return <div className="palette-block palette-filtered-agent" key={player}>
+            <div className="palette-filtered-heading"><img src={agent.icon} alt="" /><span><strong>{agent.name}</strong><small>{player}</small></span></div>
+            <ul className="palette-filtered-abilities">{abilitiesForAgent(agentId).map((ability) => <li key={ability.key}><img src={ability.icon} alt="" /><kbd>{slotLabels[ability.slot]}</kbd><span>{ability.name}</span></li>)}</ul>
+          </div>;
+        }) : <>
         <div className="palette-block">
           <span className="palette-title"><span className="team-swatch" style={{ background: teamColors.ally }} /> SEU TIME</span>
           {allies.length ? <div className="palette-allies">{allies.map(({ player, agentId }) => {
@@ -338,6 +385,7 @@ export function TacticsBoard({ map, mapName, allies, notes, observations, onNote
           <span className="palette-title">HABILIDADES{focusAgent && ` · ${agentById.get(focusAgent.agentId)?.name}`}</span>
           {focusAgent ? <div className="palette-abilities">{focusAbilities.map((ability) => <button key={ability.key} className={placing?.kind === "ability" && placing.abilityKey === ability.key ? "active" : ""} onClick={() => { setPlacing({ kind: "ability", abilityKey: ability.key, team: focusAgent.team }); setTool("select"); }} title={ability.name}><img src={ability.icon} alt="" /><span><kbd>{slotLabels[ability.slot]}</kbd>{ability.name}</span></button>)}</div> : <p className="palette-empty">Escolha um agente para ver as habilidades.</p>}
         </div>
+        </>}
       </aside>
     </div>
   </section>;
