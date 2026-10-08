@@ -1,0 +1,83 @@
+{
+  "id": "espumas-esponjas-2026-10-07",
+  "date": "2026-10-07",
+  "event": "Partida personalizada",
+  "sourceUrl": "https://tracker.gg/valorant/profile/riot/intertwined%23anaju/customs?platform=pc&playlist=competitive&season=8102cd81-43a0-d0d7-bd59-47b8fe9bed1b",
+  "contextUrl": "https://chatgpt.com/share/6ac7805f-5b8c-83e9-ab75-86199814ffeb",
+  "ratingNote": "Rating estimado da versão corrigida da partida: usa eliminações e mortes por round, ADR, KAST, assistências por round e saldo de primeiras eliminações. Não é o rating oficial do VLR.",
+  "seriesStats": {
+    "intertwined": { "rating": 1.47, "acs": 281, "kast": 75, "adr": 174 },
+    "vls": { "rating": 1.32, "acs": 284, "kast": 73, "adr": 187 },
+    "maopyk": { "rating": 1.26, "acs": 230, "kast": 79, "adr": 153 },
+    "laszo": { "rating": 0.92, "acs": 181, "kast": 79, "adr": 126 },
+    "felpao": { "rating": 0.30, "acs": 81, "kast": 62, "adr": 57 },
+    "israel-games": { "rating": 1.30, "acs": 245, "kast": 77, "adr": 158 },
+    "ieovah": { "rating": 1.13, "acs": 258, "kast": 62, "adr": 157 },
+    "persa-faz-22": { "rating": 1.08, "acs": 214, "kast": 75, "adr": 138 },
+    "gusta": { "rating": 0.83, "acs": 181, "kast": 66, "adr": 120 },
+    "willy-wonka": { "rating": 0.40, "acs": 128, "kast": 63, "adr": 90 }
+  },
+  "teams": [
+    { "id": "espumas", "name": "Espumas", "tag": "ESP", "crest": "espumas" },
+    { "id": "esponjas", "name": "Esponjas", "tag": "ESN", "crest": "esponjas" }
+  ],
+  "players": [
+    { "id": "intertwined", "name": "intertwined", "teamId": "espumas", "riotId": "intertwined#anaju" },
+    { "id": "vls", "name": "vls", "teamId": "espumas" },
+    { "id": "maopyk", "name": "Maopyk", "teamId": "espumas" },
+    { "id": "laszo", "name": "laszo", "teamId": "espumas" },
+    { "id": "felpao", "name": "Felpao", "teamId": "espumas" },
+    { "id": "israel-games", "name": "Israel games", "teamId": "esponjas" },
+    { "id": "ieovah", "name": "IEOVAH", "teamId": "esponjas" },
+    { "id": "persa-faz-22", "name": "persa faz 22", "teamId": "esponjas" },
+    { "id": "gusta", "name": "gusta", "teamId": "esponjas", "riotId": "# CHORA" },
+    { "id": "willy-wonka", "name": "Willy Wonka", "teamId": "esponjas" }
+  ],
+  "maps": [
+    {
+      "id": "ascent", "name": "Ascent", "score": [13, 6], "durationSeconds": 1966,
+      "stats": [
+        { "playerId": "vls", "agent": "Jett", "rating": 1.77, "acs": 336, "kills": 22, "deaths": 14, "assists": 6, "kast": 84, "adr": 215, "hs": 20, "fk": 7, "fd": 3 },
+        { "playerId": "maopyk", "agent": "Omen", "rating": 1.75, "acs": 277, "kills": 19, "deaths": 9, "assists": 10, "kast": 89, "adr": 181, "hs": 29, "fk": 0, "fd": 0 },
+        { "playerId": "intertwined", "agent": "Chamber", "rating": 1.47, "acs": 269, "kills": 20, "deaths": 12, "assists": 2, "kast": 79, "adr": 166, "hs": 28, "fk": 3, "fd": 3 },
+        { "playerId": "laszo", "agent": "Sova", "rating": 0.83, "acs": 158, "kills": 10, "deaths": 14, "assists": 8, "kast": 84, "adr": 115, "hs": 21, "fk": 0, "fd": 1 },
+        { "playerId": "felpao", "agent": "KAY/O", "rating": 0.25, "acs": 71, "kills": 4, "deaths": 15, "assists": 8, "kast": 68, "adr": 55, "hs": 15, "fk": 0, "fd": 2 },
+        { "playerId": "israel-games", "agent": "Sova", "rating": 1.47, "acs": 282, "kills": 18, "deaths": 13, "assists": 7, "kast": 84, "adr": 180, "hs": 24, "fk": 1, "fd": 0 },
+        { "playerId": "persa-faz-22", "agent": "Jett", "rating": 1.00, "acs": 220, "kills": 15, "deaths": 15, "assists": 4, "kast": 68, "adr": 141, "hs": 38, "fk": 2, "fd": 2 },
+        { "playerId": "gusta", "agent": "Omen", "rating": 0.78, "acs": 173, "kills": 12, "deaths": 15, "assists": 5, "kast": 74, "adr": 104, "hs": 18, "fk": 0, "fd": 1 },
+        { "playerId": "ieovah", "agent": "Neon", "rating": 0.67, "acs": 183, "kills": 12, "deaths": 15, "assists": 2, "kast": 63, "adr": 110, "hs": 23, "fk": 4, "fd": 6 },
+        { "playerId": "willy-wonka", "agent": "Killjoy", "rating": 0.33, "acs": 134, "kills": 7, "deaths": 17, "assists": 3, "kast": 53, "adr": 95, "hs": 7, "fk": 2, "fd": 1 }
+      ]
+    },
+    {
+      "id": "split", "name": "Split", "score": [13, 11], "durationSeconds": 2583,
+      "stats": [
+        { "playerId": "intertwined", "agent": "Chamber", "rating": 1.64, "acs": 323, "kills": 29, "deaths": 15, "assists": 1, "kast": 71, "adr": 194, "hs": 31, "fk": 3, "fd": 3 },
+        { "playerId": "maopyk", "agent": "Omen", "rating": 1.12, "acs": 196, "kills": 16, "deaths": 16, "assists": 11, "kast": 83, "adr": 132, "hs": 30, "fk": 2, "fd": 1 },
+        { "playerId": "vls", "agent": "Neon", "rating": 0.96, "acs": 240, "kills": 18, "deaths": 20, "assists": 4, "kast": 67, "adr": 161, "hs": 24, "fk": 6, "fd": 5 },
+        { "playerId": "laszo", "agent": "Fade", "rating": 0.90, "acs": 196, "kills": 15, "deaths": 20, "assists": 8, "kast": 83, "adr": 134, "hs": 24, "fk": 2, "fd": 1 },
+        { "playerId": "felpao", "agent": "Breach", "rating": 0.31, "acs": 81, "kills": 7, "deaths": 18, "assists": 7, "kast": 54, "adr": 60, "hs": 23, "fk": 0, "fd": 1 },
+        { "playerId": "israel-games", "agent": "Omen", "rating": 1.38, "acs": 266, "kills": 21, "deaths": 15, "assists": 5, "kast": 79, "adr": 176, "hs": 32, "fk": 2, "fd": 0 },
+        { "playerId": "ieovah", "agent": "Neon", "rating": 1.30, "acs": 294, "kills": 26, "deaths": 18, "assists": 3, "kast": 58, "adr": 180, "hs": 19, "fk": 4, "fd": 6 },
+        { "playerId": "persa-faz-22", "agent": "Raze", "rating": 1.14, "acs": 223, "kills": 19, "deaths": 17, "assists": 6, "kast": 75, "adr": 144, "hs": 19, "fk": 3, "fd": 2 },
+        { "playerId": "gusta", "agent": "Cypher", "rating": 0.68, "acs": 144, "kills": 13, "deaths": 16, "assists": 5, "kast": 58, "adr": 89, "hs": 24, "fk": 1, "fd": 2 },
+        { "playerId": "willy-wonka", "agent": "Fade", "rating": 0.49, "acs": 131, "kills": 10, "deaths": 19, "assists": 5, "kast": 75, "adr": 85, "hs": 21, "fk": 1, "fd": 3 }
+      ]
+    },
+    {
+      "id": "summit", "name": "Summit", "score": [15, 13], "durationSeconds": 2926,
+      "stats": [
+        { "playerId": "vls", "agent": "Neon", "rating": 1.33, "acs": 286, "kills": 27, "deaths": 21, "assists": 5, "kast": 71, "adr": 190, "hs": 26, "fk": 5, "fd": 4 },
+        { "playerId": "intertwined", "agent": "Chamber", "rating": 1.32, "acs": 254, "kills": 25, "deaths": 18, "assists": 4, "kast": 75, "adr": 162, "hs": 27, "fk": 4, "fd": 2 },
+        { "playerId": "maopyk", "agent": "Omen", "rating": 1.06, "acs": 228, "kills": 21, "deaths": 21, "assists": 12, "kast": 68, "adr": 151, "hs": 34, "fk": 1, "fd": 2 },
+        { "playerId": "laszo", "agent": "Fade", "rating": 1.00, "acs": 185, "kills": 19, "deaths": 18, "assists": 8, "kast": 71, "adr": 127, "hs": 39, "fk": 3, "fd": 4 },
+        { "playerId": "felpao", "agent": "Breach", "rating": 0.34, "acs": 89, "kills": 9, "deaths": 20, "assists": 5, "kast": 64, "adr": 56, "hs": 21, "fk": 0, "fd": 3 },
+        { "playerId": "ieovah", "agent": "Omen", "rating": 1.30, "acs": 277, "kills": 27, "deaths": 20, "assists": 8, "kast": 64, "adr": 170, "hs": 40, "fk": 3, "fd": 3 },
+        { "playerId": "israel-games", "agent": "Breach", "rating": 1.11, "acs": 202, "kills": 17, "deaths": 17, "assists": 16, "kast": 71, "adr": 128, "hs": 30, "fk": 4, "fd": 1 },
+        { "playerId": "persa-faz-22", "agent": "Jett", "rating": 1.10, "acs": 203, "kills": 21, "deaths": 19, "assists": 2, "kast": 79, "adr": 131, "hs": 33, "fk": 4, "fd": 1 },
+        { "playerId": "gusta", "agent": "Chamber", "rating": 0.99, "acs": 219, "kills": 22, "deaths": 22, "assists": 4, "kast": 68, "adr": 159, "hs": 26, "fk": 2, "fd": 3 },
+        { "playerId": "willy-wonka", "agent": "Fade", "rating": 0.37, "acs": 122, "kills": 11, "deaths": 23, "assists": 5, "kast": 61, "adr": 93, "hs": 24, "fk": 2, "fd": 5 }
+      ]
+    }
+  ]
+}

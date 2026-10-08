@@ -19,4 +19,12 @@ Para a API, rode `cd server && npm ci && npm start`. Configure `DATABASE_URL` (c
 
 As Observações Gerais do Time usam um registro próprio no banco, acessado pela rota `/api/team-observations`. O texto é o mesmo em todos os mapas e tem limite de 5.000 caracteres.
 
+## VLR dos Espumas
+
+A página `/vlr-dos-espumas` mostra as séries do time com placares, agentes e leaderboards em HTML. As abas alternam entre a série inteira e cada mapa; as colunas permitem ordenação e o filtro permite ver uma equipe por vez. Cada partida tem um link permanente em `/vlr-dos-espumas/[matchId]`.
+
+O primeiro registro é Espumas 3–0 Esponjas, de 07/10/2026, em Ascent, Split e Summit. Os dados foram transcritos do relatório fornecido pelo time, incluindo a versão corrigida dos ratings estimados. HS% permanece separado por mapa, pois a contagem de acertos necessária para consolidá-lo não foi fornecida.
+
+Para adicionar séries, crie um JSON em `data/vlr/` seguindo `lib/vlr/types.ts` e registre-o em `lib/vlr/matches.ts`. Registre médias gerais em `seriesStats` quando disponíveis para evitar diferenças de arredondamento; os totais de K/D/A e FK/FD são calculados pelos mapas. `npm run vlr:validate` confere os dados, agentes, placares e totais. As séries são versionadas no repositório e não dependem da API de composições.
+
 As imagens dos mapas e ícones dos agentes vêm do [Valorant-API](https://valorant-api.com/), a partir de conteúdo do VALORANT. Este é um projeto independente, sem afiliação com a Riot Games ou com a FIAP.

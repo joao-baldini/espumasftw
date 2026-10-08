@@ -9,6 +9,7 @@ import { registerCompositionTool } from "./webmcp";
 import { TrainingResults } from "./training-results";
 import { TeamObservations } from "./team-observations";
 import { TacticsBoard } from "./tactics/tactics-board";
+import { SiteHeader } from "@/components/site-header";
 import { maxNoteLength, type Composition, type NoteKey } from "@/lib/composition";
 
 type Agent = { id: string; name: string; role: string; icon: string };
@@ -87,7 +88,7 @@ export default function Home() {
   }
 
   return <div className="app-shell">
-    <header className="topbar"><div className="brand"><span className="brand-mark">E</span><div><strong>ESPUMAS</strong><small>COMPOSIÇÕES VALORANT</small></div></div><div className="topbar-right"><span className="team-chip"><span className="team-dot" /> CAMPEONATO</span><span className="edition">TEMPORADA 2026</span></div></header>
+    <SiteHeader />
     <div className="workspace">
       <aside className="map-sidebar" aria-label="Mapas do campeonato"><div className="sidebar-heading"><span>MAP POOL</span><span className="count">07 MAPAS</span></div><div className="map-list">{maps.map((map, index) => {
         const assigned = players.filter((player) => compositions[map]?.picks[player]).length;
