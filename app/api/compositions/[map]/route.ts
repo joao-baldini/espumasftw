@@ -3,7 +3,7 @@ import { usingRenderBackend } from "@/db/backend";
 import agents from "@/app/agents.json";
 import { maxNoteLength, noteKeys, packNotes, sitesForMap, type NoteKey, type Notes } from "@/lib/composition";
 
-const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"]);
+const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"]);
 const players = new Set(["joao", "ronaldo", "bolla", "rafa", "felipe"]);
 const agentIds = new Set(agents.map((agent) => agent.id));
 

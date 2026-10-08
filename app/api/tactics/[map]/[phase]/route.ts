@@ -2,7 +2,7 @@ import { putTactics } from "@/db/tactics";
 import { sitesForMap } from "@/lib/composition";
 import type { BoardItem } from "@/lib/tactics/board";
 
-const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"]);
+const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"]);
 
 export async function PUT(request: Request, context: { params: Promise<{ map: string; phase: string }> }) {
   const { map, phase } = await context.params;

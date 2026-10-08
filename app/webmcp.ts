@@ -10,7 +10,7 @@ type ModelContext = {
   }, options: { signal: AbortSignal }) => void | Promise<void>;
 };
 
-const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"]);
+const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"]);
 const players = new Set(["joao", "ronaldo", "bolla", "rafa", "felipe"]);
 
 export function registerCompositionTool(onSaved: (map: string, composition: Composition) => void) {

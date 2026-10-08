@@ -13,7 +13,7 @@ app.disable("x-powered-by");
 app.use(express.json({ limit: "1mb" }));
 app.use((_, response, next) => { response.set("Cache-Control", "no-store"); next(); });
 
-const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"]);
+const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"]);
 const players = new Set(["joao", "ronaldo", "bolla", "rafa", "felipe"]);
 const agents = JSON.parse(readFileSync(new URL("../app/agents.json", import.meta.url), "utf8"));
 const agentIds = new Set(agents.map((agent) => agent.id));

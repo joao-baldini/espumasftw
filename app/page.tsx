@@ -14,7 +14,7 @@ import { maxNoteLength, type Composition, type NoteKey } from "@/lib/composition
 
 type Agent = { id: string; name: string; role: string; icon: string };
 const players = ["joao", "ronaldo", "bolla", "rafa", "felipe"];
-const maps = ["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"];
+const maps = ["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"];
 const mapNames: Record<string, string> = Object.fromEntries(maps.map((map) => [map, map.charAt(0).toUpperCase() + map.slice(1)]));
 const agentList = agents as Agent[];
 const emptyComposition = (): Composition => ({ picks: {}, notes: {}, observations: "" });

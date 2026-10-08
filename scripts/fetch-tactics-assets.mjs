@@ -3,7 +3,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import agents from "../app/agents.json" with { type: "json" };
 
-const maps = ["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"];
+const maps = ["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"];
 const slots = ["Grenade", "Ability1", "Ability2", "Ultimate"];
 
 async function json(url) {

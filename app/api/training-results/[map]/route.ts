@@ -1,6 +1,6 @@
 import { putTrainingResult } from "@/db/training-results";
 
-const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus"]);
+const maps = new Set(["abyss", "ascent", "haven", "summit", "split", "sunset", "lotus", "corrode", "bind"]);
 
 export async function PUT(request: Request, context: { params: Promise<{ map: string }> }) {
   const { map } = await context.params;

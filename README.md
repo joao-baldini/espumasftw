@@ -1,6 +1,6 @@
 # Espumas — Campeonato Valorant
 
-Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset e Lotus. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe, procedimentos por fase, observações e resultados de treinos. Default, Exec por bomb, Pós Plant e Retake aparecem junto ao quadro tático da fase. O quadro salva automaticamente agentes, habilidades, desenhos e textos por mapa e fase.
+Site para organizar as composições do time em Abyss, Ascent, Haven, Summit, Split, Sunset, Lotus, Corrode e Bind. Cada mapa guarda os agentes de joao, ronaldo, bolla, rafa e felipe, procedimentos por fase, observações e resultados de treinos. Default, Exec por bomb, Pós Plant e Retake aparecem junto ao quadro tático da fase. O quadro salva automaticamente agentes, habilidades, desenhos e textos por mapa e fase.
 
 Os minimapas, as posições e os ícones de habilidades do quadro tático são baixados com `node scripts/fetch-tactics-assets.mjs`. Os alcances ficam em `lib/tactics/abilities.ts` e são aproximados.
 
