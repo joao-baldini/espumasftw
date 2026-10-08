@@ -1,0 +1,20 @@
+{
+  "version": "espumas-vlr-proxy-1",
+  "intercept": 0.7859968,
+  "coefficients": {
+    "kpr": 1.07209381,
+    "dpr": -0.9109516,
+    "apr": 0.22474444,
+    "damageResidual": 0.25587069,
+    "fkpr": 0,
+    "fdpr": -0.28254182,
+    "combatResidual": 0.12157091
+  },
+  "calibration": {
+    "trainMaps": 88,
+    "testMaps": 53,
+    "testPlayerMaps": 530,
+    "mae": 0.05832799,
+    "within010": 0.85471698
+  }
+}

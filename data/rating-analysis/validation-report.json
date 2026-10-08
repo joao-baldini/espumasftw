@@ -1,0 +1,4083 @@
+{
+  "version": "espumas-vlr-proxy-1",
+  "collectedAt": "2026-10-08",
+  "method": "Sign-constrained ridge regression; 5-fold series-grouped CV on 2025; independent 2026 event holdout",
+  "train": {
+    "event": "Champions 2025",
+    "playerMaps": 880,
+    "maps": 88,
+    "series": 34
+  },
+  "test": {
+    "event": "Champions 2026 (completed series only)",
+    "playerMaps": 530,
+    "maps": 53,
+    "series": 23
+  },
+  "selected": {
+    "name": "openings-combat",
+    "ridge": 1,
+    "crossValidation": {
+      "observations": 880,
+      "mae": 0.05680118,
+      "rmse": 0.07125304,
+      "p90AbsoluteError": 0.11427095,
+      "within010": 0.85340909,
+      "rSquared": 0.94964486,
+      "bias": -0.00019921
+    }
+  },
+  "holdout": {
+    "observations": 530,
+    "mae": 0.05832799,
+    "rmse": 0.07196408,
+    "p90AbsoluteError": 0.11607371,
+    "within010": 0.85471698,
+    "rSquared": 0.94994397,
+    "bias": 0.00212191
+  },
+  "constantBaseline": {
+    "observations": 530,
+    "mae": 0.25369387,
+    "rmse": 0.32167805,
+    "p90AbsoluteError": 0.51080682,
+    "within010": 0.25660377,
+    "rSquared": -0.00015576,
+    "bias": 0.00401437
+  },
+  "candidates": [
+    {
+      "name": "openings-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "combatResidual"
+      ],
+      "ridge": 1,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05680118,
+        "rmse": 0.07125304,
+        "p90AbsoluteError": 0.11427095,
+        "within010": 0.85340909,
+        "rSquared": 0.94964486,
+        "bias": -0.00019921
+      }
+    },
+    {
+      "name": "openings-kast-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast",
+        "combatResidual"
+      ],
+      "ridge": 1,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05680118,
+        "rmse": 0.07125304,
+        "p90AbsoluteError": 0.11427095,
+        "within010": 0.85340909,
+        "rSquared": 0.94964486,
+        "bias": -0.00019921
+      }
+    },
+    {
+      "name": "openings-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "combatResidual"
+      ],
+      "ridge": 0,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05680959,
+        "rmse": 0.07125189,
+        "p90AbsoluteError": 0.11398102,
+        "within010": 0.85340909,
+        "rSquared": 0.94964649,
+        "bias": -0.00019828
+      }
+    },
+    {
+      "name": "openings-kast-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast",
+        "combatResidual"
+      ],
+      "ridge": 0,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05680959,
+        "rmse": 0.07125189,
+        "p90AbsoluteError": 0.11398102,
+        "within010": 0.85340909,
+        "rSquared": 0.94964649,
+        "bias": -0.00019828
+      }
+    },
+    {
+      "name": "openings-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "combatResidual"
+      ],
+      "ridge": 10,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05697146,
+        "rmse": 0.07151236,
+        "p90AbsoluteError": 0.11490783,
+        "within010": 0.84886364,
+        "rSquared": 0.94927766,
+        "bias": -0.00020669
+      }
+    },
+    {
+      "name": "openings-kast-combat",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast",
+        "combatResidual"
+      ],
+      "ridge": 10,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05697146,
+        "rmse": 0.07151236,
+        "p90AbsoluteError": 0.11490783,
+        "within010": 0.84886364,
+        "rSquared": 0.94927766,
+        "bias": -0.00020669
+      }
+    },
+    {
+      "name": "openings",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr"
+      ],
+      "ridge": 1,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05750882,
+        "rmse": 0.07200282,
+        "p90AbsoluteError": 0.11412306,
+        "within010": 0.8375,
+        "rSquared": 0.94857953,
+        "bias": -0.00015594
+      }
+    },
+    {
+      "name": "openings-kast",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast"
+      ],
+      "ridge": 1,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05750882,
+        "rmse": 0.07200282,
+        "p90AbsoluteError": 0.11412306,
+        "within010": 0.8375,
+        "rSquared": 0.94857953,
+        "bias": -0.00015594
+      }
+    },
+    {
+      "name": "openings",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr"
+      ],
+      "ridge": 0,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05751491,
+        "rmse": 0.07200998,
+        "p90AbsoluteError": 0.11510789,
+        "within010": 0.83522727,
+        "rSquared": 0.94856931,
+        "bias": -0.00015619
+      }
+    },
+    {
+      "name": "openings-kast",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast"
+      ],
+      "ridge": 0,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05751491,
+        "rmse": 0.07200998,
+        "p90AbsoluteError": 0.11510789,
+        "within010": 0.83522727,
+        "rSquared": 0.94856931,
+        "bias": -0.00015619
+      }
+    },
+    {
+      "name": "openings",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr"
+      ],
+      "ridge": 10,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05752319,
+        "rmse": 0.07205961,
+        "p90AbsoluteError": 0.11499321,
+        "within010": 0.84545455,
+        "rSquared": 0.94849838,
+        "bias": -0.00014748
+      }
+    },
+    {
+      "name": "openings-kast",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual",
+        "fkpr",
+        "fdpr",
+        "kast"
+      ],
+      "ridge": 10,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05752319,
+        "rmse": 0.07205961,
+        "p90AbsoluteError": 0.11499321,
+        "within010": 0.84545455,
+        "rSquared": 0.94849838,
+        "bias": -0.00014748
+      }
+    },
+    {
+      "name": "core",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual"
+      ],
+      "ridge": 10,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05974654,
+        "rmse": 0.07463313,
+        "p90AbsoluteError": 0.12059243,
+        "within010": 0.82045455,
+        "rSquared": 0.94475406,
+        "bias": -0.00011241
+      }
+    },
+    {
+      "name": "core",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual"
+      ],
+      "ridge": 1,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05983619,
+        "rmse": 0.07461077,
+        "p90AbsoluteError": 0.11920223,
+        "within010": 0.81931818,
+        "rSquared": 0.94478716,
+        "bias": -0.00011493
+      }
+    },
+    {
+      "name": "core",
+      "features": [
+        "kpr",
+        "dpr",
+        "apr",
+        "damageResidual"
+      ],
+      "ridge": 0,
+      "crossValidation": {
+        "observations": 880,
+        "mae": 0.05985037,
+        "rmse": 0.07461802,
+        "p90AbsoluteError": 0.11898893,
+        "within010": 0.81931818,
+        "rSquared": 0.94477643,
+        "bias": -0.00011523
+      }
+    }
+  ],
+  "predictions": [
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "13039",
+      "expected": 1.05,
+      "predicted": 0.90632738
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "20140",
+      "expected": 1.28,
+      "predicted": 1.32612748
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "2489",
+      "expected": 0.98,
+      "predicted": 1.03443832
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "29833",
+      "expected": 0.85,
+      "predicted": 0.70618085
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "29893",
+      "expected": 1.25,
+      "predicted": 1.40329139
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "3880",
+      "expected": 1.63,
+      "predicted": 1.5991437
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "4147",
+      "expected": 1.69,
+      "predicted": 1.60805369
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "485",
+      "expected": 0.49,
+      "predicted": 0.44587951
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "601",
+      "expected": 0.77,
+      "predicted": 0.75366203
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283151",
+      "playerId": "804",
+      "expected": 0.04,
+      "predicted": 0.19270436
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "13039",
+      "expected": 1.03,
+      "predicted": 1.02776257
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "20140",
+      "expected": 0.87,
+      "predicted": 0.92046066
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "2489",
+      "expected": 0.74,
+      "predicted": 0.71815327
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "29833",
+      "expected": 1.28,
+      "predicted": 1.18326946
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "29893",
+      "expected": 1.18,
+      "predicted": 1.18300767
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "3880",
+      "expected": 1.08,
+      "predicted": 1.06614876
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "4147",
+      "expected": 1.36,
+      "predicted": 1.409745
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "485",
+      "expected": 0.39,
+      "predicted": 0.34102437
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "601",
+      "expected": 1.58,
+      "predicted": 1.48144447
+    },
+    {
+      "matchId": "753444",
+      "mapId": "283152",
+      "playerId": "804",
+      "expected": 0.53,
+      "predicted": 0.63270673
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "11218",
+      "expected": 0.13,
+      "predicted": 0.05029214
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "12793",
+      "expected": 1.17,
+      "predicted": 1.22884979
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "15735",
+      "expected": 1.94,
+      "predicted": 1.91231477
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "3519",
+      "expected": 0.17,
+      "predicted": 0.12461374
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "39357",
+      "expected": 1.78,
+      "predicted": 1.98505441
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "49476",
+      "expected": 0.64,
+      "predicted": 0.55673808
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "5568",
+      "expected": 1.45,
+      "predicted": 1.52712508
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "64969",
+      "expected": 0.3,
+      "predicted": 0.24906038
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "7857",
+      "expected": 0.72,
+      "predicted": 0.6282095
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283154",
+      "playerId": "8369",
+      "expected": 1.32,
+      "predicted": 1.27904903
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "11218",
+      "expected": 0.86,
+      "predicted": 0.72671339
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "12793",
+      "expected": 1.17,
+      "predicted": 1.20473074
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "15735",
+      "expected": 1.06,
+      "predicted": 1.05377321
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "3519",
+      "expected": 1.22,
+      "predicted": 1.24432517
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "39357",
+      "expected": 1.07,
+      "predicted": 1.15354985
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "49476",
+      "expected": 0.64,
+      "predicted": 0.65698982
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "5568",
+      "expected": 0.74,
+      "predicted": 0.83633281
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "64969",
+      "expected": 0.92,
+      "predicted": 0.87275406
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "7857",
+      "expected": 1.1,
+      "predicted": 1.0487803
+    },
+    {
+      "matchId": "753445",
+      "mapId": "283155",
+      "playerId": "8369",
+      "expected": 1.19,
+      "predicted": 1.2393834
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "12793",
+      "expected": 0.62,
+      "predicted": 0.7087979
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "15735",
+      "expected": 0.94,
+      "predicted": 0.92123237
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "20140",
+      "expected": 1.14,
+      "predicted": 1.05541829
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "29893",
+      "expected": 1.29,
+      "predicted": 1.36462943
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "3880",
+      "expected": 1.27,
+      "predicted": 1.28823825
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "39357",
+      "expected": 0.37,
+      "predicted": 0.47845275
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "4147",
+      "expected": 1.04,
+      "predicted": 1.03065096
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "5568",
+      "expected": 0.43,
+      "predicted": 0.49955787
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "601",
+      "expected": 1.14,
+      "predicted": 1.16963274
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283157",
+      "playerId": "8369",
+      "expected": 1.23,
+      "predicted": 1.20183757
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "12793",
+      "expected": 0.96,
+      "predicted": 0.88946459
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "15735",
+      "expected": 1.08,
+      "predicted": 0.94403793
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "20140",
+      "expected": 1.08,
+      "predicted": 1.11336558
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "29893",
+      "expected": 1.14,
+      "predicted": 1.16216803
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "3880",
+      "expected": 0.95,
+      "predicted": 1.06558461
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "39357",
+      "expected": 0.94,
+      "predicted": 0.84532822
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "4147",
+      "expected": 0.97,
+      "predicted": 1.09387867
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "5568",
+      "expected": 1.02,
+      "predicted": 0.91349234
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "601",
+      "expected": 1.25,
+      "predicted": 1.16947629
+    },
+    {
+      "matchId": "753446",
+      "mapId": "283158",
+      "playerId": "8369",
+      "expected": 0.77,
+      "predicted": 0.82203785
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "11218",
+      "expected": 0.97,
+      "predicted": 0.94927435
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "13039",
+      "expected": 0.96,
+      "predicted": 0.9783788
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "2489",
+      "expected": 1.13,
+      "predicted": 1.07065943
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "29833",
+      "expected": 0.92,
+      "predicted": 0.93966609
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "3519",
+      "expected": 1.13,
+      "predicted": 1.09059195
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "485",
+      "expected": 1.28,
+      "predicted": 1.26478401
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "49476",
+      "expected": 0.84,
+      "predicted": 0.82702095
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "64969",
+      "expected": 1.37,
+      "predicted": 1.30545051
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "7857",
+      "expected": 0.62,
+      "predicted": 0.61994544
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283160",
+      "playerId": "804",
+      "expected": 0.86,
+      "predicted": 0.98556496
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "11218",
+      "expected": 1.12,
+      "predicted": 1.11997252
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "13039",
+      "expected": 0.69,
+      "predicted": 0.81830409
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "2489",
+      "expected": 0.53,
+      "predicted": 0.68359969
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "29833",
+      "expected": 0.61,
+      "predicted": 0.56904923
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "3519",
+      "expected": 0.84,
+      "predicted": 0.7730733
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "485",
+      "expected": 0.62,
+      "predicted": 0.6549617
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "49476",
+      "expected": 1.62,
+      "predicted": 1.58453199
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "64969",
+      "expected": 1.02,
+      "predicted": 0.92985371
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "7857",
+      "expected": 1.44,
+      "predicted": 1.3389178
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283161",
+      "playerId": "804",
+      "expected": 0.58,
+      "predicted": 0.64579147
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "11218",
+      "expected": 0.4,
+      "predicted": 0.3639155
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "13039",
+      "expected": 1.27,
+      "predicted": 1.301043
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "2489",
+      "expected": 1.02,
+      "predicted": 1.10399797
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "29833",
+      "expected": 0.88,
+      "predicted": 0.89098431
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "3519",
+      "expected": 1.03,
+      "predicted": 0.80947192
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "485",
+      "expected": 1.05,
+      "predicted": 1.03237504
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "49476",
+      "expected": 0.67,
+      "predicted": 0.73506913
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "64969",
+      "expected": 0.88,
+      "predicted": 0.88944007
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "7857",
+      "expected": 0.66,
+      "predicted": 0.66715606
+    },
+    {
+      "matchId": "753447",
+      "mapId": "283162",
+      "playerId": "804",
+      "expected": 2,
+      "predicted": 1.92246105
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "12793",
+      "expected": 0.91,
+      "predicted": 0.92146518
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "13039",
+      "expected": 0.86,
+      "predicted": 0.91760312
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "15735",
+      "expected": 0.81,
+      "predicted": 0.81292304
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "2489",
+      "expected": 1.01,
+      "predicted": 0.98415134
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "29833",
+      "expected": 1.67,
+      "predicted": 1.58580136
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "39357",
+      "expected": 1.04,
+      "predicted": 1.08420825
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "485",
+      "expected": 0.71,
+      "predicted": 0.73676235
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "5568",
+      "expected": 0.96,
+      "predicted": 0.97729143
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "804",
+      "expected": 0.72,
+      "predicted": 0.81467438
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283163",
+      "playerId": "8369",
+      "expected": 1.27,
+      "predicted": 1.19673086
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "12793",
+      "expected": 0.88,
+      "predicted": 0.89573506
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "13039",
+      "expected": 0.58,
+      "predicted": 0.68407684
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "15735",
+      "expected": 0.96,
+      "predicted": 1.02952908
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "2489",
+      "expected": 1.09,
+      "predicted": 1.00095716
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "29833",
+      "expected": 1.42,
+      "predicted": 1.32944367
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "39357",
+      "expected": 0.55,
+      "predicted": 0.69810709
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "485",
+      "expected": 1.32,
+      "predicted": 1.25742829
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "5568",
+      "expected": 1.34,
+      "predicted": 1.29439013
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "804",
+      "expected": 1.02,
+      "predicted": 1.08445265
+    },
+    {
+      "matchId": "753448",
+      "mapId": "283164",
+      "playerId": "8369",
+      "expected": 0.87,
+      "predicted": 0.83355575
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "13744",
+      "expected": 0.71,
+      "predicted": 0.73993342
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "33902",
+      "expected": 1.09,
+      "predicted": 1.08268271
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "4428",
+      "expected": 1.07,
+      "predicted": 0.98860772
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "458",
+      "expected": 0.86,
+      "predicted": 0.9310009
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "5022",
+      "expected": 0.73,
+      "predicted": 0.92943361
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "5554",
+      "expected": 1.18,
+      "predicted": 1.20311219
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "5796",
+      "expected": 0.94,
+      "predicted": 0.89480357
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "7754",
+      "expected": 1.28,
+      "predicted": 1.21488298
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "872",
+      "expected": 0.85,
+      "predicted": 0.86029689
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283166",
+      "playerId": "9780",
+      "expected": 1,
+      "predicted": 1.02662981
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "13744",
+      "expected": 1.59,
+      "predicted": 1.52830696
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "33902",
+      "expected": 0.73,
+      "predicted": 0.81447056
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "4428",
+      "expected": 0.81,
+      "predicted": 0.86001022
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "458",
+      "expected": 0.9,
+      "predicted": 0.88832826
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "5022",
+      "expected": 0.83,
+      "predicted": 0.9046704
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "5554",
+      "expected": 1.12,
+      "predicted": 1.15678893
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "5796",
+      "expected": 1.15,
+      "predicted": 1.05755854
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "7754",
+      "expected": 0.67,
+      "predicted": 0.71620585
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "872",
+      "expected": 0.98,
+      "predicted": 0.90439111
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283167",
+      "playerId": "9780",
+      "expected": 1.47,
+      "predicted": 1.46185129
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "13744",
+      "expected": 0.85,
+      "predicted": 0.78454317
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "33902",
+      "expected": 0.81,
+      "predicted": 0.86276277
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "4428",
+      "expected": 0.92,
+      "predicted": 0.92055093
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "458",
+      "expected": 1.17,
+      "predicted": 1.34260995
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "5022",
+      "expected": 1.18,
+      "predicted": 1.15199541
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "5554",
+      "expected": 0.98,
+      "predicted": 0.96159612
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "5796",
+      "expected": 0.97,
+      "predicted": 0.96905925
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "7754",
+      "expected": 1.38,
+      "predicted": 1.22216112
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "872",
+      "expected": 0.67,
+      "predicted": 0.65845069
+    },
+    {
+      "matchId": "753449",
+      "mapId": "283168",
+      "playerId": "9780",
+      "expected": 1.02,
+      "predicted": 1.10805339
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "10557",
+      "expected": 0.78,
+      "predicted": 0.73635757
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "10885",
+      "expected": 1.09,
+      "predicted": 1.04930538
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "15559",
+      "expected": 0.97,
+      "predicted": 0.96534896
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "16924",
+      "expected": 0.56,
+      "predicted": 0.60753717
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "28716",
+      "expected": 1.03,
+      "predicted": 0.92508121
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "29242",
+      "expected": 1.16,
+      "predicted": 1.23996892
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "3017",
+      "expected": 0.64,
+      "predicted": 0.66782157
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "3520",
+      "expected": 1.35,
+      "predicted": 1.19014367
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "41224",
+      "expected": 1.65,
+      "predicted": 1.73102971
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283169",
+      "playerId": "4742",
+      "expected": 0.77,
+      "predicted": 0.74226541
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "10557",
+      "expected": 1.25,
+      "predicted": 1.18708153
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "10885",
+      "expected": 1.63,
+      "predicted": 1.53618371
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "15559",
+      "expected": 0.55,
+      "predicted": 0.44040123
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "16924",
+      "expected": 0.39,
+      "predicted": 0.46071296
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "28716",
+      "expected": 1.39,
+      "predicted": 1.33314346
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "29242",
+      "expected": 0.72,
+      "predicted": 0.84247675
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "3017",
+      "expected": 1.11,
+      "predicted": 1.04032716
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "3520",
+      "expected": 0.71,
+      "predicted": 0.70028872
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "41224",
+      "expected": 1.34,
+      "predicted": 1.43970203
+    },
+    {
+      "matchId": "753450",
+      "mapId": "283170",
+      "playerId": "4742",
+      "expected": 1.05,
+      "predicted": 1.02368744
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "10557",
+      "expected": 0.65,
+      "predicted": 0.51149933
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "10885",
+      "expected": 0.91,
+      "predicted": 0.88763354
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "28716",
+      "expected": 1.18,
+      "predicted": 1.15523956
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "29242",
+      "expected": 0.65,
+      "predicted": 0.63222058
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "33902",
+      "expected": 1.07,
+      "predicted": 1.11616264
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "41224",
+      "expected": 0.88,
+      "predicted": 0.75568996
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "458",
+      "expected": 1,
+      "predicted": 1.00590069
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "5022",
+      "expected": 0.76,
+      "predicted": 0.87152117
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "5554",
+      "expected": 1.53,
+      "predicted": 1.53853092
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285206",
+      "playerId": "9780",
+      "expected": 1.06,
+      "predicted": 1.12452912
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "10557",
+      "expected": 0.38,
+      "predicted": 0.45760943
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "10885",
+      "expected": 0.95,
+      "predicted": 0.9447967
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "28716",
+      "expected": 1.33,
+      "predicted": 1.2654171
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "29242",
+      "expected": 0.96,
+      "predicted": 0.95779145
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "33902",
+      "expected": 1.19,
+      "predicted": 1.14902879
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "41224",
+      "expected": 1.27,
+      "predicted": 1.27862225
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "458",
+      "expected": 1.12,
+      "predicted": 1.14232722
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "5022",
+      "expected": 0.99,
+      "predicted": 1.00701724
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "5554",
+      "expected": 0.92,
+      "predicted": 0.89218319
+    },
+    {
+      "matchId": "753451",
+      "mapId": "285207",
+      "playerId": "9780",
+      "expected": 1.04,
+      "predicted": 1.08336242
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "13744",
+      "expected": 1.55,
+      "predicted": 1.63987488
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "15559",
+      "expected": 0.92,
+      "predicted": 0.84331616
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "16924",
+      "expected": 0.61,
+      "predicted": 0.56635305
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "3017",
+      "expected": 0.9,
+      "predicted": 0.95507922
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "3520",
+      "expected": 1.21,
+      "predicted": 1.26609638
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "4428",
+      "expected": 1.14,
+      "predicted": 1.18603458
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "4742",
+      "expected": 0.61,
+      "predicted": 0.5449404
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "5796",
+      "expected": 1.49,
+      "predicted": 1.46496418
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "7754",
+      "expected": 1.16,
+      "predicted": 1.14453967
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283175",
+      "playerId": "872",
+      "expected": 0.38,
+      "predicted": 0.48015558
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "13744",
+      "expected": 0.96,
+      "predicted": 1.05883886
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "15559",
+      "expected": 0.61,
+      "predicted": 0.55190444
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "16924",
+      "expected": 0.75,
+      "predicted": 0.69471182
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "3017",
+      "expected": 0.65,
+      "predicted": 0.63983077
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "3520",
+      "expected": 0.79,
+      "predicted": 0.7380165
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "4428",
+      "expected": 1.49,
+      "predicted": 1.6313909
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "4742",
+      "expected": 1.09,
+      "predicted": 1.05739347
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "5796",
+      "expected": 1.37,
+      "predicted": 1.40081278
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "7754",
+      "expected": 1.12,
+      "predicted": 1.13717188
+    },
+    {
+      "matchId": "753452",
+      "mapId": "283176",
+      "playerId": "872",
+      "expected": 1.03,
+      "predicted": 1.09653709
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "10557",
+      "expected": 1,
+      "predicted": 1.06350166
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "10885",
+      "expected": 0.96,
+      "predicted": 1.04302177
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "13744",
+      "expected": 1.41,
+      "predicted": 1.30486738
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "28716",
+      "expected": 1.3,
+      "predicted": 1.4015083
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "29242",
+      "expected": 1.79,
+      "predicted": 1.72287532
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "41224",
+      "expected": 0.57,
+      "predicted": 0.63391068
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "4428",
+      "expected": 0.57,
+      "predicted": 0.65747252
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "5796",
+      "expected": 0.61,
+      "predicted": 0.60534472
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "7754",
+      "expected": 0.75,
+      "predicted": 0.65042912
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283178",
+      "playerId": "872",
+      "expected": 0.78,
+      "predicted": 0.77930343
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "10557",
+      "expected": 1.39,
+      "predicted": 1.35775506
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "10885",
+      "expected": 0.86,
+      "predicted": 0.88530421
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "13744",
+      "expected": 1.2,
+      "predicted": 1.21647272
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "28716",
+      "expected": 1,
+      "predicted": 1.04305581
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "29242",
+      "expected": 1.35,
+      "predicted": 1.37037862
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "41224",
+      "expected": 1,
+      "predicted": 1.06880836
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "4428",
+      "expected": 0.38,
+      "predicted": 0.41591736
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "5796",
+      "expected": 0.77,
+      "predicted": 0.69991337
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "7754",
+      "expected": 1.15,
+      "predicted": 1.12344809
+    },
+    {
+      "matchId": "753453",
+      "mapId": "283179",
+      "playerId": "872",
+      "expected": 1.03,
+      "predicted": 1.00971619
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "15500",
+      "expected": 1.36,
+      "predicted": 1.31705019
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "2170",
+      "expected": 1.33,
+      "predicted": 1.29382533
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "36685",
+      "expected": 0.66,
+      "predicted": 0.69242579
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "3885",
+      "expected": 1.14,
+      "predicted": 1.18970513
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "39485",
+      "expected": 0.79,
+      "predicted": 0.78374278
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "3993",
+      "expected": 0.52,
+      "predicted": 0.62970327
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "41739",
+      "expected": 0.89,
+      "predicted": 0.90264815
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "55085",
+      "expected": 0.87,
+      "predicted": 0.81276673
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "7849",
+      "expected": 1.01,
+      "predicted": 0.91656152
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283181",
+      "playerId": "7873",
+      "expected": 1.18,
+      "predicted": 1.13175236
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "15500",
+      "expected": 2.01,
+      "predicted": 2.08813982
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "2170",
+      "expected": 0.94,
+      "predicted": 0.95813805
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "36685",
+      "expected": 0.58,
+      "predicted": 0.56937771
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "3885",
+      "expected": 1.3,
+      "predicted": 1.34738573
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "39485",
+      "expected": 0.97,
+      "predicted": 0.92127275
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "3993",
+      "expected": 1.5,
+      "predicted": 1.68597293
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "41739",
+      "expected": 0.62,
+      "predicted": 0.56854051
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "55085",
+      "expected": 0.71,
+      "predicted": 0.50777516
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "7849",
+      "expected": 0.29,
+      "predicted": 0.32436733
+    },
+    {
+      "matchId": "753454",
+      "mapId": "283182",
+      "playerId": "7873",
+      "expected": 1.12,
+      "predicted": 1.07742685
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "11134",
+      "expected": 0.81,
+      "predicted": 0.75116977
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "14681",
+      "expected": 0.56,
+      "predicted": 0.59209108
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "17086",
+      "expected": 1.6,
+      "predicted": 1.59726975
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "2168",
+      "expected": 0.89,
+      "predicted": 0.92531601
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "457",
+      "expected": 0.87,
+      "predicted": 0.81987432
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "50813",
+      "expected": 0.68,
+      "predicted": 0.63236914
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "7378",
+      "expected": 1.2,
+      "predicted": 1.24382702
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "8504",
+      "expected": 1.08,
+      "predicted": 1.16688824
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "9801",
+      "expected": 1.16,
+      "predicted": 1.21967175
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283184",
+      "playerId": "9803",
+      "expected": 1.24,
+      "predicted": 1.15970306
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "11134",
+      "expected": 1.2,
+      "predicted": 1.08392629
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "14681",
+      "expected": 1.53,
+      "predicted": 1.49093512
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "17086",
+      "expected": 1.3,
+      "predicted": 1.21754421
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "2168",
+      "expected": 0.88,
+      "predicted": 0.99719749
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "457",
+      "expected": 1.04,
+      "predicted": 1.11883731
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "50813",
+      "expected": 1.17,
+      "predicted": 1.11875699
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "7378",
+      "expected": 0.9,
+      "predicted": 0.90292161
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "8504",
+      "expected": 0.83,
+      "predicted": 0.92417222
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "9801",
+      "expected": 0.51,
+      "predicted": 0.58204473
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283185",
+      "playerId": "9803",
+      "expected": 0.47,
+      "predicted": 0.5447895
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "11134",
+      "expected": 0.63,
+      "predicted": 0.58442838
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "14681",
+      "expected": 0.75,
+      "predicted": 0.84048635
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "17086",
+      "expected": 1.29,
+      "predicted": 1.26745812
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "2168",
+      "expected": 0.99,
+      "predicted": 0.88240601
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "457",
+      "expected": 0.92,
+      "predicted": 0.81039176
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "50813",
+      "expected": 1.25,
+      "predicted": 1.19686359
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "7378",
+      "expected": 0.5,
+      "predicted": 0.583594
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "8504",
+      "expected": 1.18,
+      "predicted": 1.22263002
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "9801",
+      "expected": 1.03,
+      "predicted": 1.02421794
+    },
+    {
+      "matchId": "753455",
+      "mapId": "283186",
+      "playerId": "9803",
+      "expected": 1.4,
+      "predicted": 1.51759037
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "15500",
+      "expected": 1.23,
+      "predicted": 1.25906094
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "17086",
+      "expected": 0.63,
+      "predicted": 0.61810527
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "2170",
+      "expected": 1.21,
+      "predicted": 1.17117099
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "3885",
+      "expected": 0.83,
+      "predicted": 0.86431391
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "3993",
+      "expected": 1.03,
+      "predicted": 1.10773813
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "7378",
+      "expected": 1.41,
+      "predicted": 1.2757164
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "7873",
+      "expected": 1.1,
+      "predicted": 1.08387979
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "8504",
+      "expected": 0.72,
+      "predicted": 0.76818451
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "9801",
+      "expected": 0.84,
+      "predicted": 0.88775664
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283187",
+      "playerId": "9803",
+      "expected": 0.91,
+      "predicted": 0.88381563
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "15500",
+      "expected": 0.65,
+      "predicted": 0.68126946
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "17086",
+      "expected": 0.59,
+      "predicted": 0.70830851
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "2170",
+      "expected": 1.35,
+      "predicted": 1.29935641
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "3885",
+      "expected": 1.04,
+      "predicted": 1.00447987
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "3993",
+      "expected": 0.67,
+      "predicted": 0.74869409
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "7378",
+      "expected": 1.12,
+      "predicted": 1.18538347
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "7873",
+      "expected": 0.94,
+      "predicted": 0.94055692
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "8504",
+      "expected": 0.83,
+      "predicted": 0.89349002
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "9801",
+      "expected": 1.3,
+      "predicted": 1.21988004
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283188",
+      "playerId": "9803",
+      "expected": 1.37,
+      "predicted": 1.26872787
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "15500",
+      "expected": 0.61,
+      "predicted": 0.59732826
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "17086",
+      "expected": 1.11,
+      "predicted": 1.14048232
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "2170",
+      "expected": 0.77,
+      "predicted": 0.82017214
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "3885",
+      "expected": 1.17,
+      "predicted": 1.07816776
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "3993",
+      "expected": 1.12,
+      "predicted": 1.20575748
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "7378",
+      "expected": 1.27,
+      "predicted": 1.2098522
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "7873",
+      "expected": 0.72,
+      "predicted": 0.64926539
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "8504",
+      "expected": 1.2,
+      "predicted": 1.15586367
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "9801",
+      "expected": 0.72,
+      "predicted": 0.76944046
+    },
+    {
+      "matchId": "753456",
+      "mapId": "283189",
+      "playerId": "9803",
+      "expected": 1.19,
+      "predicted": 1.27866831
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "11134",
+      "expected": 1.08,
+      "predicted": 1.12137658
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "14681",
+      "expected": 1.73,
+      "predicted": 1.79171802
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "2168",
+      "expected": 0.57,
+      "predicted": 0.61115306
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "36685",
+      "expected": 0.73,
+      "predicted": 0.68126646
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "39485",
+      "expected": 0.47,
+      "predicted": 0.53573676
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "41739",
+      "expected": 1.22,
+      "predicted": 1.12614629
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "457",
+      "expected": 0.9,
+      "predicted": 0.93851316
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "50813",
+      "expected": 1.54,
+      "predicted": 1.51209793
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "55085",
+      "expected": 0.97,
+      "predicted": 0.94605777
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283190",
+      "playerId": "7849",
+      "expected": 0.8,
+      "predicted": 0.64282708
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "11134",
+      "expected": 0.98,
+      "predicted": 1.02707797
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "14681",
+      "expected": 0.7,
+      "predicted": 0.68747512
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "2168",
+      "expected": 0.98,
+      "predicted": 0.9636959
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "36685",
+      "expected": 1.1,
+      "predicted": 1.08783643
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "39485",
+      "expected": 0.66,
+      "predicted": 0.75884682
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "41739",
+      "expected": 1.48,
+      "predicted": 1.50055987
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "457",
+      "expected": 0.79,
+      "predicted": 0.80790803
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "50813",
+      "expected": 0.72,
+      "predicted": 0.78969398
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "55085",
+      "expected": 0.95,
+      "predicted": 0.97675755
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283191",
+      "playerId": "7849",
+      "expected": 1.22,
+      "predicted": 1.04562369
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "11134",
+      "expected": 1.47,
+      "predicted": 1.53438538
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "14681",
+      "expected": 1.54,
+      "predicted": 1.49554747
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "2168",
+      "expected": 1.54,
+      "predicted": 1.5186542
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "36685",
+      "expected": 0.8,
+      "predicted": 0.70718154
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "39485",
+      "expected": 0.75,
+      "predicted": 0.7555353
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "41739",
+      "expected": 0.16,
+      "predicted": 0.15828982
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "457",
+      "expected": 1.3,
+      "predicted": 1.33640611
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "50813",
+      "expected": 1.44,
+      "predicted": 1.45583213
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "55085",
+      "expected": 0.48,
+      "predicted": 0.42548029
+    },
+    {
+      "matchId": "753457",
+      "mapId": "283192",
+      "playerId": "7849",
+      "expected": 0.4,
+      "predicted": 0.39551886
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "11134",
+      "expected": 1.33,
+      "predicted": 1.32774314
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "14681",
+      "expected": 1.27,
+      "predicted": 1.25572418
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "15500",
+      "expected": 1.3,
+      "predicted": 1.22631299
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "2168",
+      "expected": 1,
+      "predicted": 0.91630457
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "2170",
+      "expected": 0.9,
+      "predicted": 0.93111712
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "3885",
+      "expected": 0.97,
+      "predicted": 0.96915221
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "3993",
+      "expected": 0.85,
+      "predicted": 0.88000004
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "457",
+      "expected": 0.6,
+      "predicted": 0.60933539
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "50813",
+      "expected": 0.91,
+      "predicted": 0.96091589
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283193",
+      "playerId": "7873",
+      "expected": 0.68,
+      "predicted": 0.76142916
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "11134",
+      "expected": 0.86,
+      "predicted": 0.8457186
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "14681",
+      "expected": 0.96,
+      "predicted": 0.86993248
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "15500",
+      "expected": 1.38,
+      "predicted": 1.47216187
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "2168",
+      "expected": 1.33,
+      "predicted": 1.26495753
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "2170",
+      "expected": 1,
+      "predicted": 1.0462358
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "3885",
+      "expected": 1.45,
+      "predicted": 1.38533026
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "3993",
+      "expected": 1.13,
+      "predicted": 1.2177772
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "457",
+      "expected": 0.84,
+      "predicted": 0.86211229
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "50813",
+      "expected": 0.54,
+      "predicted": 0.46212461
+    },
+    {
+      "matchId": "753458",
+      "mapId": "283194",
+      "playerId": "7873",
+      "expected": 0.76,
+      "predicted": 0.83901002
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "11527",
+      "expected": 0.49,
+      "predicted": 0.47955763
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "16215",
+      "expected": 1.2,
+      "predicted": 1.22171821
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "20144",
+      "expected": 1.29,
+      "predicted": 1.36806406
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "22047",
+      "expected": 1.07,
+      "predicted": 0.93880674
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "24308",
+      "expected": 1.11,
+      "predicted": 1.18547812
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "2858",
+      "expected": 0.93,
+      "predicted": 0.94854186
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "36245",
+      "expected": 1.08,
+      "predicted": 1.17009865
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "37489",
+      "expected": 0.33,
+      "predicted": 0.3491304
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "37927",
+      "expected": 0.44,
+      "predicted": 0.53303096
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283196",
+      "playerId": "5654",
+      "expected": 1.71,
+      "predicted": 1.64520536
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "11527",
+      "expected": 0.61,
+      "predicted": 0.56002136
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "16215",
+      "expected": 0.95,
+      "predicted": 1.00662659
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "20144",
+      "expected": 0.82,
+      "predicted": 0.99341947
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "22047",
+      "expected": 0.37,
+      "predicted": 0.31033369
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "24308",
+      "expected": 0.53,
+      "predicted": 0.51746921
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "2858",
+      "expected": 1.06,
+      "predicted": 1.06987564
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "36245",
+      "expected": 2.07,
+      "predicted": 2.01145138
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "37489",
+      "expected": 0.93,
+      "predicted": 0.84200744
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "37927",
+      "expected": 0.77,
+      "predicted": 0.62332879
+    },
+    {
+      "matchId": "753459",
+      "mapId": "283197",
+      "playerId": "5654",
+      "expected": 1.12,
+      "predicted": 1.25862632
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "11118",
+      "expected": 1.1,
+      "predicted": 1.11361575
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "11225",
+      "expected": 1,
+      "predicted": 1.00652132
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "11494",
+      "expected": 1.09,
+      "predicted": 1.07939455
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "2172",
+      "expected": 1.21,
+      "predicted": 1.32432814
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "31827",
+      "expected": 0.53,
+      "predicted": 0.4499115
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "31828",
+      "expected": 0.81,
+      "predicted": 0.82204717
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "31829",
+      "expected": 0.8,
+      "predicted": 0.7731239
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "42772",
+      "expected": 0.85,
+      "predicted": 0.81867038
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "488",
+      "expected": 0.74,
+      "predicted": 0.7317375
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283199",
+      "playerId": "5132",
+      "expected": 1.77,
+      "predicted": 1.68594179
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "11118",
+      "expected": 1.31,
+      "predicted": 1.20863657
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "11225",
+      "expected": 1.1,
+      "predicted": 1.07102967
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "11494",
+      "expected": 1.3,
+      "predicted": 1.19425608
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "2172",
+      "expected": 1.22,
+      "predicted": 1.19749121
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "31827",
+      "expected": 0.66,
+      "predicted": 0.7116913
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "31828",
+      "expected": 0.87,
+      "predicted": 0.87201399
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "31829",
+      "expected": 0.5,
+      "predicted": 0.64149078
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "42772",
+      "expected": 1.03,
+      "predicted": 1.0744328
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "488",
+      "expected": 0.86,
+      "predicted": 0.83729079
+    },
+    {
+      "matchId": "753460",
+      "mapId": "283200",
+      "playerId": "5132",
+      "expected": 1.1,
+      "predicted": 0.9851134
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "11118",
+      "expected": 1.17,
+      "predicted": 1.08121347
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "11225",
+      "expected": 0.84,
+      "predicted": 0.79562989
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "11494",
+      "expected": 0.83,
+      "predicted": 0.77566821
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "16215",
+      "expected": 1.02,
+      "predicted": 0.94262647
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "20144",
+      "expected": 1.13,
+      "predicted": 1.10551574
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "2172",
+      "expected": 1.11,
+      "predicted": 1.13115112
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "2858",
+      "expected": 1.42,
+      "predicted": 1.43333394
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "36245",
+      "expected": 1.09,
+      "predicted": 1.08655545
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "5132",
+      "expected": 0.57,
+      "predicted": 0.61595038
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283202",
+      "playerId": "5654",
+      "expected": 0.83,
+      "predicted": 0.8978497
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "11118",
+      "expected": 0.93,
+      "predicted": 0.87642471
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "11225",
+      "expected": 1.4,
+      "predicted": 1.30973692
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "11494",
+      "expected": 1.1,
+      "predicted": 1.03949773
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "16215",
+      "expected": 1,
+      "predicted": 0.92560916
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "20144",
+      "expected": 0.91,
+      "predicted": 0.93724672
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "2172",
+      "expected": 0.88,
+      "predicted": 0.84389036
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "2858",
+      "expected": 1.17,
+      "predicted": 1.16182849
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "36245",
+      "expected": 0.67,
+      "predicted": 0.69671077
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "5132",
+      "expected": 0.75,
+      "predicted": 0.79669257
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283203",
+      "playerId": "5654",
+      "expected": 0.91,
+      "predicted": 1.11116816
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "11118",
+      "expected": 0.68,
+      "predicted": 0.77463133
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "11225",
+      "expected": 0.99,
+      "predicted": 1.06411216
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "11494",
+      "expected": 1.14,
+      "predicted": 1.18747034
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "16215",
+      "expected": 1.16,
+      "predicted": 1.01848682
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "20144",
+      "expected": 0.73,
+      "predicted": 0.75474304
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "2172",
+      "expected": 1.22,
+      "predicted": 1.28687348
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "2858",
+      "expected": 0.5,
+      "predicted": 0.53049378
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "36245",
+      "expected": 0.8,
+      "predicted": 0.71740965
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "5132",
+      "expected": 1.45,
+      "predicted": 1.48407692
+    },
+    {
+      "matchId": "753461",
+      "mapId": "283204",
+      "playerId": "5654",
+      "expected": 1.09,
+      "predicted": 0.95330864
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "11527",
+      "expected": 0.23,
+      "predicted": 0.3693789
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "22047",
+      "expected": 1.06,
+      "predicted": 0.93861964
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "24308",
+      "expected": 1.09,
+      "predicted": 0.95950207
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "31827",
+      "expected": 0.72,
+      "predicted": 0.84886014
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "31828",
+      "expected": 1.28,
+      "predicted": 1.33271752
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "31829",
+      "expected": 0.87,
+      "predicted": 0.89792789
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "37489",
+      "expected": 1.37,
+      "predicted": 1.29126144
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "37927",
+      "expected": 1.19,
+      "predicted": 1.11328294
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "42772",
+      "expected": 1.08,
+      "predicted": 1.0137542
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283205",
+      "playerId": "488",
+      "expected": 1.13,
+      "predicted": 1.27285141
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "11527",
+      "expected": 0.77,
+      "predicted": 0.85125945
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "22047",
+      "expected": 0.93,
+      "predicted": 0.82509032
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "24308",
+      "expected": 0.77,
+      "predicted": 0.78485034
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "31827",
+      "expected": 0.73,
+      "predicted": 0.7701626
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "31828",
+      "expected": 1.48,
+      "predicted": 1.44073504
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "31829",
+      "expected": 0.96,
+      "predicted": 0.98781168
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "37489",
+      "expected": 0.75,
+      "predicted": 0.82704056
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "37927",
+      "expected": 1.04,
+      "predicted": 1.07988029
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "42772",
+      "expected": 1.36,
+      "predicted": 1.27681102
+    },
+    {
+      "matchId": "753462",
+      "mapId": "283206",
+      "playerId": "488",
+      "expected": 0.98,
+      "predicted": 0.94156836
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "16215",
+      "expected": 0.89,
+      "predicted": 0.96922379
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "20144",
+      "expected": 0.79,
+      "predicted": 0.93148467
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "2858",
+      "expected": 1.49,
+      "predicted": 1.50809017
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "31827",
+      "expected": 0.51,
+      "predicted": 0.49611056
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "31828",
+      "expected": 0.5,
+      "predicted": 0.51697453
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "31829",
+      "expected": 0.91,
+      "predicted": 0.83992647
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "36245",
+      "expected": 1.32,
+      "predicted": 1.3861947
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "42772",
+      "expected": 1.11,
+      "predicted": 1.06565843
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "488",
+      "expected": 1.33,
+      "predicted": 1.24000004
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283208",
+      "playerId": "5654",
+      "expected": 0.68,
+      "predicted": 0.73088914
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "16215",
+      "expected": 0.55,
+      "predicted": 0.6452389
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "20144",
+      "expected": 0.79,
+      "predicted": 0.78872992
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "2858",
+      "expected": 0.92,
+      "predicted": 0.94377367
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "31827",
+      "expected": 1.36,
+      "predicted": 1.34788422
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "31828",
+      "expected": 0.72,
+      "predicted": 0.77355885
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "31829",
+      "expected": 1.35,
+      "predicted": 1.33967974
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "36245",
+      "expected": 1.12,
+      "predicted": 1.00265382
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "42772",
+      "expected": 1.27,
+      "predicted": 1.24675029
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "488",
+      "expected": 1.04,
+      "predicted": 1.18302055
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283209",
+      "playerId": "5654",
+      "expected": 0.59,
+      "predicted": 0.65066275
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "16215",
+      "expected": 0.53,
+      "predicted": 0.48287509
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "20144",
+      "expected": 0.86,
+      "predicted": 0.92799396
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "2858",
+      "expected": 0.44,
+      "predicted": 0.46465104
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "31827",
+      "expected": 1.88,
+      "predicted": 1.82569136
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "31828",
+      "expected": 0.96,
+      "predicted": 1.02395164
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "31829",
+      "expected": 1.13,
+      "predicted": 1.17250657
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "36245",
+      "expected": 0.97,
+      "predicted": 0.93867253
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "42772",
+      "expected": 0.78,
+      "predicted": 0.92951789
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "488",
+      "expected": 1.19,
+      "predicted": 1.16534132
+    },
+    {
+      "matchId": "753463",
+      "mapId": "283210",
+      "playerId": "5654",
+      "expected": 1.28,
+      "predicted": 1.16648166
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "15500",
+      "expected": 1.33,
+      "predicted": 1.46158321
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "20140",
+      "expected": 1.24,
+      "predicted": 1.04838515
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "2170",
+      "expected": 1.05,
+      "predicted": 1.08567055
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "29893",
+      "expected": 0.78,
+      "predicted": 0.69774503
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "3880",
+      "expected": 0.38,
+      "predicted": 0.44513783
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "3885",
+      "expected": 0.51,
+      "predicted": 0.68881214
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "3993",
+      "expected": 1.09,
+      "predicted": 1.14266957
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "4147",
+      "expected": 0.91,
+      "predicted": 0.97427855
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "601",
+      "expected": 0.82,
+      "predicted": 0.76478242
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283265",
+      "playerId": "7873",
+      "expected": 1.46,
+      "predicted": 1.51330069
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "15500",
+      "expected": 1.24,
+      "predicted": 1.14752988
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "20140",
+      "expected": 0.66,
+      "predicted": 0.74429606
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "2170",
+      "expected": 1.19,
+      "predicted": 1.05371377
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "29893",
+      "expected": 1.17,
+      "predicted": 1.1731487
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "3880",
+      "expected": 0.98,
+      "predicted": 1.05175937
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "3885",
+      "expected": 1.06,
+      "predicted": 1.04189436
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "3993",
+      "expected": 0.55,
+      "predicted": 0.59475944
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "4147",
+      "expected": 0.71,
+      "predicted": 0.80221756
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "601",
+      "expected": 1.46,
+      "predicted": 1.49994949
+    },
+    {
+      "matchId": "754730",
+      "mapId": "283266",
+      "playerId": "7873",
+      "expected": 0.93,
+      "predicted": 0.93016497
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "11118",
+      "expected": 0.83,
+      "predicted": 0.84747787
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "11225",
+      "expected": 0.83,
+      "predicted": 0.81401517
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "11494",
+      "expected": 1.15,
+      "predicted": 1.12386052
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "13039",
+      "expected": 0.84,
+      "predicted": 0.83088942
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "2172",
+      "expected": 1.35,
+      "predicted": 1.28759542
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "2489",
+      "expected": 0.85,
+      "predicted": 0.89115305
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "29833",
+      "expected": 0.81,
+      "predicted": 0.84709079
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "485",
+      "expected": 0.81,
+      "predicted": 0.86962295
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "5132",
+      "expected": 1.33,
+      "predicted": 1.26258917
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283271",
+      "playerId": "804",
+      "expected": 1.03,
+      "predicted": 1.08973605
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "11118",
+      "expected": 0.89,
+      "predicted": 0.89425631
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "11225",
+      "expected": 1.5,
+      "predicted": 1.4168412
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "11494",
+      "expected": 1.62,
+      "predicted": 1.49089034
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "13039",
+      "expected": 0.93,
+      "predicted": 0.88965661
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "2172",
+      "expected": 1.59,
+      "predicted": 1.69089082
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "2489",
+      "expected": 0.42,
+      "predicted": 0.55549633
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "29833",
+      "expected": 0.77,
+      "predicted": 0.80478396
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "485",
+      "expected": 0.36,
+      "predicted": 0.39650566
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "5132",
+      "expected": 0.91,
+      "predicted": 0.94092112
+    },
+    {
+      "matchId": "754732",
+      "mapId": "283272",
+      "playerId": "804",
+      "expected": 0.93,
+      "predicted": 0.91981575
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "10557",
+      "expected": 0.94,
+      "predicted": 0.95746128
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "10885",
+      "expected": 0.8,
+      "predicted": 0.77435262
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "17086",
+      "expected": 1.2,
+      "predicted": 1.18079289
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "28716",
+      "expected": 1.39,
+      "predicted": 1.40027826
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "29242",
+      "expected": 1.57,
+      "predicted": 1.51143789
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "41224",
+      "expected": 0.68,
+      "predicted": 0.72655614
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "7378",
+      "expected": 0.97,
+      "predicted": 1.04820286
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "8504",
+      "expected": 0.53,
+      "predicted": 0.54626624
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "9801",
+      "expected": 0.89,
+      "predicted": 0.82215976
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283274",
+      "playerId": "9803",
+      "expected": 0.76,
+      "predicted": 0.80409711
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "10557",
+      "expected": 1,
+      "predicted": 1.02406465
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "10885",
+      "expected": 0.93,
+      "predicted": 0.88542285
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "17086",
+      "expected": 0.92,
+      "predicted": 0.89467147
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "28716",
+      "expected": 1.25,
+      "predicted": 1.2689999
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "29242",
+      "expected": 1.19,
+      "predicted": 1.05101655
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "41224",
+      "expected": 1.06,
+      "predicted": 1.06451618
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "7378",
+      "expected": 0.91,
+      "predicted": 0.92444778
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "8504",
+      "expected": 1.03,
+      "predicted": 1.04087797
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "9801",
+      "expected": 0.92,
+      "predicted": 1.00001983
+    },
+    {
+      "matchId": "754733",
+      "mapId": "283275",
+      "playerId": "9803",
+      "expected": 0.81,
+      "predicted": 0.83394708
+    }
+  ]
+}

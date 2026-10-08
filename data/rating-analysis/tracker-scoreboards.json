@@ -1,0 +1,623 @@
+{
+  "collectedAt": "2026-10-08",
+  "maps": [
+    {
+      "map": "summit",
+      "url": "https://tracker.gg/valorant/match/df1748ca-b6a4-4de1-b0bd-2814acca1b20",
+      "rows": [
+        {
+          "agent": "Omen",
+          "name": "IEOVAH #GOD",
+          "profile": "/valorant/profile/riot/IEOVAH%23GOD",
+          "values": [
+            "277",
+            "27",
+            "20",
+            "8",
+            "+7",
+            "1.4",
+            "+31",
+            "169.7",
+            "40%",
+            "64%",
+            "3",
+            "3",
+            "2"
+          ]
+        },
+        {
+          "agent": "Chamber",
+          "name": "水 gusta ヅ #CHORA",
+          "profile": "/valorant/profile/riot/%E6%B0%B4%20gusta%20%E3%83%85%23CHORA",
+          "values": [
+            "219",
+            "22",
+            "22",
+            "4",
+            "0",
+            "1.0",
+            "+16",
+            "159.2",
+            "26%",
+            "68%",
+            "2",
+            "3",
+            "1"
+          ]
+        },
+        {
+          "agent": "Jett",
+          "name": "persa faz 22 #sccp",
+          "profile": "/valorant/profile/riot/persa%20faz%2022%23sccp",
+          "values": [
+            "203",
+            "21",
+            "19",
+            "2",
+            "+2",
+            "1.1",
+            "-4",
+            "131.0",
+            "33%",
+            "79%",
+            "4",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "agent": "Breach",
+          "name": "Israel games #6742",
+          "profile": "/valorant/profile/riot/Israel%20games%236742",
+          "values": [
+            "202",
+            "17",
+            "17",
+            "16",
+            "0",
+            "1.0",
+            "+11",
+            "127.6",
+            "30%",
+            "71%",
+            "4",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "agent": "Fade",
+          "name": "Willy Wonka #BQTA",
+          "profile": "/valorant/profile/riot/Willy%20Wonka%23BQTA",
+          "values": [
+            "122",
+            "11",
+            "23",
+            "5",
+            "-12",
+            "0.5",
+            "-60",
+            "92.6",
+            "24%",
+            "61%",
+            "2",
+            "5",
+            "0"
+          ]
+        },
+        {
+          "agent": "Neon",
+          "name": "vls #det",
+          "profile": "/valorant/profile/riot/vls%23det",
+          "values": [
+            "286",
+            "27",
+            "21",
+            "5",
+            "+6",
+            "1.3",
+            "+38",
+            "190.1",
+            "26%",
+            "71%",
+            "5",
+            "4",
+            "4"
+          ]
+        },
+        {
+          "agent": "Chamber",
+          "name": "intertwined #anaju",
+          "profile": "/valorant/profile/riot/intertwined%23anaju",
+          "values": [
+            "254",
+            "25",
+            "18",
+            "4",
+            "+7",
+            "1.4",
+            "+42",
+            "162.0",
+            "27%",
+            "75%",
+            "4",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "agent": "Omen",
+          "name": "Maopyk #piru",
+          "profile": "/valorant/profile/riot/Maopyk%23piru",
+          "values": [
+            "228",
+            "21",
+            "21",
+            "12",
+            "0",
+            "1.0",
+            "+2",
+            "151.2",
+            "34%",
+            "68%",
+            "1",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "agent": "Fade",
+          "name": "laszo #333",
+          "profile": "/valorant/profile/riot/laszo%23333",
+          "values": [
+            "185",
+            "19",
+            "18",
+            "8",
+            "+1",
+            "1.1",
+            "-9",
+            "127.0",
+            "39%",
+            "71%",
+            "3",
+            "4",
+            "1"
+          ]
+        },
+        {
+          "agent": "Breach",
+          "name": "Felpao #000",
+          "profile": "/valorant/profile/riot/Felpao%23000",
+          "values": [
+            "89",
+            "9",
+            "20",
+            "5",
+            "-11",
+            "0.5",
+            "-67",
+            "56.0",
+            "21%",
+            "64%",
+            "0",
+            "3",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "split",
+      "url": "https://tracker.gg/valorant/match/800ae5eb-16d7-4304-b587-3acb52a3b802",
+      "rows": [
+        {
+          "agent": "Neon",
+          "name": "IEOVAH #GOD",
+          "profile": "/valorant/profile/riot/IEOVAH%23GOD",
+          "values": [
+            "294",
+            "26",
+            "18",
+            "3",
+            "+8",
+            "1.4",
+            "+24",
+            "179.7",
+            "19%",
+            "58%",
+            "4",
+            "6",
+            "4"
+          ]
+        },
+        {
+          "agent": "Omen",
+          "name": "Israel games #6742",
+          "profile": "/valorant/profile/riot/Israel%20games%236742",
+          "values": [
+            "266",
+            "21",
+            "15",
+            "5",
+            "+6",
+            "1.4",
+            "+49",
+            "176.4",
+            "32%",
+            "79%",
+            "2",
+            "0",
+            "2"
+          ]
+        },
+        {
+          "agent": "Raze",
+          "name": "persa faz 22 #sccp",
+          "profile": "/valorant/profile/riot/persa%20faz%2022%23sccp",
+          "values": [
+            "223",
+            "19",
+            "17",
+            "6",
+            "+2",
+            "1.1",
+            "+18",
+            "143.8",
+            "19%",
+            "75%",
+            "3",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "agent": "Cypher",
+          "name": "水 gusta ヅ #CHORA",
+          "profile": "/valorant/profile/riot/%E6%B0%B4%20gusta%20%E3%83%85%23CHORA",
+          "values": [
+            "144",
+            "13",
+            "16",
+            "5",
+            "-3",
+            "0.8",
+            "-32",
+            "88.6",
+            "24%",
+            "58%",
+            "1",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "agent": "Fade",
+          "name": "Willy Wonka #BQTA",
+          "profile": "/valorant/profile/riot/Willy%20Wonka%23BQTA",
+          "values": [
+            "131",
+            "10",
+            "19",
+            "5",
+            "-9",
+            "0.5",
+            "-66",
+            "84.8",
+            "21%",
+            "75%",
+            "1",
+            "3",
+            "0"
+          ]
+        },
+        {
+          "agent": "Chamber",
+          "name": "intertwined #anaju",
+          "profile": "/valorant/profile/riot/intertwined%23anaju",
+          "values": [
+            "323",
+            "29",
+            "15",
+            "1",
+            "+14",
+            "1.9",
+            "+67",
+            "193.9",
+            "31%",
+            "71%",
+            "3",
+            "3",
+            "2"
+          ]
+        },
+        {
+          "agent": "Neon",
+          "name": "vls #det",
+          "profile": "/valorant/profile/riot/vls%23det",
+          "values": [
+            "240",
+            "18",
+            "20",
+            "4",
+            "-2",
+            "0.9",
+            "+8",
+            "160.8",
+            "24%",
+            "67%",
+            "6",
+            "5",
+            "1"
+          ]
+        },
+        {
+          "agent": "Fade",
+          "name": "laszo #333",
+          "profile": "/valorant/profile/riot/laszo%23333",
+          "values": [
+            "196",
+            "15",
+            "20",
+            "8",
+            "-5",
+            "0.8",
+            "-19",
+            "133.6",
+            "24%",
+            "83%",
+            "2",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "agent": "Omen",
+          "name": "Maopyk #piru",
+          "profile": "/valorant/profile/riot/Maopyk%23piru",
+          "values": [
+            "196",
+            "16",
+            "16",
+            "11",
+            "0",
+            "1.0",
+            "+22",
+            "131.5",
+            "30%",
+            "83%",
+            "2",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "agent": "Breach",
+          "name": "Felpao #000",
+          "profile": "/valorant/profile/riot/Felpao%23000",
+          "values": [
+            "81",
+            "7",
+            "18",
+            "7",
+            "-11",
+            "0.4",
+            "-71",
+            "59.7",
+            "23%",
+            "54%",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "ascent",
+      "url": "https://tracker.gg/valorant/match/42589ce4-7648-4b0e-a01f-d89b96e52efe",
+      "rows": [
+        {
+          "agent": "Jett",
+          "name": "vls #det",
+          "profile": "/valorant/profile/riot/vls%23det",
+          "values": [
+            "336",
+            "22",
+            "14",
+            "6",
+            "+8",
+            "1.6",
+            "+79",
+            "215.1",
+            "20%",
+            "84%",
+            "7",
+            "3",
+            "2"
+          ]
+        },
+        {
+          "agent": "Omen",
+          "name": "Maopyk #piru",
+          "profile": "/valorant/profile/riot/Maopyk%23piru",
+          "values": [
+            "277",
+            "19",
+            "9",
+            "10",
+            "+10",
+            "2.1",
+            "+79",
+            "181.2",
+            "29%",
+            "89%",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        {
+          "agent": "Chamber",
+          "name": "intertwined #anaju",
+          "profile": "/valorant/profile/riot/intertwined%23anaju",
+          "values": [
+            "269",
+            "20",
+            "12",
+            "2",
+            "+8",
+            "1.7",
+            "+50",
+            "166.2",
+            "28%",
+            "79%",
+            "3",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "agent": "Sova",
+          "name": "laszo #333",
+          "profile": "/valorant/profile/riot/laszo%23333",
+          "values": [
+            "158",
+            "10",
+            "14",
+            "8",
+            "-4",
+            "0.7",
+            "-17",
+            "115.3",
+            "21%",
+            "84%",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "agent": "KAY/O",
+          "name": "Felpao #000",
+          "profile": "/valorant/profile/riot/Felpao%23000",
+          "values": [
+            "71",
+            "4",
+            "15",
+            "8",
+            "-11",
+            "0.3",
+            "-87",
+            "54.7",
+            "15%",
+            "68%",
+            "0",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "agent": "Sova",
+          "name": "Israel games #6742",
+          "profile": "/valorant/profile/riot/Israel%20games%236742",
+          "values": [
+            "282",
+            "18",
+            "13",
+            "7",
+            "+5",
+            "1.4",
+            "+49",
+            "179.8",
+            "24%",
+            "84%",
+            "1",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "agent": "Jett",
+          "name": "persa faz 22 #sccp",
+          "profile": "/valorant/profile/riot/persa%20faz%2022%23sccp",
+          "values": [
+            "220",
+            "15",
+            "15",
+            "4",
+            "0",
+            "1.0",
+            "-12",
+            "140.7",
+            "38%",
+            "68%",
+            "2",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "agent": "Neon",
+          "name": "IEOVAH #GOD",
+          "profile": "/valorant/profile/riot/IEOVAH%23GOD",
+          "values": [
+            "183",
+            "12",
+            "15",
+            "2",
+            "-3",
+            "0.8",
+            "-32",
+            "109.7",
+            "23%",
+            "63%",
+            "4",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "agent": "Omen",
+          "name": "水 gusta ヅ #CHORA",
+          "profile": "/valorant/profile/riot/%E6%B0%B4%20gusta%20%E3%83%85%23CHORA",
+          "values": [
+            "173",
+            "12",
+            "15",
+            "5",
+            "-3",
+            "0.8",
+            "-38",
+            "103.5",
+            "18%",
+            "74%",
+            "0",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "agent": "Killjoy",
+          "name": "Willy Wonka #BQTA",
+          "profile": "/valorant/profile/riot/Willy%20Wonka%23BQTA",
+          "values": [
+            "134",
+            "7",
+            "17",
+            "3",
+            "-10",
+            "0.4",
+            "-71",
+            "94.5",
+            "7%",
+            "53%",
+            "2",
+            "1",
+            "0"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,6 @@ export type MatchPlayer = {
 export type MapPlayerStats = {
   playerId: string;
   agent: string;
-  rating: number;
   acs: number;
   kills: number;
   deaths: number;
@@ -42,13 +41,14 @@ export type ValorantMatch = {
   sourceUrl: string;
   contextUrl: string;
   ratingNote: string;
-  seriesStats?: Record<string, Pick<MapPlayerStats, "rating" | "acs" | "adr" | "kast">>;
+  seriesStats?: Record<string, Pick<MapPlayerStats, "acs" | "adr" | "kast">>;
   teams: [MatchTeam, MatchTeam];
   players: MatchPlayer[];
   maps: MatchMap[];
 };
 
 export type LeaderboardRow = MatchPlayer & Omit<MapPlayerStats, "playerId" | "agent" | "hs"> & {
+  rating: number;
   agents: string[];
   headshots: Array<{ map: string; value: number }>;
   diff: number;

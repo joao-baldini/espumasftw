@@ -24,7 +24,8 @@ for (const file of (await readdir(directory)).filter((file) => file.endsWith(".j
     for (const row of map.stats) {
       assert(match.players.some((player) => player.id === row.playerId), `Jogador desconhecido: ${row.playerId}`);
       assert(agentNames.has(row.agent), `Agente desconhecido: ${row.agent}`);
-      for (const key of ["rating", "acs", "kills", "deaths", "assists", "kast", "adr", "hs", "fk", "fd"]) assert(Number.isFinite(row[key]) && row[key] >= 0, `${map.name} ${row.playerId}: ${key}`);
+      for (const key of ["acs", "kills", "deaths", "assists", "kast", "adr", "hs", "fk", "fd"]) assert(Number.isFinite(row[key]) && row[key] >= 0, `${map.name} ${row.playerId}: ${key}`);
+      assert(!("rating" in row), "Rating calculado não deve ser duplicado nos dados de entrada");
       assert(row.kast <= 100 && row.hs <= 100);
     }
     const teamStats = match.teams.map((team) => map.stats.filter((row) => match.players.find((player) => player.id === row.playerId).teamId === team.id));
@@ -36,9 +37,9 @@ for (const file of (await readdir(directory)).filter((file) => file.endsWith(".j
     assert.deepEqual(seriesScore(match), [3, 0]);
     assert.equal(totalRounds(match), 71);
     const intertwined = rows.find((row) => row.id === "intertwined");
-    assert.deepEqual([intertwined.kills, intertwined.deaths, intertwined.assists, intertwined.diff, intertwined.rating, intertwined.acs, intertwined.adr, intertwined.kast], [74, 45, 7, 29, 1.47, 281, 174, 75]);
+    assert.deepEqual([intertwined.kills, intertwined.deaths, intertwined.assists, intertwined.diff, intertwined.rating, intertwined.acs, intertwined.adr, intertwined.kast], [74, 45, 7, 29, 1.38, 281, 174, 75]);
     assert.deepEqual(intertwined.headshots.map((entry) => entry.value), [28, 31, 27]);
-    assert.equal(rows.find((row) => row.id === "felpao").rating, 0.30, "Preservar o rating geral registrado, sem arredondá-lo duas vezes");
+    assert.equal(rows.find((row) => row.id === "felpao").rating, 0.48, "Calcular rating a partir das estatísticas, sem rating manual");
     assert.deepEqual([rows.find((row) => row.id === "gusta").adr, rows.find((row) => row.id === "willy-wonka").adr, rows.find((row) => row.id === "willy-wonka").kast], [120, 90, 63], "Preservar médias gerais do relatório antes do arredondamento por mapa");
     for (const [mapId, playerId, agent] of [["ascent", "vls", "Jett"], ["split", "persa-faz-22", "Raze"], ["summit", "israel-games", "Breach"]]) {
       assert.deepEqual(leaderboardRows(match, mapId).find((row) => row.id === playerId).agents, [agent]);

@@ -23,8 +23,14 @@ As Observações Gerais do Time usam um registro próprio no banco, acessado pel
 
 A página `/vlr-dos-espumas` mostra as séries do time com placares, agentes e leaderboards em HTML. As abas alternam entre a série inteira e cada mapa; as colunas permitem ordenação e o filtro permite ver uma equipe por vez. Cada partida tem um link permanente em `/vlr-dos-espumas/[matchId]`.
 
-O primeiro registro é Espumas 3–0 Esponjas, de 07/10/2026, em Ascent, Split e Summit. Os dados foram transcritos do relatório fornecido pelo time, incluindo a versão corrigida dos ratings estimados. HS% permanece separado por mapa, pois a contagem de acertos necessária para consolidá-lo não foi fornecida.
+O primeiro registro é Espumas 3–0 Esponjas, de 07/10/2026, em Ascent, Split e Summit. As estatísticas foram conferidas nos três placares do Tracker, incluindo o ADR com uma casa decimal. O rating é calculado pela fórmula Espumas v1, calibrada com ratings VLR 2.0. HS% permanece separado por mapa, pois a contagem de acertos necessária para consolidá-lo não foi fornecida.
 
-Para adicionar séries, crie um JSON em `data/vlr/` seguindo `lib/vlr/types.ts` e registre-o em `lib/vlr/matches.ts`. Registre médias gerais em `seriesStats` quando disponíveis para evitar diferenças de arredondamento; os totais de K/D/A e FK/FD são calculados pelos mapas. `npm run vlr:validate` confere os dados, agentes, placares e totais. As séries são versionadas no repositório e não dependem da API de composições.
+Para adicionar séries, crie um JSON em `data/vlr/` seguindo `lib/vlr/types.ts` e registre-o em `lib/vlr/matches.ts`. Registre médias gerais em `seriesStats` quando disponíveis para evitar diferenças de arredondamento; os totais de K/D/A e FK/FD são calculados pelos mapas. Não preencha ratings: o sistema calcula por mapa e pondera as contribuições sem arredondamento pelos rounds da série. `npm run vlr:validate` confere os dados, agentes, placares, totais e o cálculo do rating. As séries são versionadas no repositório e não dependem da API de composições.
+
+### Rating Espumas v1
+
+A fórmula é uma estimativa baseada nos totais do mapa, não uma reprodução do algoritmo privado do VLR. [Método, fórmula, validação e limitações](docs/rating.md). Ajuste em 880 registros de jogador por mapa (88 mapas do Champions 2025); teste separado em 530 registros (53 mapas de 23 séries concluídas do Champions 2026). Erro absoluto médio no teste: **0,0583 ponto**. Em **85,5%** dos casos, o erro foi de até **0,10 ponto**. Não há medição equivalente para partidas personalizadas, que não têm rating VLR oficial.
+
+`npm run rating:calibrate` reproduz o ajuste offline usando os dados versionados; `npm run rating:check` confirma os coeficientes e o relatório sem modificar arquivos. A seleção de variáveis e regularização usa validação cruzada com cinco grupos de séries dentro de 2025. O evento de 2026 fica fora do ajuste. Nenhum dado de pesquisa nem acesso ao Tracker/VLR é necessário durante o uso do site.
 
 As imagens dos mapas e ícones dos agentes vêm do [Valorant-API](https://valorant-api.com/), a partir de conteúdo do VALORANT. Este é um projeto independente, sem afiliação com a Riot Games ou com a FIAP.

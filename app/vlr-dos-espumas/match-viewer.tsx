@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef, useState, type KeyboardEvent } from "react";
 import agents from "@/app/agents.json";
 import { formatDuration, formatMatchDate, leaderboardRows, seriesScore, totalRounds } from "@/lib/vlr/stats";
+import { RATING_VALIDATION } from "@/lib/vlr/rating.mjs";
 import type { LeaderboardRow, MatchTeam, SortColumn, ValorantMatch } from "@/lib/vlr/types";
 import styles from "./vlr.module.css";
 
@@ -105,11 +106,11 @@ export function MatchViewer({ match }: { match: ValorantMatch }) {
               </div>
             </div>;
           })}
-          <div className={styles.tableNotes}><p><strong>* R:</strong> rating estimado, versão corrigida. Não é o rating oficial do VLR.</p>{activeMap === "all" && <p><strong>HS%:</strong> {match.maps.map((map) => map.name).join(" / ")}, na mesma ordem. ACS, ADR e KAST ponderados pelos rounds.</p>}<p className={styles.mobileHint}>Deslize a tabela para ver todas as colunas.</p></div>
+          <div className={styles.tableNotes}><p><strong>* R:</strong> Rating Espumas v1, estimativa calibrada com o VLR 2.0. Não é o rating oficial.</p>{activeMap === "all" && <p><strong>HS%:</strong> {match.maps.map((map) => map.name).join(" / ")}, na mesma ordem. Médias gerais por round.</p>}<p className={styles.mobileHint}>Deslize a tabela para ver todas as colunas.</p></div>
         </div>
       </div>
     </section>
 
-    <details className={styles.methodology}><summary>Como ler as estatísticas</summary><div><p>{match.ratingNote}</p><p>Os dados desta série foram transcritos do relatório fornecido pelo time. As médias gerais mantêm os valores do relatório; eliminações, mortes, assistências, FK e FD são somados entre os mapas.</p><dl><div><dt>ACS</dt><dd>Pontuação média de combate.</dd></div><div><dt>K / D / A</dt><dd>Eliminações / mortes / assistências.</dd></div><div><dt>KAST</dt><dd>Percentual de rounds com eliminação, assistência, sobrevivência ou troca.</dd></div><div><dt>ADR</dt><dd>Dano médio causado por round.</dd></div><div><dt>HS%</dt><dd>Percentual de acertos na cabeça. No geral, cada valor corresponde a um mapa.</dd></div><div><dt>FK / FD</dt><dd>Primeira eliminação / primeira morte do round. A última coluna mostra esse saldo.</dd></div></dl></div></details>
+    <details className={styles.methodology}><summary>Como ler as estatísticas</summary><div><p>{match.ratingNote}</p><p>A fórmula foi calibrada em {RATING_VALIDATION.trainMaps} mapas do Champions 2025 e testada separadamente em {RATING_VALIDATION.testMaps} mapas do Champions 2026. Nesse teste, a diferença média para o rating oficial foi de {RATING_VALIDATION.mae.toFixed(3).replace(".", ",")} ponto; {(RATING_VALIDATION.within010 * 100).toFixed(1).replace(".", ",")}% das estimativas ficaram a até 0,10 ponto. Esses resultados são de partidas profissionais e não garantem o mesmo erro em partidas personalizadas.</p><p>As estatísticas desta série foram conferidas no Tracker, incluindo o ADR com uma casa decimal usado no cálculo. As médias gerais exibidas mantêm os valores do relatório; eliminações, mortes, assistências, FK e FD são somados entre os mapas.</p><dl><div><dt>ACS</dt><dd>Pontuação média de combate.</dd></div><div><dt>K / D / A</dt><dd>Eliminações / mortes / assistências.</dd></div><div><dt>KAST</dt><dd>Percentual de rounds com eliminação, assistência, sobrevivência ou troca. Exibido na tabela; não entra nesta fórmula.</dd></div><div><dt>ADR</dt><dd>Dano médio causado por round.</dd></div><div><dt>HS%</dt><dd>Percentual de acertos na cabeça. No geral, cada valor corresponde a um mapa.</dd></div><div><dt>FK / FD</dt><dd>Primeira eliminação / primeira morte do round. A última coluna mostra esse saldo.</dd></div></dl></div></details>
   </>;
 }
