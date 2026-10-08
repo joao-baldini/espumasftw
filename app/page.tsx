@@ -90,7 +90,7 @@ export default function Home() {
   return <div className="app-shell">
     <SiteHeader />
     <div className="workspace">
-      <aside className="map-sidebar" aria-label="Mapas do campeonato"><div className="sidebar-heading"><span>MAP POOL</span><span className="count">07 MAPAS</span></div><div className="map-list">{maps.map((map, index) => {
+      <aside className="map-sidebar" aria-label="Mapas do campeonato"><div className="sidebar-heading"><span>MAP POOL</span><span className="count">{maps.length.toString().padStart(2, "0")} MAPAS</span></div><div className="map-list">{maps.map((map, index) => {
         const assigned = players.filter((player) => compositions[map]?.picks[player]).length;
         return <button key={map} className={`map-tile ${selectedMap === map ? "active" : ""}`} onClick={() => chooseMap(map)} aria-current={selectedMap === map ? "page" : undefined}><img src={`/maps/${map}-thumb.png`} alt="" /><span className="map-shade" /><span className="map-index">0{index + 1}</span><span className="map-info"><strong>{mapNames[map]}</strong><small>{assigned}/5 AGENTES</small></span><ArrowUpRight size={16} className="map-arrow" /></button>;
       })}</div><div className="sidebar-footer"><span className="side-accent" /> PLANEJAMENTO DE EQUIPE</div></aside>
