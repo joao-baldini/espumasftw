@@ -41,9 +41,6 @@
 .seriesInfo>div+div { border-top: 1px solid #d0d2d4; }
 .seriesInfo dt { color: #70777d; font-size: 11px; }
 .seriesInfo dd { margin: 0; font-size: 11px; font-weight: 700; }
-.sourceLinks { display: flex; flex-direction: column; gap: 10px; padding: 0 10px; }
-.sourceLinks a { color: var(--vlr-blue); font-size: 11px; }
-.sourceLinks a:hover { text-decoration: underline; }
 .matchHeader { background: #fafafa; border: 1px solid #c4c7ca; border-top: 3px solid var(--vlr-blue); box-shadow: 0 2px 2px #0000000b; }
 .matchMeta { display: flex; justify-content: space-between; gap: 20px; padding: 19px 24px 0; font-size: 11px; line-height: 1.7; }
 .matchMeta h2 { margin: 0; color: var(--vlr-blue); font-size: 14px; line-height: 1.6; }
@@ -156,7 +153,6 @@
   .sidebar .sideHeading { display: none; }
   .matchList { flex: 1; }
   .seriesInfo { flex: 1; }
-  .sourceLinks { justify-content: center; }
   .statsTable { min-width: 825px; }
 }
 
@@ -188,5 +184,4 @@
   .mapBannerScore strong { font-size: 26px; }
   .methodology dl { grid-template-columns: 1fr; }
   .sidebar { flex-wrap: wrap; }
-  .sourceLinks { flex-basis: 100%; flex-direction: row; justify-content: flex-start; padding: 5px 2px; gap: 18px; }
 }

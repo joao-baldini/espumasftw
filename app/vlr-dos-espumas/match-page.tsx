@@ -23,8 +23,6 @@ export function MatchPage({ match }: { match: ValorantMatch }) {
           })}</nav>
           <div className={styles.sideHeading}>Esta série</div>
           <dl className={styles.seriesInfo}><div><dt>Mapas</dt><dd>{match.maps.length}</dd></div><div><dt>Rounds</dt><dd>{totalRounds(match)}</dd></div><div><dt>Formato</dt><dd>Personalizada</dd></div></dl>
-          <div className={styles.sideHeading}>Fontes</div>
-          <div className={styles.sourceLinks}><a href={match.sourceUrl} target="_blank" rel="noreferrer">Histórico no Tracker ↗</a><a href={match.contextUrl} target="_blank" rel="noreferrer">Relatório da partida ↗</a></div>
         </aside>
         <main className={styles.main}><MatchViewer key={match.id} match={match} /></main>
       </div>
