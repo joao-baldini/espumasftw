@@ -1,0 +1,343 @@
+{
+  "id": "espumas-sabonetes-2026-10-16",
+  "date": "2026-10-16",
+  "event": "Competitiva · Lotus",
+  "format": "Competitiva",
+  "sourceUrl": "https://tracker.gg/valorant/match/8fd26773-ebc8-4444-b250-1f082042d561",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/vls%23det/overview?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "sabonetes",
+      "name": "Sabonetes",
+      "tag": "SAB",
+      "crest": "sabonetes"
+    }
+  ],
+  "players": [
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "sabonetes-1",
+      "name": "jeeyv",
+      "riotId": "jeeyv#000",
+      "teamId": "sabonetes"
+    },
+    {
+      "id": "sabonetes-2",
+      "name": "Zukão",
+      "riotId": "Zukão#bazé",
+      "teamId": "sabonetes"
+    },
+    {
+      "id": "sabonetes-3",
+      "name": "TIGREBAIANODELAS",
+      "riotId": "TIGREBAIANODELAS#laura",
+      "teamId": "sabonetes"
+    },
+    {
+      "id": "sabonetes-4",
+      "name": "wee",
+      "riotId": "wee#bdm",
+      "teamId": "sabonetes"
+    },
+    {
+      "id": "sabonetes-5",
+      "name": "Elias Ama Bia",
+      "riotId": "Elias Ama Bia#EMN",
+      "teamId": "sabonetes"
+    }
+  ],
+  "maps": [
+    {
+      "id": "lotus",
+      "name": "Lotus",
+      "score": [
+        15,
+        13
+      ],
+      "durationSeconds": 2797,
+      "sourceUrl": "https://tracker.gg/valorant/match/8fd26773-ebc8-4444-b250-1f082042d561",
+      "rounds": [
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "sabonetes",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 364,
+          "kills": 37,
+          "deaths": 17,
+          "assists": 1,
+          "adr": 228.5,
+          "hs": 35,
+          "kast": 82,
+          "fk": 7,
+          "fd": 0
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Omen",
+          "acs": 197,
+          "kills": 16,
+          "deaths": 19,
+          "assists": 18,
+          "adr": 135.4,
+          "hs": 20,
+          "kast": 86,
+          "fk": 1,
+          "fd": 1
+        },
+        {
+          "playerId": "vls",
+          "agent": "Neon",
+          "acs": 191,
+          "kills": 19,
+          "deaths": 20,
+          "assists": 8,
+          "adr": 124.7,
+          "hs": 25,
+          "kast": 71,
+          "fk": 4,
+          "fd": 3
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Fade",
+          "acs": 175,
+          "kills": 18,
+          "deaths": 20,
+          "assists": 9,
+          "adr": 108.7,
+          "hs": 31,
+          "kast": 79,
+          "fk": 4,
+          "fd": 3
+        },
+        {
+          "playerId": "felpao",
+          "agent": "Breach",
+          "acs": 124,
+          "kills": 11,
+          "deaths": 21,
+          "assists": 15,
+          "adr": 79.9,
+          "hs": 17,
+          "kast": 79,
+          "fk": 1,
+          "fd": 4
+        },
+        {
+          "playerId": "sabonetes-1",
+          "agent": "Omen",
+          "acs": 274,
+          "kills": 28,
+          "deaths": 18,
+          "assists": 12,
+          "adr": 196.5,
+          "hs": 34,
+          "kast": 79,
+          "fk": 1,
+          "fd": 3
+        },
+        {
+          "playerId": "sabonetes-2",
+          "agent": "Raze",
+          "acs": 265,
+          "kills": 24,
+          "deaths": 19,
+          "assists": 8,
+          "adr": 172.7,
+          "hs": 23,
+          "kast": 71,
+          "fk": 3,
+          "fd": 2
+        },
+        {
+          "playerId": "sabonetes-3",
+          "agent": "Reyna",
+          "acs": 222,
+          "kills": 23,
+          "deaths": 19,
+          "assists": 6,
+          "adr": 138.4,
+          "hs": 26,
+          "kast": 68,
+          "fk": 4,
+          "fd": 4
+        },
+        {
+          "playerId": "sabonetes-4",
+          "agent": "Chamber",
+          "acs": 165,
+          "kills": 15,
+          "deaths": 24,
+          "assists": 2,
+          "adr": 110.5,
+          "hs": 28,
+          "kast": 57,
+          "fk": 3,
+          "fd": 6
+        },
+        {
+          "playerId": "sabonetes-5",
+          "agent": "Fade",
+          "acs": 74,
+          "kills": 7,
+          "deaths": 21,
+          "assists": 4,
+          "adr": 55,
+          "hs": 19,
+          "kast": 64,
+          "fk": 0,
+          "fd": 2
+        }
+      ]
+    }
+  ]
+}

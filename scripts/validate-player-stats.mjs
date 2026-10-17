@@ -35,6 +35,17 @@ for (const player of players) {
 }
 const intertwined = aggregateMapStats(playerMapRecords(recent, "intertwined"));
 assert.deepEqual([intertwined.kills, intertwined.deaths, intertwined.assists, intertwined.rounds], [82, 33, 12, 68]);
+const october16 = matches.filter((match) => match.date === "2026-10-16");
+assert.equal(october16.length, 3, "Importar as três ranqueadas solicitadas");
+for (const match of october16) {
+  const player = match.players.find((entry) => entry.id === "intertwined");
+  assert.equal(player.name, "intertwined", "Preservar o nome do perfil existente");
+  assert.equal(player.riotId, "intertwined#anaju");
+}
+const october16Intertwined = aggregateMapStats(playerMapRecords(october16, "intertwined"));
+assert.deepEqual([october16Intertwined.kills, october16Intertwined.deaths, october16Intertwined.assists, october16Intertwined.rounds], [78, 37, 9, 68], "Somar os três placares ao mesmo jogador");
+const october16Vls = aggregateMapStats(playerMapRecords(october16, "vls"));
+assert.deepEqual([october16Vls.kills, october16Vls.deaths, october16Vls.assists], [52, 51, 21], "Totais da sessão conferidos no Tracker do vls");
 assert.equal(playerAgentRows(playerMapRecords(originalMatches, "vls")).find((row) => row.agent === "Jett").maps, 1);
 assert.equal(playerAgentRows(playerMapRecords(originalMatches, "laszo")).find((row) => row.agent === "Sova").maps, 3);
 const fixture = playerMapRecords(matches, "intertwined")[0];

@@ -90,7 +90,7 @@ for (const file of (await readdir(new URL("../data/tracker-rounds/", import.meta
     const timeline = replayFrames(round, map.id, Object.fromEntries(match.players.map((player) => [player.id, player.teamId])));
     const grid = replayNavigation(map.id);
     assert(grid, `${file}: navigation is available`);
-    if (map.id === "bind" && round.number === 1) {
+    if (file === "bind-2026-10-14.json" && round.number === 1) {
       const start = timeline.find((frame) => frame.time === 13);
       const end = timeline.find((frame) => frame.time === 27);
       for (const player of ["i-wonder-why", "gusta"]) {
@@ -107,11 +107,11 @@ for (const file of (await readdir(new URL("../data/tracker-rounds/", import.meta
       assert(death.markers.find((entry) => entry.playerId === "maopyk").dead, "Brimstone still dies at the recorded instant");
       assert(!replayMarkers(timeline, 35.99).find((entry) => entry.playerId === "maopyk").dead, "The drop does not anticipate the death");
     }
-    if (map.id === "bind" && round.number === 16) {
+    if (file === "bind-2026-10-14.json" && round.number === 16) {
       assert(timeline.find((frame) => frame.time === 26).paths["israel-games"].segments.includes("teleport"), "Phoenix rotates through the map TP instead of the defenders' route");
       assert(timeline.find((frame) => frame.time === 45).paths["persa-faz-22"].segments.includes("drop"), "Chamber leaves A Heaven through its drop");
     }
-    if (map.id === "bind" && round.number === 17) assert(timeline.find((frame) => frame.time === 69).paths["i-wonder-why"].segments.includes("teleport"), "Clove reaches A Bath through the TP instead of walking through Fade");
+    if (file === "bind-2026-10-14.json" && round.number === 17) assert(timeline.find((frame) => frame.time === 69).paths["i-wonder-why"].segments.includes("teleport"), "Clove reaches A Bath through the TP instead of walking through Fade");
     for (const [index, frame] of timeline.entries()) {
       for (const route of Object.values(frame.paths)) if (route) {
         for (let i = 1; i < route.points.length; i++) assert(traversableSegment(grid, route.points[i - 1], route.points[i], route.segments[i - 1]), `${file} R${round.number}: only walking floors or explicitly mapped directional drops`);

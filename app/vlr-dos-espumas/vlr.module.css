@@ -39,6 +39,9 @@
 .buchas { background-image: url('/teams/buchas.png'); background-size: contain; background-position: center; }
 .loucas { background-image: url('/teams/loucas.png'); background-size: contain; background-position: center; }
 .molhados { background-image: url('/teams/molhados.png'); background-size: contain; background-position: center; }
+.sabonetes { background-image: url('/teams/sabonetes.svg'); background-size: contain; background-position: center; }
+.ralos { background-image: url('/teams/ralos.svg'); background-size: contain; background-position: center; }
+.escorredores { background-image: url('/teams/escorredores.svg'); background-size: contain; background-position: center; }
 .seriesInfo { margin: 0; border: 1px solid #c7c9cb; background: #e9eaeb; padding: 5px 12px; }
 .seriesInfo>div { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; }
 .seriesInfo>div+div { border-top: 1px solid #d0d2d4; }

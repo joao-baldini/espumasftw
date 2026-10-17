@@ -2,7 +2,7 @@ export type MatchTeam = {
   id: string;
   name: string;
   tag: string;
-  crest: "espumas" | "esponjas" | "buchas" | "loucas" | "molhados";
+  crest: "espumas" | "esponjas" | "buchas" | "loucas" | "molhados" | "sabonetes" | "ralos" | "escorredores";
 };
 
 export type MatchPlayer = {
@@ -41,6 +41,7 @@ export type TrackerRounds = {
   players: string[];
   rounds: string[];
   positions?: string[];
+  positionNotes?: string[];
 };
 
 export type MatchMap = {

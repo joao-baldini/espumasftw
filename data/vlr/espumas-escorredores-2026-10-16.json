@@ -1,0 +1,315 @@
+{
+  "id": "espumas-escorredores-2026-10-16",
+  "date": "2026-10-16",
+  "event": "Competitiva · Bind",
+  "format": "Competitiva",
+  "sourceUrl": "https://tracker.gg/valorant/match/54939cfb-c70f-4adc-b98d-1cbdae3e232b",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/vls%23det/overview?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "escorredores",
+      "name": "Escorredores",
+      "tag": "ESC",
+      "crest": "escorredores"
+    }
+  ],
+  "players": [
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "escorredores-1",
+      "name": "Spike O Bulldog",
+      "riotId": "Spike O Bulldog#iwnl",
+      "teamId": "escorredores"
+    },
+    {
+      "id": "escorredores-2",
+      "name": "Zé O Jacaré",
+      "riotId": "Zé O Jacaré#i19",
+      "teamId": "escorredores"
+    },
+    {
+      "id": "escorredores-3",
+      "name": "costa goat",
+      "riotId": "costa goat#0302",
+      "teamId": "escorredores"
+    },
+    {
+      "id": "escorredores-4",
+      "name": "Doctor Larry",
+      "riotId": "Doctor Larry#aura",
+      "teamId": "escorredores"
+    },
+    {
+      "id": "escorredores-5",
+      "name": "Celso 137",
+      "riotId": "Celso 137#TDAH",
+      "teamId": "escorredores"
+    }
+  ],
+  "maps": [
+    {
+      "id": "bind",
+      "name": "Bind",
+      "score": [
+        13,
+        8
+      ],
+      "durationSeconds": 2151,
+      "sourceUrl": "https://tracker.gg/valorant/match/54939cfb-c70f-4adc-b98d-1cbdae3e232b",
+      "rounds": [
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "escorredores",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 311,
+          "kills": 25,
+          "deaths": 10,
+          "assists": 2,
+          "adr": 201.9,
+          "hs": 43,
+          "kast": 86,
+          "fk": 3,
+          "fd": 0
+        },
+        {
+          "playerId": "felpao",
+          "agent": "Gekko",
+          "acs": 244,
+          "kills": 18,
+          "deaths": 11,
+          "assists": 6,
+          "adr": 141.9,
+          "hs": 19,
+          "kast": 81,
+          "fk": 3,
+          "fd": 1
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Fade",
+          "acs": 223,
+          "kills": 18,
+          "deaths": 11,
+          "assists": 7,
+          "adr": 150.4,
+          "hs": 39,
+          "kast": 71,
+          "fk": 3,
+          "fd": 3
+        },
+        {
+          "playerId": "vls",
+          "agent": "Raze",
+          "acs": 189,
+          "kills": 12,
+          "deaths": 19,
+          "assists": 7,
+          "adr": 122.2,
+          "hs": 20,
+          "kast": 67,
+          "fk": 1,
+          "fd": 4
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Brimstone",
+          "acs": 156,
+          "kills": 10,
+          "deaths": 10,
+          "assists": 15,
+          "adr": 119.2,
+          "hs": 35,
+          "kast": 76,
+          "fk": 0,
+          "fd": 3
+        },
+        {
+          "playerId": "escorredores-1",
+          "agent": "Jett",
+          "acs": 223,
+          "kills": 16,
+          "deaths": 17,
+          "assists": 1,
+          "adr": 149.5,
+          "hs": 28,
+          "kast": 57,
+          "fk": 3,
+          "fd": 2
+        },
+        {
+          "playerId": "escorredores-2",
+          "agent": "Yoru",
+          "acs": 221,
+          "kills": 16,
+          "deaths": 15,
+          "assists": 5,
+          "adr": 138.6,
+          "hs": 26,
+          "kast": 71,
+          "fk": 2,
+          "fd": 1
+        },
+        {
+          "playerId": "escorredores-3",
+          "agent": "Sage",
+          "acs": 182,
+          "kills": 13,
+          "deaths": 16,
+          "assists": 6,
+          "adr": 130.7,
+          "hs": 25,
+          "kast": 76,
+          "fk": 1,
+          "fd": 1
+        },
+        {
+          "playerId": "escorredores-4",
+          "agent": "Neon",
+          "acs": 168,
+          "kills": 12,
+          "deaths": 20,
+          "assists": 3,
+          "adr": 102,
+          "hs": 7,
+          "kast": 43,
+          "fk": 4,
+          "fd": 5
+        },
+        {
+          "playerId": "escorredores-5",
+          "agent": "Brimstone",
+          "acs": 92,
+          "kills": 4,
+          "deaths": 15,
+          "assists": 11,
+          "adr": 69.8,
+          "hs": 4,
+          "kast": 62,
+          "fk": 1,
+          "fd": 1
+        }
+      ]
+    }
+  ]
+}

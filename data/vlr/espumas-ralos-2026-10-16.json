@@ -1,0 +1,314 @@
+{
+  "id": "espumas-ralos-2026-10-16",
+  "date": "2026-10-16",
+  "event": "Competitiva · Abyss",
+  "format": "Competitiva",
+  "sourceUrl": "https://tracker.gg/valorant/match/5f4c1ca2-555b-4010-89de-b7c0cc2b0d9e",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/vls%23det/overview?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "ralos",
+      "name": "Ralos",
+      "tag": "RAL",
+      "crest": "ralos"
+    }
+  ],
+  "players": [
+    {
+      "id": "ralos-1",
+      "name": "石原さとみ",
+      "riotId": "石原さとみ#TAO",
+      "teamId": "ralos"
+    },
+    {
+      "id": "ralos-2",
+      "name": "F1refly",
+      "riotId": "F1refly#Sunny",
+      "teamId": "ralos"
+    },
+    {
+      "id": "ralos-3",
+      "name": "彼阳的晚意",
+      "riotId": "彼阳的晚意#弹道偏左",
+      "teamId": "ralos"
+    },
+    {
+      "id": "ralos-4",
+      "name": "速发贝老师",
+      "riotId": "速发贝老师#Sunny",
+      "teamId": "ralos"
+    },
+    {
+      "id": "ralos-5",
+      "name": "风间彻",
+      "riotId": "风间彻#K1ng",
+      "teamId": "ralos"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    }
+  ],
+  "maps": [
+    {
+      "id": "abyss",
+      "name": "Abyss",
+      "score": [
+        13,
+        6
+      ],
+      "durationSeconds": 1832,
+      "sourceUrl": "https://tracker.gg/valorant/match/5f4c1ca2-555b-4010-89de-b7c0cc2b0d9e",
+      "rounds": [
+        {
+          "winner": "ralos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "ralos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "ralos",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "ralos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "ralos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "ralos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "ralos-1",
+          "agent": "Omen",
+          "acs": 205,
+          "kills": 12,
+          "deaths": 16,
+          "assists": 8,
+          "adr": 123.9,
+          "hs": 35,
+          "kast": 58,
+          "fk": 1,
+          "fd": 3
+        },
+        {
+          "playerId": "ralos-2",
+          "agent": "Chamber",
+          "acs": 195,
+          "kills": 13,
+          "deaths": 14,
+          "assists": 4,
+          "adr": 133.3,
+          "hs": 11,
+          "kast": 58,
+          "fk": 1,
+          "fd": 1
+        },
+        {
+          "playerId": "ralos-3",
+          "agent": "Jett",
+          "acs": 189,
+          "kills": 12,
+          "deaths": 16,
+          "assists": 2,
+          "adr": 126.6,
+          "hs": 54,
+          "kast": 53,
+          "fk": 2,
+          "fd": 4
+        },
+        {
+          "playerId": "ralos-4",
+          "agent": "Vyse",
+          "acs": 179,
+          "kills": 11,
+          "deaths": 15,
+          "assists": 6,
+          "adr": 116.6,
+          "hs": 22,
+          "kast": 74,
+          "fk": 1,
+          "fd": 5
+        },
+        {
+          "playerId": "ralos-5",
+          "agent": "Sova",
+          "acs": 58,
+          "kills": 4,
+          "deaths": 17,
+          "assists": 3,
+          "adr": 45.3,
+          "hs": 42,
+          "kast": 58,
+          "fk": 0,
+          "fd": 1
+        },
+        {
+          "playerId": "vls",
+          "agent": "Neon",
+          "acs": 312,
+          "kills": 21,
+          "deaths": 12,
+          "assists": 6,
+          "adr": 222.8,
+          "hs": 19,
+          "kast": 79,
+          "fk": 5,
+          "fd": 1
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Omen",
+          "acs": 262,
+          "kills": 21,
+          "deaths": 6,
+          "assists": 7,
+          "adr": 154.8,
+          "hs": 26,
+          "kast": 84,
+          "fk": 2,
+          "fd": 0
+        },
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 239,
+          "kills": 16,
+          "deaths": 10,
+          "assists": 6,
+          "adr": 153.4,
+          "hs": 28,
+          "kast": 79,
+          "fk": 2,
+          "fd": 2
+        },
+        {
+          "playerId": "felpao",
+          "agent": "KAY/O",
+          "acs": 174,
+          "kills": 11,
+          "deaths": 12,
+          "assists": 11,
+          "adr": 107,
+          "hs": 18,
+          "kast": 84,
+          "fk": 2,
+          "fd": 1
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Sova",
+          "acs": 158,
+          "kills": 9,
+          "deaths": 13,
+          "assists": 10,
+          "adr": 104,
+          "hs": 21,
+          "kast": 79,
+          "fk": 3,
+          "fd": 1
+        }
+      ],
+      "uncreditedDeaths": [
+        {
+          "playerId": "intertwined",
+          "count": 1,
+          "reason": "Round 1, aos 0:33: morte sem autor no log do Tracker, sem explosão da spike; não creditada como eliminação adversária."
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,11 @@ for (const file of (await readdir(new URL("../data/tracker-rounds/", import.meta
   const rounds = detailedRounds(match, { ...map, tracker });
   assert(rounds, `${file}: jogadores do Tracker não correspondem aos agentes do placar`);
   assert.equal(rounds.length, map.score[0] + map.score[1], `${file}: um registro por round`);
+  if (file === "abyss-2026-10-16.json") {
+    assert(rounds[0].events.some((event) => event.type === "death" && event.victim === "intertwined" && event.time === 33 && !event.blast), "Morte sem autor do round 1 conta no placar");
+    assert(rounds[12].events.some((event) => event.type === "death" && event.victim === "maopyk" && event.time === 85 && event.blast), "Explosão após vitória por eliminação não conta como death, mesmo sem evento X");
+  }
+  if (file === "bind-2026-10-16.json") assert(rounds[19].events.some((event) => event.type === "death" && event.victim === "intertwined" && event.time === 138 && event.blast), "Dano da explosão no segundo seguinte não entra nas mortes do placar");
   rounds.forEach((round, index) => {
     assert.equal(match.teams[round.winnerIndex].id, map.rounds[index].winner, `${file} round ${index + 1}: vencedor diferente da linha do tempo`);
     assert.equal(round.outcome, map.rounds[index].outcome, `${file} round ${index + 1}: desfecho diferente da linha do tempo`);

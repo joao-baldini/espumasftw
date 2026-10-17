@@ -77,6 +77,11 @@ export function detailedRounds(match: ValorantMatch, map: MatchMap): DetailedRou
     }));
     const tokens = eventsText ? eventsText.split(" ") : [];
     const explosions = new Set(tokens.filter((token) => token[0] === "X").map((token) => Number(token.slice(1).split(".")[0])));
+    // After an elimination win, Tracker can omit the explosion event while still
+    // showing a blast death at the planted spike's 45-second expiration.
+    const spikeExpirations = new Set(tokens.filter((token) => token[0] === "P").map((token) => Number(token.slice(1).split(".")[0]) + 45));
+    // Blast damage can reach a player in the following displayed second.
+    const blastTimes = new Set([...explosions, ...spikeExpirations].flatMap((time) => [time, time + 1]));
     const events = tokens.map((token): RoundEvent => {
       const [time, ...rest] = token.slice(1).split(".");
       const seconds = Number(time);
@@ -87,7 +92,7 @@ export function detailedRounds(match: ValorantMatch, map: MatchMap): DetailedRou
         case "D": return { type: "defuse", time: seconds, player: id(rest[0]) };
         case "X": return { type: "explode", time: seconds, player: id(rest[0]) };
         // Spike blast deaths are left out of Tracker scoreboards; other deaths without a killer count.
-        default: return { type: "death", time: seconds, victim: id(rest[0]), blast: explosions.has(seconds) };
+        default: return { type: "death", time: seconds, victim: id(rest[0]), blast: blastTimes.has(seconds) };
       }
     });
     // Positions: one snapshot per event, 9 characters per player (index, x and y in thousandths, facing in tens of degrees or "--").
