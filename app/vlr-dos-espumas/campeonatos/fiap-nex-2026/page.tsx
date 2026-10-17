@@ -14,6 +14,9 @@ import styles from "./tournament.module.css";
 export const metadata: Metadata = { title: `${FIAP_NEX_2026.name} — VLR dos Espumas`, description: "Acompanhe os Espumas no FIAP NEX 2026: resultados, estatísticas individuais e replays das partidas." };
 
 export default function TournamentPage() {
+  const nextMatch = FIAP_NEX_2026.nextMatch;
+  const nextMatchDate = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "America/Sao_Paulo" }).format(new Date(nextMatch.startsAt));
+  const nextMatchTime = new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" }).format(new Date(nextMatch.startsAt));
   const games = matches.filter((match) => match.tournamentId === FIAP_NEX_2026.id)
     .sort((a, b) => a.date.localeCompare(b.date) || (a.tournamentMatch?.order ?? 0) - (b.tournamentMatch?.order ?? 0));
   const maps = games.flatMap((match) => match.maps);
@@ -53,7 +56,12 @@ export default function TournamentPage() {
             </div>
           </Link>;
         })}</div>
-        <aside className={styles.next}><span className={styles.status}>Pausado · Próximo confronto</span><h3>Espumas <em>vs.</em> A definir</h3><p>Jogo 56 · Stage 1 · Lower Round of 4</p><small>Adversário e horário a confirmar.</small></aside>
+        <aside className={styles.next} aria-labelledby="next-match-title">
+          <div className={styles.nextHeader}><span className={styles.status}>Próximo confronto · MD{nextMatch.bestOf}</span><time dateTime={nextMatch.startsAt}>{nextMatchDate} · {nextMatchTime}<small>Brasília · GMT−3</small></time></div>
+          <h3 id="next-match-title">Espumas <em>vs.</em> {nextMatch.opponent}</h3>
+          <p>Jogo {nextMatch.number} · {nextMatch.stage}</p>
+          <details className={styles.rosters}><summary>Jogadores inscritos</summary><p className={styles.rosterNote}>Lista de inscritos no campeonato. Os cinco titulares de cada time ainda serão confirmados.</p><div className={styles.rosterGrid}>{nextMatch.rosters.map((roster) => <section key={roster.team} aria-label={`Inscritos de ${roster.team}`}><h4>{roster.team}</h4><ul>{roster.players.map((player) => <li key={player.name}><span>{player.name}</span>{player.captain && <small>Capitão</small>}</li>)}</ul></section>)}</div></details>
+        </aside>
       </section>
       <section aria-labelledby="stats-title">
         <div className={styles.sectionTitle}><h2 id="stats-title">Espumas no campeonato</h2><span>{maps.length} mapas · {rounds} rounds</span></div>

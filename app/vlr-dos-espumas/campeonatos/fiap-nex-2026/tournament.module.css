@@ -38,12 +38,23 @@
 .score { display: inline-flex; gap: 12px; font-size: 23px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .score em { font-style: normal; color: #a0a8b1; font-weight: 400; }
 .gameFooter>span:last-child { color: #087c9d; white-space: nowrap; }
-.next { margin-top: 14px; border: 1px dashed #aeb5bc; background: #e3e5e7; padding: 18px 22px; }
-.next .status { color: #8b642c; font-size: 10px; }
-.next h3 { margin: 12px 0 8px; font-size: 16px; }
+.next { margin-top: 14px; border: 1px solid #bdc3ca; border-left: 3px solid #ed145b; background: #f3f4f6; padding: 18px 22px; }
+.next .status { color: #9e1647; font-size: 10px; font-weight: 700; }
+.nextHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.nextHeader time { color: #343d49; font-size: 17px; font-weight: 700; text-align: right; }
+.nextHeader time small { display: block; margin-top: 5px; font-size: 10px; font-weight: 400; }
+.next h3 { margin: 16px 0 8px; font-size: 20px; }
 .next h3 em { font-size: 12px; color: #7c848e; margin: 0 7px; font-style: normal; }
 .next p { font-size: 11px; margin: 0 0 8px; }
 .next small { font-size: 10px; color: #747b84; }
+.rosters { margin-top: 18px; border-top: 1px solid #d3d7dc; padding-top: 14px; }
+.rosters summary { cursor: pointer; color: #087c9d; font-size: 11px; font-weight: 700; }
+.rosters .rosterNote { margin: 14px 0; font-size: 10px; line-height: 1.6; color: #737c87; }
+.rosterGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.rosterGrid h4 { margin: 0 0 9px; font-size: 12px; font-weight: 700; }
+.rosterGrid ul { list-style: none; padding: 0; margin: 0; }
+.rosterGrid li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid #dde0e4; font-size: 11px; }
+.rosterGrid li small { color: #9e1647; font-size: 9px; }
 .tableScroll { overflow-x: auto; border: 1px solid #c4c7ca; }
 .stats { width: 100%; min-width: 730px; border-collapse: collapse; background: #f7f7f8; font-size: 12px; font-variant-numeric: tabular-nums; }
 .stats caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
@@ -78,5 +89,7 @@
   .teams { gap: 7px; }
   .teams strong { font-size: 12px; }
   .score { gap: 5px; font-size: 19px; }
+  .nextHeader time { text-align: left; }
+  .rosterGrid { grid-template-columns: 1fr; gap: 20px; }
   .gameFooter { align-items: flex-start; flex-direction: column; gap: 7px; font-size: 9px; }
 }
