@@ -1,0 +1,289 @@
+{
+  "id": "espumas-os-maga-las-fiap-nex-2026-10-17-ascent",
+  "date": "2026-10-17",
+  "event": "FIAP NEX 2026 · Upper Round of 16",
+  "format": "Campeonato",
+  "tournamentId": "fiap-nex-2026",
+  "tournamentMatch": {
+    "number": 23,
+    "stage": "Upper Round of 16",
+    "order": 2
+  },
+  "sourceUrl": "https://tracker.gg/valorant/match/04049765-9407-4547-a353-82e4544c5266",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/intertwined%23anaju/customs?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "os-maga-las",
+      "name": "Os Maga las",
+      "tag": "MAG",
+      "crest": "tournament"
+    }
+  ],
+  "players": [
+    {
+      "id": "os-maga-las-genyelz-7826",
+      "name": "genyelz",
+      "riotId": "genyelz#7826",
+      "teamId": "os-maga-las"
+    },
+    {
+      "id": "os-maga-las-presuntoparma-gprj",
+      "name": "PresuntoParma",
+      "riotId": "PresuntoParma#GPRJ",
+      "teamId": "os-maga-las"
+    },
+    {
+      "id": "os-maga-las-draxlerfps-777",
+      "name": "DraxlerFPS",
+      "riotId": "DraxlerFPS#777",
+      "teamId": "os-maga-las"
+    },
+    {
+      "id": "os-maga-las-minimuz-7035",
+      "name": "MiniMuz",
+      "riotId": "MiniMuz#7035",
+      "teamId": "os-maga-las"
+    },
+    {
+      "id": "os-maga-las-iiiiiabraaoiiiii-jesus",
+      "name": "IIIIIAbraãoIIIII",
+      "riotId": "IIIIIAbraãoIIIII#Jesus",
+      "teamId": "os-maga-las"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    }
+  ],
+  "maps": [
+    {
+      "id": "ascent",
+      "name": "Ascent",
+      "score": [
+        13,
+        0
+      ],
+      "durationSeconds": 1059,
+      "sourceUrl": "https://tracker.gg/valorant/match/04049765-9407-4547-a353-82e4544c5266",
+      "rounds": [
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "os-maga-las-genyelz-7826",
+          "agent": "Cypher",
+          "acs": 241,
+          "kills": 10,
+          "deaths": 13,
+          "assists": 1,
+          "adr": 147.7,
+          "hs": 36,
+          "kast": 62,
+          "fk": 1,
+          "fd": 0
+        },
+        {
+          "playerId": "os-maga-las-presuntoparma-gprj",
+          "agent": "Harbor",
+          "acs": 102,
+          "kills": 4,
+          "deaths": 13,
+          "assists": 0,
+          "adr": 63.3,
+          "hs": 4,
+          "kast": 31,
+          "fk": 1,
+          "fd": 3
+        },
+        {
+          "playerId": "os-maga-las-draxlerfps-777",
+          "agent": "Raze",
+          "acs": 26,
+          "kills": 0,
+          "deaths": 13,
+          "assists": 1,
+          "adr": 26.1,
+          "hs": 20,
+          "kast": 23,
+          "fk": 0,
+          "fd": 4
+        },
+        {
+          "playerId": "os-maga-las-minimuz-7035",
+          "agent": "Gekko",
+          "acs": 23,
+          "kills": 1,
+          "deaths": 13,
+          "assists": 2,
+          "adr": 12,
+          "hs": 0,
+          "kast": 46,
+          "fk": 0,
+          "fd": 2
+        },
+        {
+          "playerId": "os-maga-las-iiiiiabraaoiiiii-jesus",
+          "agent": "Clove",
+          "acs": 8,
+          "kills": 0,
+          "deaths": 14,
+          "assists": 1,
+          "adr": 8.1,
+          "hs": 0,
+          "kast": 38,
+          "fk": 0,
+          "fd": 2
+        },
+        {
+          "playerId": "vls",
+          "agent": "Jett",
+          "acs": 491,
+          "kills": 25,
+          "deaths": 6,
+          "assists": 4,
+          "adr": 302.6,
+          "hs": 40,
+          "kast": 92,
+          "fk": 5,
+          "fd": 1
+        },
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 382,
+          "kills": 19,
+          "deaths": 2,
+          "assists": 5,
+          "adr": 217.8,
+          "hs": 11,
+          "kast": 100,
+          "fk": 5,
+          "fd": 0
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Omen",
+          "acs": 196,
+          "kills": 10,
+          "deaths": 2,
+          "assists": 8,
+          "adr": 137.8,
+          "hs": 17,
+          "kast": 100,
+          "fk": 1,
+          "fd": 0
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Sova",
+          "acs": 154,
+          "kills": 7,
+          "deaths": 0,
+          "assists": 7,
+          "adr": 102.1,
+          "hs": 17,
+          "kast": 100,
+          "fk": 0,
+          "fd": 0
+        },
+        {
+          "playerId": "felpao",
+          "agent": "KAY/O",
+          "acs": 108,
+          "kills": 5,
+          "deaths": 5,
+          "assists": 6,
+          "adr": 63.1,
+          "hs": 9,
+          "kast": 85,
+          "fk": 0,
+          "fd": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "id": "espumas-edu-e-amigos-fiap-nex-2026-10-17-bind",
+  "date": "2026-10-17",
+  "event": "FIAP NEX 2026 · Lower Round of 8",
+  "format": "Campeonato",
+  "tournamentId": "fiap-nex-2026",
+  "tournamentMatch": {
+    "number": 52,
+    "stage": "Lower Round of 8",
+    "order": 4
+  },
+  "sourceUrl": "https://tracker.gg/valorant/match/7add631b-01e3-4b31-8aab-3af91171f17b",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/intertwined%23anaju/customs?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "edu-e-amigos",
+      "name": "Edu e Amigos",
+      "tag": "EDU",
+      "crest": "tournament"
+    }
+  ],
+  "players": [
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "edu-e-amigos-akes-sem-cu-slash",
+      "name": "AKES Sem cu",
+      "riotId": "AKES Sem cu#slash",
+      "teamId": "edu-e-amigos"
+    },
+    {
+      "id": "edu-e-amigos-sinelli-031",
+      "name": "Sinelli",
+      "riotId": "Sinelli#031",
+      "teamId": "edu-e-amigos"
+    },
+    {
+      "id": "edu-e-amigos-kenii-2002",
+      "name": "kenii",
+      "riotId": "kenii#2002",
+      "teamId": "edu-e-amigos"
+    },
+    {
+      "id": "edu-e-amigos-lucas-1575",
+      "name": "Lucas",
+      "riotId": "Lucas#1575",
+      "teamId": "edu-e-amigos"
+    },
+    {
+      "id": "edu-e-amigos-bluestar2-0002",
+      "name": "BlueStar2",
+      "riotId": "BlueStar2#0002",
+      "teamId": "edu-e-amigos"
+    }
+  ],
+  "maps": [
+    {
+      "id": "bind",
+      "name": "Bind",
+      "score": [
+        13,
+        9
+      ],
+      "durationSeconds": 2441,
+      "sourceUrl": "https://tracker.gg/valorant/match/7add631b-01e3-4b31-8aab-3af91171f17b",
+      "rounds": [
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "detonate"
+        },
+        {
+          "winner": "edu-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "vls",
+          "agent": "Raze",
+          "acs": 380,
+          "kills": 30,
+          "deaths": 17,
+          "assists": 2,
+          "adr": 236.1,
+          "hs": 26,
+          "kast": 86,
+          "fk": 7,
+          "fd": 3
+        },
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 241,
+          "kills": 21,
+          "deaths": 9,
+          "assists": 5,
+          "adr": 155.1,
+          "hs": 37,
+          "kast": 82,
+          "fk": 4,
+          "fd": 2
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Brimstone",
+          "acs": 228,
+          "kills": 18,
+          "deaths": 12,
+          "assists": 15,
+          "adr": 135.4,
+          "hs": 25,
+          "kast": 95,
+          "fk": 1,
+          "fd": 0
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Fade",
+          "acs": 163,
+          "kills": 10,
+          "deaths": 15,
+          "assists": 16,
+          "adr": 118.1,
+          "hs": 12,
+          "kast": 77,
+          "fk": 1,
+          "fd": 1
+        },
+        {
+          "playerId": "felpao",
+          "agent": "Gekko",
+          "acs": 96,
+          "kills": 7,
+          "deaths": 13,
+          "assists": 7,
+          "adr": 61.5,
+          "hs": 10,
+          "kast": 77,
+          "fk": 1,
+          "fd": 2
+        },
+        {
+          "playerId": "edu-e-amigos-akes-sem-cu-slash",
+          "agent": "Raze",
+          "acs": 263,
+          "kills": 17,
+          "deaths": 19,
+          "assists": 9,
+          "adr": 190.8,
+          "hs": 31,
+          "kast": 73,
+          "fk": 5,
+          "fd": 4
+        },
+        {
+          "playerId": "edu-e-amigos-sinelli-031",
+          "agent": "Brimstone",
+          "acs": 246,
+          "kills": 19,
+          "deaths": 17,
+          "assists": 6,
+          "adr": 141.7,
+          "hs": 21,
+          "kast": 68,
+          "fk": 2,
+          "fd": 3
+        },
+        {
+          "playerId": "edu-e-amigos-kenii-2002",
+          "agent": "Viper",
+          "acs": 142,
+          "kills": 11,
+          "deaths": 17,
+          "assists": 3,
+          "adr": 91.2,
+          "hs": 10,
+          "kast": 59,
+          "fk": 1,
+          "fd": 4
+        },
+        {
+          "playerId": "edu-e-amigos-lucas-1575",
+          "agent": "Cypher",
+          "acs": 131,
+          "kills": 11,
+          "deaths": 16,
+          "assists": 3,
+          "adr": 82.3,
+          "hs": 25,
+          "kast": 73,
+          "fk": 0,
+          "fd": 2
+        },
+        {
+          "playerId": "edu-e-amigos-bluestar2-0002",
+          "agent": "Skye",
+          "acs": 100,
+          "kills": 8,
+          "deaths": 17,
+          "assists": 3,
+          "adr": 65.2,
+          "hs": 15,
+          "kast": 59,
+          "fk": 0,
+          "fd": 1
+        }
+      ]
+    }
+  ]
+}

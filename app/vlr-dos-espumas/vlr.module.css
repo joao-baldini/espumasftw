@@ -42,6 +42,10 @@
 .sabonetes { background-image: url('/teams/sabonetes.svg'); background-size: contain; background-position: center; }
 .ralos { background-image: url('/teams/ralos.svg'); background-size: contain; background-position: center; }
 .escorredores { background-image: url('/teams/escorredores.svg'); background-size: contain; background-position: center; }
+.tournament { background-image: url('/teams/tournament.svg'); background-size: contain; background-position: center; }
+.eventLink { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; padding: 15px 18px; background: #20242e; border-left: 3px solid #ed145b; color: #fff; font-weight: 700; line-height: 1.5; }
+.eventLink:hover { background: #303441; }
+.eventLink span { color: #f588ab; font-size: 11px; white-space: nowrap; }
 .seriesInfo { margin: 0; border: 1px solid #c7c9cb; background: #e9eaeb; padding: 5px 12px; }
 .seriesInfo>div { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; }
 .seriesInfo>div+div { border-top: 1px solid #d0d2d4; }

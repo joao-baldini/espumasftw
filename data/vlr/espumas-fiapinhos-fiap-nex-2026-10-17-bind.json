@@ -1,0 +1,309 @@
+{
+  "id": "espumas-fiapinhos-fiap-nex-2026-10-17-bind",
+  "date": "2026-10-17",
+  "event": "FIAP NEX 2026 · Upper Quarter finals",
+  "format": "Campeonato",
+  "tournamentId": "fiap-nex-2026",
+  "tournamentMatch": {
+    "number": 28,
+    "stage": "Upper Quarter finals",
+    "order": 3
+  },
+  "sourceUrl": "https://tracker.gg/valorant/match/3a90372b-8b61-4b84-9b8e-2124ae16be60",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/intertwined%23anaju/customs?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "fiapinhos",
+      "name": "Fiapinhos",
+      "tag": "FIP",
+      "crest": "tournament"
+    }
+  ],
+  "players": [
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "fiapinhos-desire-yhwh",
+      "name": "desire",
+      "riotId": "desire#yhwh",
+      "teamId": "fiapinhos"
+    },
+    {
+      "id": "fiapinhos-pr1m3-7352",
+      "name": "PR1M3",
+      "riotId": "PR1M3#7352",
+      "teamId": "fiapinhos"
+    },
+    {
+      "id": "fiapinhos-needy-sink",
+      "name": "needy",
+      "riotId": "needy#sink",
+      "teamId": "fiapinhos"
+    },
+    {
+      "id": "fiapinhos-mini-pekka-gatti",
+      "name": "Mini PEKKA",
+      "riotId": "Mini PEKKA#gatti",
+      "teamId": "fiapinhos"
+    },
+    {
+      "id": "fiapinhos-sakura-miyawaki-needy",
+      "name": "sakura miyawaki",
+      "riotId": "sakura miyawaki#needy",
+      "teamId": "fiapinhos"
+    }
+  ],
+  "maps": [
+    {
+      "id": "bind",
+      "name": "Bind",
+      "score": [
+        5,
+        13
+      ],
+      "durationSeconds": 1544,
+      "sourceUrl": "https://tracker.gg/valorant/match/3a90372b-8b61-4b84-9b8e-2124ae16be60",
+      "rounds": [
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "fiapinhos",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 314,
+          "kills": 21,
+          "deaths": 14,
+          "assists": 0,
+          "adr": 212.3,
+          "hs": 47,
+          "kast": 83,
+          "fk": 2,
+          "fd": 1
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Brimstone",
+          "acs": 192,
+          "kills": 10,
+          "deaths": 15,
+          "assists": 7,
+          "adr": 134.3,
+          "hs": 31,
+          "kast": 78,
+          "fk": 0,
+          "fd": 0
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Fade",
+          "acs": 150,
+          "kills": 8,
+          "deaths": 17,
+          "assists": 4,
+          "adr": 106.7,
+          "hs": 25,
+          "kast": 72,
+          "fk": 2,
+          "fd": 4
+        },
+        {
+          "playerId": "vls",
+          "agent": "Raze",
+          "acs": 140,
+          "kills": 8,
+          "deaths": 17,
+          "assists": 1,
+          "adr": 93.3,
+          "hs": 24,
+          "kast": 50,
+          "fk": 0,
+          "fd": 3
+        },
+        {
+          "playerId": "felpao",
+          "agent": "Gekko",
+          "acs": 75,
+          "kills": 3,
+          "deaths": 18,
+          "assists": 3,
+          "adr": 54.7,
+          "hs": 22,
+          "kast": 56,
+          "fk": 1,
+          "fd": 5
+        },
+        {
+          "playerId": "fiapinhos-desire-yhwh",
+          "agent": "Viper",
+          "acs": 359,
+          "kills": 26,
+          "deaths": 7,
+          "assists": 5,
+          "adr": 247.6,
+          "hs": 45,
+          "kast": 89,
+          "fk": 5,
+          "fd": 0
+        },
+        {
+          "playerId": "fiapinhos-pr1m3-7352",
+          "agent": "Jett",
+          "acs": 272,
+          "kills": 18,
+          "deaths": 11,
+          "assists": 5,
+          "adr": 166,
+          "hs": 19,
+          "kast": 83,
+          "fk": 3,
+          "fd": 3
+        },
+        {
+          "playerId": "fiapinhos-needy-sink",
+          "agent": "Phoenix",
+          "acs": 245,
+          "kills": 15,
+          "deaths": 12,
+          "assists": 10,
+          "adr": 158.1,
+          "hs": 28,
+          "kast": 72,
+          "fk": 4,
+          "fd": 2
+        },
+        {
+          "playerId": "fiapinhos-mini-pekka-gatti",
+          "agent": "Fade",
+          "acs": 163,
+          "kills": 11,
+          "deaths": 11,
+          "assists": 6,
+          "adr": 108.2,
+          "hs": 26,
+          "kast": 89,
+          "fk": 1,
+          "fd": 0
+        },
+        {
+          "playerId": "fiapinhos-sakura-miyawaki-needy",
+          "agent": "Brimstone",
+          "acs": 163,
+          "kills": 11,
+          "deaths": 9,
+          "assists": 12,
+          "adr": 98.6,
+          "hs": 21,
+          "kast": 83,
+          "fk": 0,
+          "fd": 0
+        }
+      ]
+    }
+  ]
+}

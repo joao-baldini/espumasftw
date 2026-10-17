@@ -6,6 +6,10 @@ import molhados from "@/data/vlr/espumas-molhados-2026-10-13.json";
 import sabonetes from "@/data/vlr/espumas-sabonetes-2026-10-16.json";
 import ralos from "@/data/vlr/espumas-ralos-2026-10-16.json";
 import escorredores from "@/data/vlr/espumas-escorredores-2026-10-16.json";
+import nexLotus from "@/data/vlr/espumas-edu-e-amigos-fiap-nex-2026-10-17-lotus.json";
+import nexAscent from "@/data/vlr/espumas-os-maga-las-fiap-nex-2026-10-17-ascent.json";
+import nexBindLoss from "@/data/vlr/espumas-fiapinhos-fiap-nex-2026-10-17-bind.json";
+import nexBindWin from "@/data/vlr/espumas-edu-e-amigos-fiap-nex-2026-10-17-bind.json";
 import ascentRounds from "@/data/tracker-rounds/ascent-2026-10-07.json";
 import splitRounds from "@/data/tracker-rounds/split-2026-10-07.json";
 import summitRounds from "@/data/tracker-rounds/summit-2026-10-07.json";
@@ -17,11 +21,15 @@ import bindRounds from "@/data/tracker-rounds/bind-2026-10-14.json";
 import lotusOctober16 from "@/data/tracker-rounds/lotus-2026-10-16.json";
 import abyssOctober16 from "@/data/tracker-rounds/abyss-2026-10-16.json";
 import bindOctober16 from "@/data/tracker-rounds/bind-2026-10-16.json";
+import nexLotusRounds from "@/data/tracker-rounds/lotus-2026-10-17.json";
+import nexAscentRounds from "@/data/tracker-rounds/ascent-2026-10-17.json";
+import nexBindLossRounds from "@/data/tracker-rounds/bind-loss-2026-10-17.json";
+import nexBindWinRounds from "@/data/tracker-rounds/bind-win-2026-10-17.json";
 import type { TrackerRounds, ValorantMatch } from "./types";
 
-export const matches: ValorantMatch[] = [escorredores, ralos, sabonetes, esponjasRematch, molhados, loucas, buchas, firstMatch].map((match) => match as unknown as ValorantMatch).sort((a, b) => b.date.localeCompare(a.date));
+export const matches: ValorantMatch[] = [nexBindWin, nexBindLoss, nexAscent, nexLotus, escorredores, ralos, sabonetes, esponjasRematch, molhados, loucas, buchas, firstMatch].map((match) => match as unknown as ValorantMatch).sort((a, b) => b.date.localeCompare(a.date));
 
-const trackerRounds: TrackerRounds[] = [ascentRounds, splitRounds, summitRounds, lotusRounds, havenRounds, abyssRounds, corrodeRounds, bindRounds, lotusOctober16, abyssOctober16, bindOctober16];
+const trackerRounds: TrackerRounds[] = [ascentRounds, splitRounds, summitRounds, lotusRounds, havenRounds, abyssRounds, corrodeRounds, bindRounds, lotusOctober16, abyssOctober16, bindOctober16, nexLotusRounds, nexAscentRounds, nexBindLossRounds, nexBindWinRounds];
 
 // Round-by-round Tracker data is only needed on the match page, so it is attached there.
 export function withTrackerRounds(match: ValorantMatch): ValorantMatch {

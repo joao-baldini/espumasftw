@@ -2,7 +2,7 @@ export type MatchTeam = {
   id: string;
   name: string;
   tag: string;
-  crest: "espumas" | "esponjas" | "buchas" | "loucas" | "molhados" | "sabonetes" | "ralos" | "escorredores";
+  crest: "espumas" | "esponjas" | "buchas" | "loucas" | "molhados" | "sabonetes" | "ralos" | "escorredores" | "tournament";
 };
 
 export type MatchPlayer = {
@@ -60,7 +60,9 @@ export type ValorantMatch = {
   id: string;
   date: string;
   event: string;
-  format?: "Competitiva" | "Personalizada";
+  format?: "Competitiva" | "Personalizada" | "Campeonato";
+  tournamentId?: string;
+  tournamentMatch?: { number: number; stage: string; order: number };
   sourceUrl: string;
   contextUrl: string;
   ratingNote: string;
