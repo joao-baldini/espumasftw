@@ -3,7 +3,9 @@ export const FIAP_NEX_2026 = {
   name: "Campeonato VALORANT FIAP NEX 2026",
   href: "/vlr-dos-espumas/campeonatos/fiap-nex-2026",
   startedAt: "2026-10-17",
-  nextMatch: {
+  eliminatedAt: "2026-10-18",
+  lastMatch: {
+    matchId: "espumas-allan-e-amigos-fiap-nex-2026-10-18-bind",
     number: 56,
     stage: "Stage 1 · Lower Round of 4",
     startsAt: "2026-10-18T14:00:00-03:00",

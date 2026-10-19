@@ -11,15 +11,15 @@ import agents from "@/app/agents.json";
 import vlr from "../../vlr.module.css";
 import styles from "./tournament.module.css";
 
-export const metadata: Metadata = { title: `${FIAP_NEX_2026.name} — VLR dos Espumas`, description: "Acompanhe os Espumas no FIAP NEX 2026: resultados, estatísticas individuais e replays das partidas." };
+export const metadata: Metadata = { title: `${FIAP_NEX_2026.name} — VLR dos Espumas`, description: "A campanha dos Espumas no FIAP NEX 2026: três vitórias, duas derrotas, estatísticas individuais e replays das partidas." };
 
 export default function TournamentPage() {
-  const nextMatch = FIAP_NEX_2026.nextMatch;
-  const nextMatchDate = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "America/Sao_Paulo" }).format(new Date(nextMatch.startsAt));
-  const nextMatchTime = new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" }).format(new Date(nextMatch.startsAt));
+  const lastMatch = FIAP_NEX_2026.lastMatch;
   const games = matches.filter((match) => match.tournamentId === FIAP_NEX_2026.id)
     .sort((a, b) => a.date.localeCompare(b.date) || (a.tournamentMatch?.order ?? 0) - (b.tournamentMatch?.order ?? 0));
   const maps = games.flatMap((match) => match.maps);
+  const lastGame = games.find((match) => match.id === lastMatch.matchId)!;
+  const lastMap = lastGame.maps[0];
   const wins = maps.filter((map) => map.score[0] > map.score[1]).length;
   const rounds = maps.reduce((sum, map) => sum + map.score[0] + map.score[1], 0);
   const roundWins = maps.reduce((sum, map) => sum + map.score[0], 0);
@@ -33,10 +33,10 @@ export default function TournamentPage() {
     <main className={`${vlr.container} ${styles.container}`}>
       <nav className={styles.breadcrumb} aria-label="Navegação"><Link href="/vlr-dos-espumas">VLR dos Espumas</Link><span>/</span><span>Campeonatos</span></nav>
       <header className={styles.hero}>
-        <div className={styles.heroTop}><span className={styles.eyebrow}>VALORANT · TEMPORADA 2026</span><span className={styles.status}><i />Em andamento</span></div>
+        <div className={styles.heroTop}><span className={styles.eyebrow}>VALORANT · TEMPORADA 2026</span><span className={`${styles.status} ${styles.eliminated}`}><i />Participação encerrada</span></div>
         <h1>Campeonato VALORANT<br /><strong>FIAP NEX 2026</strong></h1>
-        <p>A estreia dos Espumas no campeonato. Cada confronto, cada round.</p>
-        <div className={styles.heroBottom}><span>Início · {formatMatchDate(FIAP_NEX_2026.startedAt)}</span><span>Stage 1 · Chaves superior e inferior</span></div>
+        <p>Os Espumas encerraram sua campanha com {wins} vitórias e {maps.length - wins} derrotas, após o confronto com {lastGame.teams[1].name} na chave inferior.</p>
+        <div className={styles.heroBottom}><span>{formatMatchDate(FIAP_NEX_2026.startedAt, true)} — {formatMatchDate(FIAP_NEX_2026.eliminatedAt, true)}</span><span>Stage 1 · Eliminados na Lower Round of 4</span></div>
       </header>
       <dl className={styles.summary}>
         <div><dt>Partidas registradas</dt><dd>{games.length}</dd></div>
@@ -56,11 +56,13 @@ export default function TournamentPage() {
             </div>
           </Link>;
         })}</div>
-        <aside className={styles.next} aria-labelledby="next-match-title">
-          <div className={styles.nextHeader}><span className={styles.status}>Próximo confronto · MD{nextMatch.bestOf}</span><time dateTime={nextMatch.startsAt}>{nextMatchDate} · {nextMatchTime}<small>Brasília · GMT−3</small></time></div>
-          <h3 id="next-match-title">Espumas <em>vs.</em> {nextMatch.opponent}</h3>
-          <p>Jogo {nextMatch.number} · {nextMatch.stage}</p>
-          <details className={styles.rosters}><summary>Jogadores inscritos</summary><p className={styles.rosterNote}>Lista de inscritos no campeonato. Os cinco titulares de cada time ainda serão confirmados.</p><div className={styles.rosterGrid}>{nextMatch.rosters.map((roster) => <section key={roster.team} aria-label={`Inscritos de ${roster.team}`}><h4>{roster.team}</h4><ul>{roster.players.map((player) => <li key={player.name}><span>{player.name}</span>{player.captain && <small>Capitão</small>}</li>)}</ul></section>)}</div></details>
+        <aside className={styles.lastMatch} aria-labelledby="last-match-title">
+          <div className={styles.lastMatchHeader}><span className={styles.status}>Último confronto · Derrota · MD{lastMatch.bestOf}</span><time dateTime={lastGame.date}>{formatMatchDate(lastGame.date, true)}<small>{lastMap.name} · {Math.floor(lastMap.durationSeconds / 60)}m {String(lastMap.durationSeconds % 60).padStart(2, "0")}s</small></time></div>
+          <h3 id="last-match-title">Espumas <em>{lastMap.score[0]} : {lastMap.score[1]}</em> {lastGame.teams[1].name}</h3>
+          <p>Jogo {lastMatch.number} · {lastMatch.stage}</p>
+          <p>Eliminação dos Espumas na chave inferior.</p>
+          <Link href={`/vlr-dos-espumas/${lastGame.id}`} className={styles.matchLink}>Ver estatísticas e replay da partida →</Link>
+          <details className={styles.rosters}><summary>Jogadores inscritos</summary><p className={styles.rosterNote}>Lista de inscritos no campeonato. Os cinco jogadores que disputaram a partida estão no relatório do confronto.</p><div className={styles.rosterGrid}>{lastMatch.rosters.map((roster) => <section key={roster.team} aria-label={`Inscritos de ${roster.team}`}><h4>{roster.team}</h4><ul>{roster.players.map((player) => <li key={player.name}><span>{player.name}</span>{player.captain && <small>Capitão</small>}</li>)}</ul></section>)}</div></details>
         </aside>
       </section>
       <section aria-labelledby="stats-title">

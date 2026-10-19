@@ -1,0 +1,309 @@
+{
+  "id": "espumas-allan-e-amigos-fiap-nex-2026-10-18-bind",
+  "date": "2026-10-18",
+  "event": "FIAP NEX 2026 · Lower Round of 4",
+  "format": "Campeonato",
+  "tournamentId": "fiap-nex-2026",
+  "tournamentMatch": {
+    "number": 56,
+    "stage": "Lower Round of 4",
+    "order": 5
+  },
+  "sourceUrl": "https://tracker.gg/valorant/match/8fbd80ce-ef8e-4ed8-8ad2-84645764c189",
+  "contextUrl": "https://tracker.gg/valorant/profile/riot/intertwined%23anaju/customs?platform=pc&playlist=competitive&season=d816f426-48ea-f052-117f-9697a155b319",
+  "ratingNote": "Rating Espumas v1: estimativa calibrada com ratings VLR 2.0. Usa kills, deaths, assistências e primeiras mortes por round, ADR e ACS. O mesmo modelo é usado no perfil de cada jogador; contribuições brutas são ponderadas pelos rounds antes do arredondamento final.",
+  "teams": [
+    {
+      "id": "espumas",
+      "name": "Espumas",
+      "tag": "ESP",
+      "crest": "espumas"
+    },
+    {
+      "id": "allan-e-amigos",
+      "name": "Allan e amigos",
+      "tag": "ALL",
+      "crest": "tournament"
+    }
+  ],
+  "players": [
+    {
+      "id": "intertwined",
+      "name": "intertwined",
+      "riotId": "intertwined#anaju",
+      "teamId": "espumas"
+    },
+    {
+      "id": "maopyk",
+      "name": "Maopyk",
+      "riotId": "maopyk#bibi",
+      "teamId": "espumas"
+    },
+    {
+      "id": "vls",
+      "name": "vls",
+      "riotId": "vls#det",
+      "teamId": "espumas"
+    },
+    {
+      "id": "laszo",
+      "name": "lsz",
+      "riotId": "lsz#333",
+      "teamId": "espumas"
+    },
+    {
+      "id": "felpao",
+      "name": "Felpao",
+      "riotId": "Felpao#000",
+      "teamId": "espumas"
+    },
+    {
+      "id": "allan-e-amigos-love-me-love-me-qaq",
+      "name": "love me love me",
+      "riotId": "love me love me#qaq",
+      "teamId": "allan-e-amigos"
+    },
+    {
+      "id": "allan-e-amigos-allanh03-0913",
+      "name": "AllanH03",
+      "riotId": "AllanH03#0913",
+      "teamId": "allan-e-amigos"
+    },
+    {
+      "id": "allan-e-amigos-blackdocorre-vilao",
+      "name": "BlackDoCorre",
+      "riotId": "BlackDoCorre#vilao",
+      "teamId": "allan-e-amigos"
+    },
+    {
+      "id": "allan-e-amigos-nopexz-nope",
+      "name": "nopexz",
+      "riotId": "nopexz#nope",
+      "teamId": "allan-e-amigos"
+    },
+    {
+      "id": "allan-e-amigos-pasqua-1111",
+      "name": "pasquaツ",
+      "riotId": "pasquaツ#1111",
+      "teamId": "allan-e-amigos"
+    }
+  ],
+  "maps": [
+    {
+      "id": "bind",
+      "name": "Bind",
+      "score": [
+        5,
+        13
+      ],
+      "durationSeconds": 1802,
+      "sourceUrl": "https://tracker.gg/valorant/match/8fbd80ce-ef8e-4ed8-8ad2-84645764c189",
+      "rounds": [
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "defuse"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "espumas",
+          "outcome": "elimination"
+        },
+        {
+          "winner": "allan-e-amigos",
+          "outcome": "elimination"
+        }
+      ],
+      "stats": [
+        {
+          "playerId": "intertwined",
+          "agent": "Chamber",
+          "acs": 340,
+          "kills": 20,
+          "deaths": 15,
+          "assists": 5,
+          "kast": 61,
+          "adr": 208.6,
+          "hs": 18,
+          "fk": 4,
+          "fd": 0
+        },
+        {
+          "playerId": "maopyk",
+          "agent": "Brimstone",
+          "acs": 215,
+          "kills": 11,
+          "deaths": 16,
+          "assists": 15,
+          "kast": 72,
+          "adr": 152.9,
+          "hs": 18,
+          "fk": 0,
+          "fd": 0
+        },
+        {
+          "playerId": "vls",
+          "agent": "Raze",
+          "acs": 192,
+          "kills": 10,
+          "deaths": 17,
+          "assists": 5,
+          "kast": 67,
+          "adr": 116,
+          "hs": 26,
+          "fk": 3,
+          "fd": 5
+        },
+        {
+          "playerId": "laszo",
+          "agent": "Fade",
+          "acs": 119,
+          "kills": 7,
+          "deaths": 16,
+          "assists": 4,
+          "kast": 56,
+          "adr": 71.4,
+          "hs": 19,
+          "fk": 0,
+          "fd": 1
+        },
+        {
+          "playerId": "felpao",
+          "agent": "Gekko",
+          "acs": 97,
+          "kills": 6,
+          "deaths": 15,
+          "assists": 3,
+          "kast": 67,
+          "adr": 71.6,
+          "hs": 18,
+          "fk": 2,
+          "fd": 3
+        },
+        {
+          "playerId": "allan-e-amigos-love-me-love-me-qaq",
+          "agent": "Phoenix",
+          "acs": 390,
+          "kills": 25,
+          "deaths": 12,
+          "assists": 6,
+          "kast": 100,
+          "adr": 264.9,
+          "hs": 34,
+          "fk": 5,
+          "fd": 0
+        },
+        {
+          "playerId": "allan-e-amigos-allanh03-0913",
+          "agent": "Brimstone",
+          "acs": 255,
+          "kills": 17,
+          "deaths": 13,
+          "assists": 8,
+          "kast": 89,
+          "adr": 176.4,
+          "hs": 27,
+          "fk": 0,
+          "fd": 1
+        },
+        {
+          "playerId": "allan-e-amigos-blackdocorre-vilao",
+          "agent": "Raze",
+          "acs": 236,
+          "kills": 16,
+          "deaths": 11,
+          "assists": 5,
+          "kast": 83,
+          "adr": 167.2,
+          "hs": 32,
+          "fk": 2,
+          "fd": 4
+        },
+        {
+          "playerId": "allan-e-amigos-nopexz-nope",
+          "agent": "Cypher",
+          "acs": 235,
+          "kills": 15,
+          "deaths": 7,
+          "assists": 6,
+          "kast": 72,
+          "adr": 158.2,
+          "hs": 33,
+          "fk": 1,
+          "fd": 3
+        },
+        {
+          "playerId": "allan-e-amigos-pasqua-1111",
+          "agent": "Skye",
+          "acs": 89,
+          "kills": 6,
+          "deaths": 11,
+          "assists": 5,
+          "kast": 72,
+          "adr": 51.1,
+          "hs": 20,
+          "fk": 1,
+          "fd": 1
+        }
+      ]
+    }
+  ]
+}
