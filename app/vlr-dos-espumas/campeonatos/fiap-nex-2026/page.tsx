@@ -11,7 +11,7 @@ import agents from "@/app/agents.json";
 import vlr from "../../vlr.module.css";
 import styles from "./tournament.module.css";
 
-export const metadata: Metadata = { title: `${FIAP_NEX_2026.name} — VLR dos Espumas`, description: "A campanha dos Espumas no FIAP NEX 2026: três vitórias, duas derrotas, estatísticas individuais e replays das partidas." };
+export const metadata: Metadata = { title: `${FIAP_NEX_2026.name} — VLR dos Espumas`, description: "A campanha dos Espumas no FIAP NEXT VALORANT 2026: três vitórias, duas derrotas, estatísticas individuais e replays das partidas." };
 
 export default function TournamentPage() {
   const lastMatch = FIAP_NEX_2026.lastMatch;
@@ -34,7 +34,7 @@ export default function TournamentPage() {
       <nav className={styles.breadcrumb} aria-label="Navegação"><Link href="/vlr-dos-espumas">VLR dos Espumas</Link><span>/</span><span>Campeonatos</span></nav>
       <header className={styles.hero}>
         <div className={styles.heroTop}><span className={styles.eyebrow}>VALORANT · TEMPORADA 2026</span><span className={`${styles.status} ${styles.eliminated}`}><i />Participação encerrada</span></div>
-        <h1>Campeonato VALORANT<br /><strong>FIAP NEX 2026</strong></h1>
+        <h1>Campeonato<br /><strong>{FIAP_NEX_2026.name}</strong></h1>
         <p>Os Espumas encerraram sua campanha com {wins} vitórias e {maps.length - wins} derrotas, após o confronto com {lastGame.teams[1].name} na chave inferior.</p>
         <div className={styles.heroBottom}><span>{formatMatchDate(FIAP_NEX_2026.startedAt, true)} — {formatMatchDate(FIAP_NEX_2026.eliminatedAt, true)}</span><span>Stage 1 · Eliminados na Lower Round of 4</span></div>
       </header>
@@ -68,7 +68,7 @@ export default function TournamentPage() {
       <section aria-labelledby="stats-title">
         <div className={styles.sectionTitle}><h2 id="stats-title">Espumas no campeonato</h2><span>{maps.length} mapas · {rounds} rounds</span></div>
         <div className={styles.tableScroll}><table className={styles.stats}>
-          <caption>Estatísticas individuais nas partidas registradas do FIAP NEX 2026</caption>
+          <caption>Estatísticas individuais nas partidas registradas do {FIAP_NEX_2026.name}</caption>
           <thead><tr><th scope="col">Jogador</th><th scope="col">Agentes</th><th scope="col" title="Rating Espumas v1">R*</th><th scope="col">ACS</th><th scope="col">K / D / A</th><th scope="col">+/−</th><th scope="col">KAST</th><th scope="col">ADR</th><th scope="col">FK / FD</th></tr></thead>
           <tbody>{players.map((player) => <tr key={player.id}>
             <th scope="row"><Link href={`/vlr-dos-espumas/jogadores/${player.id}`}><Image src={PLAYER_AVATARS[player.id]} alt="" width={30} height={33} unoptimized />{player.name}</Link></th>
