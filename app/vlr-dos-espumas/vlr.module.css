@@ -456,3 +456,4 @@
   .profileMatchRow>span:last-child { grid-column: 3; grid-row: 3; }
   .playerNavigation a { padding: 7px 9px; font-size: 11px; }
 }
+.announcement { margin-bottom: 14px; }

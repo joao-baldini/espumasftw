@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { matches } from "@/lib/vlr/matches";
 import { playerMapRecords, registeredPlayers } from "@/lib/vlr/player-stats";
+import { RadiantBanner } from "@/components/radiant-banner";
+import { INTERTWINED_RADIANT } from "@/lib/vlr/announcements";
 import { PlayerViewer } from "../../player-viewer";
 import styles from "../../vlr.module.css";
 
@@ -24,6 +26,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ playerI
   return <div className={styles.page}><SiteHeader active="vlr" /><div className={styles.container}>
     <div className={styles.pageHeading}><div><h2>VLR dos Espumas</h2><p>Estatísticas individuais e histórico por agente.</p></div><Link className={styles.backLink} href="/vlr-dos-espumas">Voltar às partidas</Link></div>
     <nav className={styles.playerNavigation} aria-label="Jogadores dos Espumas">{players.filter((entry) => entry.teamId === "espumas").map((entry) => <Link key={entry.id} href={`/vlr-dos-espumas/jogadores/${entry.id}`} aria-current={entry.id === player.id ? "page" : undefined}>{entry.name}</Link>)}</nav>
+    {player.id === INTERTWINED_RADIANT.playerId && <RadiantBanner className={styles.announcement} />}
     <PlayerViewer player={player} records={playerMapRecords(matches, player.id)} asOf={asOf} />
     <footer className={styles.footer}>VLR dos Espumas · Estatísticas dos jogos registrados.</footer>
   </div></div>;
