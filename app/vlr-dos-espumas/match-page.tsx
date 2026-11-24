@@ -5,6 +5,7 @@ import { displayScore } from "@/lib/vlr/stats";
 import { registeredPlayers } from "@/lib/vlr/player-stats";
 import { FIAP_NEX_2026 } from "@/lib/vlr/tournaments";
 import type { ValorantMatch } from "@/lib/vlr/types";
+import { RadiantBanner } from "@/components/radiant-banner";
 import { MatchViewer } from "./match-viewer";
 import styles from "./vlr.module.css";
 
@@ -13,6 +14,7 @@ export function MatchPage({ match }: { match: ValorantMatch }) {
     <SiteHeader active="vlr" />
     <div className={styles.container}>
       <div className={styles.pageHeading}><div><h1>VLR dos Espumas</h1><p>Nosso histórico de partidas, mapa por mapa.</p></div><Link href="/vlr-dos-espumas/jogadores" className={styles.backLink}>Perfis dos jogadores →</Link></div>
+      <RadiantBanner className={styles.announcement} />
       <Link href={FIAP_NEX_2026.href} className={styles.eventLink}>{FIAP_NEX_2026.name}<span>Ver campeonato →</span></Link>
       <div className={styles.layout}>
         <aside className={styles.sidebar} aria-label="Histórico de partidas">

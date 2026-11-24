@@ -1,0 +1,9 @@
+.banner { position: relative; display: flex; align-items: center; gap: 16px; overflow: hidden; padding: 14px 18px; border: 1px solid #f5c95c55; border-left: 3px solid #f5c95c; background: radial-gradient(ellipse at 0% 50%, #f5c95c2b, transparent 55%), #15161d; color: #fff; text-decoration: none; }
+.banner:hover { background: radial-gradient(ellipse at 0% 50%, #f5c95c3d, transparent 60%), #1c1d26; }
+.banner:focus-visible { outline: 2px solid #f5c95c; outline-offset: 3px; }
+.emblem { flex-shrink: 0; width: 34px; height: 34px; color: #f5c95c; filter: drop-shadow(0 0 8px #f5c95c88); }
+.text { display: flex; flex-direction: column; gap: 4px; min-width: 0; line-height: 1.35; }
+.text small { color: #f5c95c; font-size: 10px; font-weight: 800; letter-spacing: .18em; }
+.text strong { font-size: 14px; font-weight: 700; }
+.cta { margin-left: auto; color: #f8d985; font-size: 11px; font-weight: 700; white-space: nowrap; }
+@media (max-width: 560px) { .cta { display: none; } .text strong { font-size: 13px; } }
